@@ -4,6 +4,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from '@/components/ui/slider';
 import AddToCartButton from '@/components/AddToCartButton';
 import ProgrammerCredits from '@/components/ProgrammerCredits';
+// TEST: Import ProfessionalAudioEngine
+import { ProfessionalAudioEngine, TrackPattern } from '@/audio/AudioEngine';
 
 interface DrumSample {
   id: string;
@@ -51,96 +53,6 @@ interface PatternBank {
 let AVAILABLE_SAMPLE_PACKS: any[] = [];
 let SAMPLE_KITS: SampleKit[] = [];
 
-// **PROFESSIONAL ISOLATED AUDIO ENGINE - COMPLETELY SEPARATE FROM REACT (FROM DESKTOP v6.0.2)**
-class SequencerAudioEngine {
-  // **AUDIO-ONLY STATE - NEVER TRIGGERS REACT RE-RENDERS**
-  private pattern: boolean[][] = [];
-  private volumes: number[] = [];
-  private selectedSamples: string[] = [];
-  private trackIds: string[] = [];
-  private currentStep: number = 0;
-  private isPlaying: boolean = false;
-  private bpm: number = 120;
-  
-  // **INITIALIZE AUDIO ENGINE WITH TRACK DATA**
-  initializeTracks(tracks: DrumTrack[]) {
-    this.trackIds = tracks.map(t => t.id);
-    this.pattern = tracks.map(t => [...t.steps]);
-    this.volumes = tracks.map(t => t.volume);
-    this.selectedSamples = tracks.map(t => t.selectedSampleId);
-  }
-  
-  // **IMMEDIATE AUDIO UPDATES - NO REACT STATE TRIGGERS**
-  updatePattern(trackIndex: number, stepIndex: number, value: boolean) {
-    if (this.pattern[trackIndex]) {
-      this.pattern[trackIndex][stepIndex] = value;
-    }
-  }
-  
-  updateVolume(trackIndex: number, volume: number) {
-    this.volumes[trackIndex] = volume;
-  }
-  
-  updateSelectedSample(trackIndex: number, sampleId: string) {
-    this.selectedSamples[trackIndex] = sampleId;
-  }
-  
-  setBpm(newBpm: number) {
-    this.bpm = newBpm;
-  }
-  
-  setPlaying(playing: boolean) {
-    this.isPlaying = playing;
-  }
-  
-  setCurrentStep(step: number) {
-    this.currentStep = step;
-  }
-  
-  // **PURE GETTERS - NO SIDE EFFECTS**
-  getPattern(trackIndex: number): boolean[] {
-    return this.pattern[trackIndex] || [];
-  }
-  
-  getVolume(trackIndex: number): number {
-    return this.volumes[trackIndex] || 0.7;
-  }
-  
-  getSelectedSample(trackIndex: number): string {
-    return this.selectedSamples[trackIndex] || '';
-  }
-  
-  getBpm(): number {
-    return this.bpm;
-  }
-  
-  getIsPlaying(): boolean {
-    return this.isPlaying;
-  }
-  
-  getCurrentStep(): number {
-    return this.currentStep;
-  }
-  
-  getTrackIds(): string[] {
-    return this.trackIds;
-  }
-  
-  // **GET ACTIVE TRACKS FOR CURRENT STEP - SCHEDULER READS THIS**
-  getActiveTracksForStep(stepIndex: number): number[] {
-    return this.pattern.reduce((active: number[], trackPattern, trackIndex) => {
-      if (trackPattern[stepIndex]) {
-        active.push(trackIndex);
-      }
-      return active;
-    }, []);
-  }
-  
-  // **CLEAR ALL PATTERNS**
-  clearAllPatterns() {
-    this.pattern = this.pattern.map(track => new Array(16).fill(false));
-  }
-}
 
 // Reuse API functions from desktop version
 const discoverSamplePacks = async (): Promise<void> => {
@@ -315,7 +227,7 @@ export default function DrumSequencerMobile() {
   const [totalSamplesToPreload, setTotalSamplesToPreload] = useState(0);
   
   const audioContextRef = useRef<AudioContext | null>(null);
-  const audioEngineRef = useRef<SequencerAudioEngine>(new SequencerAudioEngine());
+  const audioEngineRef = useRef<ProfessionalAudioEngine>(new ProfessionalAudioEngine());
   
   
   // Pattern Banks State (from Desktop v6.0.2)
@@ -423,7 +335,29 @@ export default function DrumSequencerMobile() {
             
             setTracks(newTracks);
             tracksRef.current = newTracks;
-            audioEngineRef.current.initializeTracks(newTracks);
+            
+            // Convert DrumTrack[] to TrackPattern[] for ProfessionalAudioEngine
+            const trackPatterns: TrackPattern[] = newTracks.map(track => ({
+              id: track.id,
+              name: track.name,
+              steps: [...track.steps], // Deep copy
+              volume: track.volume,
+              selectedSampleId: track.selectedSampleId,
+              muted: false // Mobile version doesn't have mute yet
+            }));
+            
+            audioEngineRef.current.initializeTracks(trackPatterns);
+            
+            // Setup callback for ProfessionalAudioEngine step events
+            audioEngineRef.current.onStepCallback = (trackId: string, sampleId: string, volume: number, time: number) => {
+              const track = tracksRef.current.find(t => t.id === trackId);
+              if (track) {
+                console.log(`🔊 Professional callback: ${trackId} -> ${sampleId} @ volume ${volume.toFixed(2)}`);
+                // Use existing playDrumSound function with timing
+                playDrumSound(track, time);
+              }
+            };
+            
             setIsInitialized(true);
             
             // Initialize Pattern Banks from Desktop v6.0.2
@@ -706,7 +640,7 @@ export default function DrumSequencerMobile() {
     const stepDuration = stepDurationRef.current;
     
     while (nextStepTimeRef.current < ctx.currentTime + lookAheadTime) {
-      const activeTrackIndexes = audioEngineRef.current.getActiveTracksForStep(currentStepIndexRef.current);
+      const activeTrackIds = audioEngineRef.current.getActiveTracksForStep(currentStepIndexRef.current);
       
       // Apply quantization to timing
       const quantizedStepTime = getQuantizedTiming(
@@ -715,8 +649,8 @@ export default function DrumSequencerMobile() {
         stepDuration
       );
       
-      activeTrackIndexes.forEach((trackIndex) => {
-        const track = tracksRef.current[trackIndex];
+      activeTrackIds.forEach((trackId) => {
+        const track = tracksRef.current.find(t => t.id === trackId);
         if (track) {
           // Use quantized timing for playback
           playDrumSound(track, quantizedStepTime);
@@ -770,6 +704,11 @@ export default function DrumSequencerMobile() {
       setIsPlaying(true);
     }
   };
+
+  // **PATTERN BANK MANAGEMENT - CRITICAL BUG FIX**
+  // (Removed duplicate - using the advanced version with useCallback below)
+  
+  // (Removed duplicate clearPatternInBank - using the advanced version with useCallback below)
   
   // **DUAL-STATE PATTERN UPDATE - IMMEDIATE AUDIO ENGINE UPDATE (FROM DESKTOP v6.0.2)**
   const toggleStep = useCallback((trackId: string, stepIndex: number) => {
@@ -780,16 +719,16 @@ export default function DrumSequencerMobile() {
     }
     
     // Use tracksRef instead of tracks for immediate access
-    const trackIndex = tracksRef.current.findIndex(t => t.id === trackId);
-    if (trackIndex === -1) return;
+    const track = tracksRef.current.find(t => t.id === trackId);
+    if (!track) return;
     
-    const currentValue = audioEngineRef.current.getPattern(trackIndex)[stepIndex];
+    const currentValue = track.steps[stepIndex];
     const newValue = !currentValue;
     
     console.log(`🎯 MOBILE Dual-state update: ${trackId} step ${stepIndex + 1} → ${newValue}`);
     
     // **1. IMMEDIATE AUDIO ENGINE UPDATE - NO REACT RE-RENDERS**
-    audioEngineRef.current.updatePattern(trackIndex, stepIndex, newValue);
+    audioEngineRef.current.updatePattern(trackId, stepIndex, newValue);
     console.log('✅ Audio engine pattern updated immediately - sequencer plays instantly');
     
     // **2. ASYNC REACT STATE UPDATE - VISUAL FEEDBACK ONLY** 
@@ -823,7 +762,7 @@ export default function DrumSequencerMobile() {
     console.log(`💾 MOBILE: Volume persistence updated for ${trackId}: ${normalizedVolume}`);
     
     // DUAL-STATE UPDATE - IMMEDIATE AUDIO ENGINE
-    audioEngineRef.current.updateVolume(trackIndex, normalizedVolume);
+    audioEngineRef.current.updateVolume(trackId, normalizedVolume);
     console.log(`🔊 MOBILE: Audio engine volume updated: index=${trackIndex}, volume=${normalizedVolume}`);
     
     // ASYNC REACT STATE UPDATE
@@ -878,7 +817,7 @@ export default function DrumSequencerMobile() {
     ));
     
     // UPDATE AUDIO ENGINE
-    audioEngineRef.current.updateSelectedSample(trackIndex, sampleId);
+    audioEngineRef.current.updateSelectedSample(trackId, sampleId);
   };
   
   const getCurrentTrack = () => tracks[selectedTrackIndex];
@@ -1017,7 +956,17 @@ export default function DrumSequencerMobile() {
     }
     
     // **CRITICAL: Initialize audio engine with preserved patterns**
-    audioEngineRef.current.initializeTracks(preservedTracks);
+    // Convert DrumTrack[] to TrackPattern[] for ProfessionalAudioEngine
+    const trackPatterns: TrackPattern[] = preservedTracks.map(track => ({
+      id: track.id,
+      name: track.name,
+      steps: [...track.steps], // Deep copy
+      volume: track.volume,
+      selectedSampleId: track.selectedSampleId,
+      muted: false // Mobile version doesn't have mute yet
+    }));
+    
+    audioEngineRef.current.initializeTracks(trackPatterns);
     
     // Set UI state with preserved patterns
     setTracks(preservedTracks);
@@ -1138,14 +1087,33 @@ export default function DrumSequencerMobile() {
 
     console.log(`🔄 Loading Pattern Bank ${bankId}`);
     
-    // Apply pattern to UI
-    setTracks([...bank.tracks]);
+    // Apply pattern to UI - DEEP COPY to prevent reference sharing
+    const deepCopiedTracks: DrumTrack[] = bank.tracks.map(track => ({
+      ...track,
+      steps: [...track.steps], // Deep copy the steps array
+      volume: track.volume,
+      selectedSampleId: track.selectedSampleId,
+      audioContext: track.audioContext,
+      audioBuffer: track.audioBuffer
+    }));
+    
+    setTracks(deepCopiedTracks);
     setBpm(bank.bpm);
     setCurrentBankId(bankId);
     
-    // Apply pattern to Audio Engine
-    tracksRef.current = [...bank.tracks];
-    audioEngineRef.current.initializeTracks(bank.tracks);
+    // Apply pattern to Audio Engine - DEEP COPY
+    tracksRef.current = deepCopiedTracks;
+    // Convert DrumTrack[] to TrackPattern[] for ProfessionalAudioEngine - using deep copied tracks
+    const trackPatterns: TrackPattern[] = deepCopiedTracks.map(track => ({
+      id: track.id,
+      name: track.name,
+      steps: [...track.steps], // Deep copy from already deep copied tracks
+      volume: track.volume,
+      selectedSampleId: track.selectedSampleId,
+      muted: false // Mobile version doesn't have mute yet
+    }));
+    
+    audioEngineRef.current.initializeTracks(trackPatterns);
     
     setHasUnsavedChanges(false);
   }, [patternBanks, currentBankId, tracks, bpm]);
@@ -1156,42 +1124,69 @@ export default function DrumSequencerMobile() {
   const copyPatternToBank = useCallback((fromBankId: string, toBankId: string) => {
     if (fromBankId === toBankId) return;
     
-    // If copying FROM current bank, use LIVE pattern
+    console.log(`📋 Copying pattern from Bank ${fromBankId} to Bank ${toBankId}`);
+    
+    // ✅ UNIFIED APPROACH: Always save current state first, then copy from saved state
+    // This prevents ALL reference sharing issues
+    
+    // Step 1: If copying FROM current bank, save current live state first
     if (fromBankId === currentBankId) {
-      console.log(`📋 Copying LIVE pattern from current Bank ${fromBankId} to Bank ${toBankId}`);
+      console.log(`💾 Saving current live state to Bank ${fromBankId} before copying`);
       
-      setPatternBanks(prev => prev.map(bank => 
-        bank.id === toBankId 
-          ? { 
-              ...bank, 
-              tracks: [...tracks], // Use CURRENT live tracks
-              bpm: bpm, // Use CURRENT live BPM
+      setPatternBanks(prev => prev.map(bank =>
+        bank.id === fromBankId
+          ? {
+              ...bank,
+              tracks: tracks.map(track => ({
+                ...track,
+                steps: [...track.steps], // Deep copy current live state
+                volume: track.volume,
+                selectedSampleId: track.selectedSampleId,
+                audioContext: track.audioContext,
+                audioBuffer: track.audioBuffer
+              })),
+              bpm: bpm,
               lastModified: new Date()
-            } 
+            }
           : bank
       ));
-    } else {
-      // Copying from SAVED bank to another bank
+    }
+    
+    // Step 2: Always copy from patternBanks (after potential save in step 1)
+    setTimeout(() => { // Allow state update to complete first
       const fromBank = patternBanks.find(b => b.id === fromBankId);
-      if (!fromBank) return;
+      if (!fromBank) {
+        console.error(`❌ Source bank ${fromBankId} not found`);
+        return;
+      }
       
-      console.log(`📋 Copying saved pattern from Bank ${fromBankId} to Bank ${toBankId}`);
+      console.log(`📋 Copying from saved Bank ${fromBankId} to Bank ${toBankId}`);
+      
+      // ✅ DEEP COPY: Prevent reference sharing
+      const deepCopiedTracks: DrumTrack[] = fromBank.tracks.map(track => ({
+        ...track,
+        steps: [...track.steps], // Deep copy the steps array
+        volume: track.volume,
+        selectedSampleId: track.selectedSampleId,
+        audioContext: track.audioContext,
+        audioBuffer: track.audioBuffer
+      }));
       
       setPatternBanks(prev => prev.map(bank => 
         bank.id === toBankId 
           ? { 
               ...bank, 
-              tracks: [...fromBank.tracks],
+              tracks: deepCopiedTracks, // Use DEEP COPIED tracks
               bpm: fromBank.bpm,
               lastModified: new Date()
             } 
           : bank
       ));
-    }
-    
-    // ✅ AUTO-SWITCH: Automatisch zur Ziel-Bank wechseln nach dem Kopieren
-    console.log(`🔄 Auto-switching from Bank ${currentBankId} to Bank ${toBankId}`);
-    setCurrentBankId(toBankId);
+      
+      // Step 3: Auto-switch to target bank
+      console.log(`🔄 Auto-switching from Bank ${currentBankId} to Bank ${toBankId}`);
+      setCurrentBankId(toBankId);
+    }, 50); // Small delay to ensure state update completed
   }, [patternBanks, currentBankId, tracks, bpm]);
 
   /**
@@ -1219,7 +1214,17 @@ export default function DrumSequencerMobile() {
       }));
       setTracks(clearedTracks);
       tracksRef.current = clearedTracks;
-      audioEngineRef.current.initializeTracks(clearedTracks);
+      // Convert DrumTrack[] to TrackPattern[] for ProfessionalAudioEngine
+      const trackPatterns: TrackPattern[] = clearedTracks.map(track => ({
+        id: track.id,
+        name: track.name,
+        steps: [...track.steps], // Deep copy
+        volume: track.volume,
+        selectedSampleId: track.selectedSampleId,
+        muted: false // Mobile version doesn't have mute yet
+      }));
+      
+      audioEngineRef.current.initializeTracks(trackPatterns);
     }
   }, [patternBanks, currentBankId]); // FIXED: Removed tracks dependency to prevent volume reset loop
   
