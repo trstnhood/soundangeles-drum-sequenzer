@@ -1,0 +1,516 @@
+/**
+ * Professional Groove Templates - 20 Classic Patterns
+ * Inspired by legendary drum machines: TR-808, TR-909, MPC, Linndrum
+ */
+
+export interface GrooveTemplate {
+  id: string;
+  name: string;
+  description: string;
+  bpm: number;
+  swing: number; // 0 = straight, 50 = max swing
+  shuffle: number; // 0 = no shuffle, 50 = max shuffle
+  trackPatterns: {
+    [trackType: string]: boolean[]; // 16 steps per track
+  };
+  grooveIntensity: 'light' | 'medium' | 'heavy';
+  origin: string; // Which machine/style inspired this
+  sampleAssignments?: { // EDITOR FEATURE: Specific sample assignments per track
+    [trackType: string]: string; // trackType -> sampleId
+  };
+  volumeLevels?: { // EDITOR FEATURE: Volume levels per track (0.0 - 1.0)
+    [trackType: string]: number; // trackType -> volume
+  };
+}
+
+export const GROOVE_TEMPLATES: GrooveTemplate[] = [
+  // Hip-Hop Classics
+  {
+    id: 'boom-bap-classic',
+    name: 'Boom Bap Classic',
+    description: 'Classic 90s Hip-Hop groove - hard hitting kick and snare',
+    bpm: 85,
+    swing: 15,
+    shuffle: 0,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+    },
+    grooveIntensity: 'heavy',
+    origin: 'MPC 60'
+  },
+  
+  {
+    id: 'trap-modern',
+    name: 'Modern Trap',
+    description: 'Contemporary trap pattern with rolling hi-hats',
+    bpm: 140,
+    swing: 8,
+    shuffle: 0,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, true, false, true, false, false, false, false, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [true, true, false, true, true, true, false, true, true, true, false, true, true, true, false, true]
+    },
+    grooveIntensity: 'heavy',
+    origin: 'Modern DAW'
+  },
+
+  // House & Techno
+  {
+    id: 'four-on-floor',
+    name: 'Four on the Floor',
+    description: 'Classic house/techno kick pattern',
+    bpm: 124,
+    swing: 0,
+    shuffle: 0,
+    trackPatterns: {
+      kick: [true, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [false, false, true, false, false, false, true, false, false, false, true, false, false, false, true, false]
+    },
+    grooveIntensity: 'light',
+    origin: 'TR-909'
+  },
+
+  {
+    id: 'detroit-techno',
+    name: 'Detroit Techno',
+    description: 'Underground Detroit techno groove',
+    bpm: 132,
+    swing: 5,
+    shuffle: 0,
+    trackPatterns: {
+      kick: [true, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true]
+    },
+    grooveIntensity: 'medium',
+    origin: 'TR-909'
+  },
+
+  // Funk & R&B
+  {
+    id: 'funk-pocket',
+    name: 'Funk Pocket',
+    description: 'Deep funk groove with ghost notes',
+    bpm: 95,
+    swing: 25,
+    shuffle: 15,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, true, false, false, true, false, false, false, false, false, false],
+      snare: [false, false, false, false, true, false, false, true, false, false, false, false, true, false, false, false],
+      hihat: [true, false, true, true, false, true, true, false, true, false, true, true, false, true, true, false]
+    },
+    grooveIntensity: 'heavy',
+    origin: 'Live Drummer'
+  },
+
+  {
+    id: 'neo-soul',
+    name: 'Neo Soul',
+    description: 'Modern R&B with laid-back feel',
+    bpm: 75,
+    swing: 30,
+    shuffle: 20,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, false, false, true, false, false, false, false, false, true, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [true, false, true, false, false, true, false, true, true, false, true, false, false, true, false, true]
+    },
+    grooveIntensity: 'medium',
+    origin: 'MPC 3000'
+  },
+
+  // Electronic Classics
+  {
+    id: 'tr808-classic',
+    name: 'TR-808 Classic',
+    description: 'Legendary 808 drum machine pattern',
+    bpm: 100,
+    swing: 12,
+    shuffle: 0,
+    trackPatterns: {
+      kick: [true, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+    },
+    grooveIntensity: 'medium',
+    origin: 'TR-808'
+  },
+
+  {
+    id: 'linndrum-80s',
+    name: 'LinnDrum 80s',
+    description: 'Classic 80s pop drum machine',
+    bpm: 110,
+    swing: 8,
+    shuffle: 0,
+    trackPatterns: {
+      kick: [true, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+    },
+    grooveIntensity: 'light',
+    origin: 'LinnDrum'
+  },
+
+  // Breakbeats
+  {
+    id: 'amen-break',
+    name: 'Amen Break',
+    description: 'Most sampled drum break in history',
+    bpm: 136,
+    swing: 18,
+    shuffle: 10,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, true, false, false, false, true, false, false, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, true, false],
+      hihat: [false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true]
+    },
+    grooveIntensity: 'heavy',
+    origin: 'Amen Break'
+  },
+
+  {
+    id: 'think-break',
+    name: 'Think Break',
+    description: 'Classic breakbeat from Lyn Collins',
+    bpm: 132,
+    swing: 20,
+    shuffle: 12,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, false, false, true, false, false, false, true, false, false, false],
+      snare: [false, false, false, false, true, false, false, true, false, false, false, false, true, false, false, false],
+      hihat: [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+    },
+    grooveIntensity: 'heavy',
+    origin: 'Think Break'
+  },
+
+  // Latin & World
+  {
+    id: 'latin-groove',
+    name: 'Latin Groove',
+    description: 'Salsa-inspired percussion pattern',
+    bpm: 120,
+    swing: 15,
+    shuffle: 25,
+    trackPatterns: {
+      kick: [true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+    },
+    grooveIntensity: 'medium',
+    origin: 'Latin Percussion'
+  },
+
+  {
+    id: 'afrobeat',
+    name: 'Afrobeat',
+    description: 'Fela Kuti inspired polyrhythm',
+    bpm: 115,
+    swing: 20,
+    shuffle: 30,
+    trackPatterns: {
+      kick: [true, false, false, true, false, false, true, false, false, true, false, false, false, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, true, false, false, false, false, false],
+      hihat: [true, false, true, false, false, true, false, true, true, false, true, false, false, true, false, true]
+    },
+    grooveIntensity: 'heavy',
+    origin: 'Afrobeat'
+  },
+
+  // Ambient & Experimental
+  {
+    id: 'ambient-pulse',
+    name: 'Ambient Pulse',
+    description: 'Minimal atmospheric groove',
+    bpm: 68,
+    swing: 5,
+    shuffle: 0,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+      snare: [false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false],
+      hihat: [false, false, false, true, false, false, false, true, false, false, false, true, false, false, false, true]
+    },
+    grooveIntensity: 'light',
+    origin: 'Ambient'
+  },
+
+  // Drum & Bass
+  {
+    id: 'dnb-neurofunk',
+    name: 'D&B Neurofunk',
+    description: 'Complex drum and bass pattern',
+    bpm: 174,
+    swing: 10,
+    shuffle: 0,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [true, true, false, true, false, true, true, false, true, true, false, true, false, true, true, false]
+    },
+    grooveIntensity: 'heavy',
+    origin: 'Amen Chopped'
+  },
+
+  // Reggae & Dub
+  {
+    id: 'reggae-one-drop',
+    name: 'Reggae One Drop',
+    description: 'Classic reggae rhythm',
+    bpm: 80,
+    swing: 25,
+    shuffle: 20,
+    trackPatterns: {
+      kick: [false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true]
+    },
+    grooveIntensity: 'medium',
+    origin: 'Reggae'
+  },
+
+  // Jazz & Swing
+  {
+    id: 'jazz-swing',
+    name: 'Jazz Swing',
+    description: 'Traditional jazz swing pattern',
+    bpm: 120,
+    swing: 40,
+    shuffle: 35,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true]
+    },
+    grooveIntensity: 'light',
+    origin: 'Jazz'
+  },
+
+  // UK Garage
+  {
+    id: 'uk-garage',
+    name: 'UK Garage',
+    description: '2-step garage shuffle',
+    bpm: 130,
+    swing: 12,
+    shuffle: 25,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, false, true, false, false, true, false, false, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false],
+      hihat: [true, false, true, true, false, true, false, true, true, false, true, true, false, true, false, true]
+    },
+    grooveIntensity: 'medium',
+    origin: 'UK Garage'
+  },
+
+  // Dubstep
+  {
+    id: 'dubstep-half-time',
+    name: 'Dubstep Half-Time',
+    description: 'Heavy dubstep groove',
+    bpm: 140,
+    swing: 5,
+    shuffle: 0,
+    trackPatterns: {
+      kick: [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+      snare: [false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false],
+      hihat: [false, false, true, false, false, false, true, false, false, false, true, false, false, false, true, false]
+    },
+    grooveIntensity: 'heavy',
+    origin: 'Dubstep'
+  },
+
+  // Experimental
+  {
+    id: 'polyrhythm-3-4',
+    name: 'Polyrhythm 3/4',
+    description: 'Complex polyrhythmic pattern',
+    bpm: 105,
+    swing: 15,
+    shuffle: 10,
+    trackPatterns: {
+      kick: [true, false, false, true, false, false, true, false, false, true, false, false, false, false, false, false],
+      snare: [false, false, false, false, true, false, false, false, false, false, true, false, false, false, false, false],
+      hihat: [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+    },
+    grooveIntensity: 'medium',
+    origin: 'Math Rock'
+  },
+
+  // Bonus: Custom Empty Template
+  {
+    id: 'custom-blank',
+    name: 'Blank Canvas',
+    description: 'Start from scratch - no preset pattern',
+    bpm: 100,
+    swing: 0,
+    shuffle: 0,
+    trackPatterns: {
+      kick: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+      snare: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+      hihat: [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+    },
+    grooveIntensity: 'light',
+    origin: 'User Created'
+  }
+];
+
+/**
+ * Get groove template by ID
+ */
+export function getGrooveTemplate(id: string): GrooveTemplate | undefined {
+  return GROOVE_TEMPLATES.find(template => template.id === id);
+}
+
+/**
+ * Get groove templates by intensity
+ */
+export function getGrooveTemplatesByIntensity(intensity: 'light' | 'medium' | 'heavy'): GrooveTemplate[] {
+  return GROOVE_TEMPLATES.filter(template => template.grooveIntensity === intensity);
+}
+
+/**
+ * Get groove templates by BPM range
+ */
+export function getGrooveTemplatesByBPM(minBpm: number, maxBpm: number): GrooveTemplate[] {
+  return GROOVE_TEMPLATES.filter(template => template.bpm >= minBpm && template.bpm <= maxBpm);
+}
+
+/**
+ * TEMPLATE EDITOR FUNCTIONS - FOR CURATION PHASE ONLY
+ */
+
+// Global variable to store modified templates during curation
+let modifiedTemplates: Map<string, GrooveTemplate> = new Map();
+
+/**
+ * Update a template with current pattern, sample assignments, volume levels and name (EDITOR MODE)
+ */
+export function updateGrooveTemplate(
+  templateId: string, 
+  patterns: { [trackType: string]: boolean[] },
+  sampleAssignments: { [trackType: string]: string },
+  volumeLevels: { [trackType: string]: number },
+  bpm: number,
+  newName?: string,
+  newDescription?: string
+): void {
+  const originalTemplate = GROOVE_TEMPLATES.find(t => t.id === templateId);
+  if (!originalTemplate) {
+    console.error(`❌ Template not found: ${templateId}`);
+    return;
+  }
+
+  const updatedTemplate: GrooveTemplate = {
+    ...originalTemplate,
+    name: newName || originalTemplate.name,
+    description: newDescription || originalTemplate.description,
+    bpm,
+    trackPatterns: { ...patterns },
+    sampleAssignments: { ...sampleAssignments },
+    volumeLevels: { ...volumeLevels }
+  };
+
+  modifiedTemplates.set(templateId, updatedTemplate);
+  console.log(`✅ Template updated in memory: ${updatedTemplate.name} (with volume levels)`);
+}
+
+/**
+ * Update only template name and description (EDITOR MODE)
+ */
+export function updateTemplateName(
+  templateId: string,
+  newName: string,
+  newDescription?: string
+): void {
+  const originalTemplate = getGrooveTemplateForEditor(templateId);
+  if (!originalTemplate) {
+    console.error(`❌ Template not found: ${templateId}`);
+    return;
+  }
+
+  const updatedTemplate: GrooveTemplate = {
+    ...originalTemplate,
+    name: newName,
+    description: newDescription || originalTemplate.description
+  };
+
+  modifiedTemplates.set(templateId, updatedTemplate);
+  console.log(`✅ Template renamed: ${originalTemplate.name} → ${newName}`);
+}
+
+/**
+ * Get template (returns modified version if available, otherwise original)
+ */
+export function getGrooveTemplateForEditor(id: string): GrooveTemplate | undefined {
+  const modified = modifiedTemplates.get(id);
+  if (modified) return modified;
+  return GROOVE_TEMPLATES.find(template => template.id === id);
+}
+
+/**
+ * Export all modified templates as TypeScript code (FINAL SAVE)
+ */
+export function exportModifiedTemplates(): string {
+  if (modifiedTemplates.size === 0) {
+    return "// No templates have been modified";
+  }
+
+  let exportCode = "// UPDATED GROOVE TEMPLATES - Generated by Template Editor\n\n";
+  exportCode += "export const GROOVE_TEMPLATES: GrooveTemplate[] = [\n";
+
+  GROOVE_TEMPLATES.forEach(originalTemplate => {
+    const modified = modifiedTemplates.get(originalTemplate.id);
+    const template = modified || originalTemplate;
+
+    exportCode += `  {\n`;
+    exportCode += `    id: '${template.id}',\n`;
+    exportCode += `    name: '${template.name.replace(/'/g, "\\'")}',\n`;
+    exportCode += `    description: '${template.description.replace(/'/g, "\\'")}',\n`;
+    exportCode += `    bpm: ${template.bpm},\n`;
+    exportCode += `    swing: ${template.swing},\n`;
+    exportCode += `    shuffle: ${template.shuffle},\n`;
+    exportCode += `    trackPatterns: {\n`;
+    
+    Object.entries(template.trackPatterns).forEach(([trackType, steps]) => {
+      exportCode += `      ${trackType}: [${steps.map(s => s.toString()).join(', ')}],\n`;
+    });
+    
+    exportCode += `    },\n`;
+    exportCode += `    grooveIntensity: '${template.grooveIntensity}',\n`;
+    exportCode += `    origin: '${template.origin}'`;
+    
+    if (template.sampleAssignments && Object.keys(template.sampleAssignments).length > 0) {
+      exportCode += `,\n    sampleAssignments: {\n`;
+      Object.entries(template.sampleAssignments).forEach(([trackType, sampleId]) => {
+        exportCode += `      ${trackType}: '${sampleId}',\n`;
+      });
+      exportCode += `    }`;
+    }
+    
+    if (template.volumeLevels && Object.keys(template.volumeLevels).length > 0) {
+      exportCode += `,\n    volumeLevels: {\n`;
+      Object.entries(template.volumeLevels).forEach(([trackType, volume]) => {
+        exportCode += `      ${trackType}: ${volume.toFixed(2)},\n`;
+      });
+      exportCode += `    }`;
+    }
+    
+    exportCode += `\n  },\n\n`;
+  });
+
+  exportCode += "];\n";
+  return exportCode;
+}
+
+/**
+ * Clear all modifications (reset to original templates)
+ */
+export function clearModifications(): void {
+  modifiedTemplates.clear();
+  console.log("🧹 All template modifications cleared");
+}

@@ -1,0 +1,81 @@
+/* Rotary Knob Styles */
+.rotary-knob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  user-select: none;
+}
+
+.knob-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.knob-container {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.1s ease;
+}
+
+.knob-container:hover {
+  transform: scale(1.05);
+}
+
+.knob-container.dragging {
+  transform: scale(1.08);
+}
+
+/* Big Knob (Master Volume) - Professional Hardware Size */
+.rotary-knob-big .knob-image {
+  width: 250px;
+  height: 250px;
+  image-rendering: optimizeQuality;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* Mid Knob (Instrument Volumes) */
+.rotary-knob-mid .knob-image {
+  width: 64px;
+  height: 64px;
+  image-rendering: optimizeQuality;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* Value Display */
+.knob-value {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+/* Focus State */
+.knob-container:focus-visible {
+  outline: 2px solid #c93026;
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .rotary-knob-big .knob-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .rotary-knob-mid .knob-image {
+    width: 48px;
+    height: 48px;
+  }
+}

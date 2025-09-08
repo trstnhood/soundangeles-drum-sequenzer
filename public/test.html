@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Test - SoundAngeles Drum Sequencer</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        .log {
+            background: #000;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .success { background: #0f5132; color: #d1e7dd; }
+        .error { background: #842029; color: #f8d7da; }
+        .warning { background: #664d03; color: #fff3cd; }
+        .info { background: #055160; color: #cff4fc; }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 16px;
+        }
+        button:hover { background: #218838; }
+        button:disabled { background: #6c757d; cursor: not-allowed; }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 SoundAngeles Drum Sequencer - Audio Test Suite</h1>
+    
+    <div class="status info">
+        <strong>Testing Environment:</strong> Browser Audio API functionality and component behavior
+    </div>
+
+    <div>
+        <button onclick="runManualTests()">Run Manual Tests</button>
+        <button onclick="openSequencer()">Open Sequencer in New Tab</button>
+        <button onclick="testAudioDirectly()">Test Web Audio API</button>
+        <button onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <h2>📊 Test Results</h2>
+    <div id="testResults" class="log">
+        <div>🚀 Ready to run tests...</div>
+    </div>
+
+    <h2>🖥️ Sequencer Preview</h2>
+    <iframe id="sequencerFrame" src="/" title="Drum Sequencer"></iframe>
+
+    <script>
+        let logContainer = document.getElementById('testResults');
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const div = document.createElement('div');
+            div.className = type;
+            div.innerHTML = `[${timestamp}] ${message}`;
+            logContainer.appendChild(div);
+            logContainer.scrollTop = logContainer.scrollHeight;
+            console.log(message);
+        }
+
+        function clearLog() {
+            logContainer.innerHTML = '<div>🧹 Log cleared</div>';
+        }
+
+        function openSequencer() {
+            window.open('/', '_blank');
+            log('🌐 Opened sequencer in new tab', 'info');
+        }
+
+        async function testAudioDirectly() {
+            log('🎵 Testing Web Audio API directly...', 'info');
+            
+            try {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContextClass) {
+                    log('❌ Web Audio API not supported', 'error');
+                    return;
+                }
+
+                const audioContext = new AudioContextClass();
+                log(`✅ AudioContext created (state: ${audioContext.state})`, 'success');
+                
+                // Test oscillator
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.5);
+                
+                log('✅ Test tone played successfully', 'success');
+                
+                // Test audio buffer
+                const buffer = audioContext.createBuffer(1, audioContext.sampleRate * 0.1, audioContext.sampleRate);
+                const channelData = buffer.getChannelData(0);
+                for (let i = 0; i < channelData.length; i++) {
+                    channelData[i] = Math.sin(2 * Math.PI * 440 * i / audioContext.sampleRate) * 0.1;
+                }
+                
+                const source = audioContext.createBufferSource();
+                source.buffer = buffer;
+                source.connect(audioContext.destination);
+                source.start(audioContext.currentTime + 0.6);
+                
+                log('✅ Audio buffer test completed', 'success');
+                
+                setTimeout(() => {
+                    audioContext.close();
+                    log('🔇 AudioContext closed', 'info');
+                }, 1000);
+                
+            } catch (error) {
+                log(`❌ Audio test failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function testAPIEndpoints() {
+            log('🔍 Testing API endpoints...', 'info');
+            
+            try {
+                // Test sample pack discovery
+                const packsResponse = await fetch('/api/discover-packs');
+                const packsData = await packsResponse.json();
+                
+                if (packsData.packs && packsData.packs.length > 0) {
+                    log(`✅ Found ${packsData.packs.length} sample packs`, 'success');
+                    
+                    // Test first pack instruments
+                    const firstPack = packsData.packs[0];
+                    const instrumentsResponse = await fetch(`/api/discover-instruments?pack=${encodeURIComponent(firstPack.folderName)}`);
+                    const instrumentsData = await instrumentsResponse.json();
+                    
+                    if (instrumentsData.folders && instrumentsData.folders.length > 0) {
+                        log(`✅ Pack "${firstPack.name}": ${instrumentsData.folders.length} instruments`, 'success');
+                        
+                        // Test first instrument samples
+                        const firstInstrument = instrumentsData.folders[0];
+                        const samplesResponse = await fetch(`/api/discover-samples?pack=${encodeURIComponent(firstPack.folderName)}&folder=${encodeURIComponent(firstInstrument)}`);
+                        const samplesData = await samplesResponse.json();
+                        
+                        if (samplesData.samples && samplesData.samples.length > 0) {
+                            log(`✅ Instrument "${firstInstrument}": ${samplesData.samples.length} samples`, 'success');
+                            
+                            // Test sample file access
+                            const firstSample = samplesData.samples[0];
+                            const sampleUrl = `/sample-packs/${encodeURIComponent(firstPack.folderName)}/${encodeURIComponent(firstInstrument)}/${encodeURIComponent(firstSample)}`;
+                            
+                            const sampleResponse = await fetch(sampleUrl, { method: 'HEAD' });
+                            if (sampleResponse.ok) {
+                                log(`✅ Sample file accessible: ${firstSample}`, 'success');
+                            } else {
+                                log(`❌ Sample file not accessible: ${firstSample} (${sampleResponse.status})`, 'error');
+                            }
+                        } else {
+                            log(`❌ No samples found in "${firstInstrument}"`, 'error');
+                        }
+                    } else {
+                        log(`❌ No instruments found in "${firstPack.name}"`, 'error');
+                    }
+                } else {
+                    log('❌ No sample packs found', 'error');
+                }
+            } catch (error) {
+                log(`❌ API test failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function testSequencerInteraction() {
+            log('🎮 Testing sequencer interaction...', 'info');
+            
+            try {
+                const frame = document.getElementById('sequencerFrame');
+                const frameDoc = frame.contentDocument || frame.contentWindow.document;
+                
+                // Wait for frame to load
+                await new Promise((resolve) => {
+                    frame.onload = resolve;
+                    if (frame.contentDocument && frame.contentDocument.readyState === 'complete') {
+                        resolve();
+                    }
+                });
+                
+                // Give React time to render
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                
+                // Check if sequencer elements exist
+                const trackContainers = frameDoc.querySelectorAll('.track-container, [class*="track"]');
+                const playButtons = frameDoc.querySelectorAll('button[aria-label*="Play"], button:contains("PLAY"), [class*="play"]');
+                const stepButtons = frameDoc.querySelectorAll('.step-button-new, [class*="step-button"], [class*="step"]');
+                
+                log(`📊 Found ${trackContainers.length} track containers`, trackContainers.length > 0 ? 'success' : 'warning');
+                log(`📊 Found ${playButtons.length} play buttons`, playButtons.length > 0 ? 'success' : 'warning');
+                log(`📊 Found ${stepButtons.length} step buttons`, stepButtons.length > 0 ? 'success' : 'warning');
+                
+                // Test play button
+                if (playButtons.length > 0) {
+                    const playButton = playButtons[0];
+                    if (!playButton.disabled) {
+                        log('🎮 Attempting to click play button...', 'info');
+                        playButton.click();
+                        log('✅ Play button clicked', 'success');
+                    } else {
+                        log('⚠️ Play button is disabled', 'warning');
+                    }
+                } else {
+                    log('❌ No play button found', 'error');
+                }
+                
+                // Test step button
+                if (stepButtons.length > 0) {
+                    const enabledStepButtons = Array.from(stepButtons).filter(btn => !btn.disabled);
+                    if (enabledStepButtons.length > 0) {
+                        log('🎮 Attempting to click step button...', 'info');
+                        enabledStepButtons[0].click();
+                        log('✅ Step button clicked', 'success');
+                    } else {
+                        log('⚠️ All step buttons are disabled', 'warning');
+                    }
+                } else {
+                    log('❌ No step buttons found', 'error');
+                }
+                
+            } catch (error) {
+                log(`❌ Sequencer interaction test failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function runManualTests() {
+            log('🚀 Starting comprehensive test suite...', 'info');
+            
+            await testAudioDirectly();
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            await testAPIEndpoints();
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            await testSequencerInteraction();
+            
+            log('🏁 Test suite completed!', 'info');
+        }
+
+        // Auto-run basic tests when page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('🌐 Test page loaded, ready for testing', 'info');
+                testAPIEndpoints();
+            }, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Track IDs</title>
+    <script>
+        function folderNameToTrackId(folderName) {
+            return folderName
+                .toLowerCase()
+                .replace(/[^a-z0-9\s]/g, '')
+                .replace(/\s+/g, '_')
+                .replace(/^_+|_+$/g, '');
+        }
+
+        async function debugTrackIds() {
+            console.log('🔍 DEBUGGING TRACK ID GENERATION');
+            console.log('==================================');
+            
+            try {
+                // Get all packs
+                const packsResponse = await fetch('/api/discover-packs');
+                const packsData = await packsResponse.json();
+                const packs = packsData.packs || [];
+                
+                for (const pack of packs) {
+                    console.log(`\n📦 Pack: ${pack.name}`);
+                    console.log(`   ID: ${pack.id}`);
+                    
+                    // Get instruments
+                    const instrResponse = await fetch(`/api/discover-instruments?pack=${encodeURIComponent(pack.folderName)}`);
+                    const instrData = await instrResponse.json();
+                    const instruments = instrData.folders || [];
+                    
+                    console.log(`\n🎼 Instruments and Generated Track IDs:`);
+                    
+                    for (const folderName of instruments) {
+                        const trackId = folderNameToTrackId(folderName);
+                        console.log(`   "${folderName}" -> "${trackId}"`);
+                        
+                        // Test sample loading for this track
+                        const samplesResponse = await fetch(`/api/discover-samples?pack=${encodeURIComponent(pack.folderName)}&folder=${encodeURIComponent(folderName)}`);
+                        const samplesData = await samplesResponse.json();
+                        const sampleCount = samplesData.samples ? samplesData.samples.length : 0;
+                        
+                        if (sampleCount > 0) {
+                            console.log(`      ✅ ${sampleCount} samples found`);
+                            
+                            // Test first sample URL
+                            if (samplesData.samples.length > 0) {
+                                const firstSample = samplesData.samples[0];
+                                const sampleUrl = `/sample-packs/${encodeURIComponent(pack.folderName)}/${encodeURIComponent(folderName)}/${encodeURIComponent(firstSample)}`;
+                                
+                                try {
+                                    const testResponse = await fetch(sampleUrl, { method: 'HEAD' });
+                                    if (testResponse.ok) {
+                                        console.log(`      🎵 Sample accessible: ${firstSample}`);
+                                    } else {
+                                        console.log(`      ❌ Sample not accessible: ${firstSample} (${testResponse.status})`);
+                                    }
+                                } catch (error) {
+                                    console.log(`      ❌ Sample fetch failed: ${firstSample}`);
+                                }
+                            }
+                        } else {
+                            console.log(`      ❌ No samples found!`);
+                        }
+                    }
+                }
+                
+                // Test specific problem tracks
+                console.log('\n🎯 TESTING SPECIFIC PROBLEM TRACKS');
+                console.log('===================================');
+                
+                const testCases = [
+                    { pack: 'I.L.L. Will - Drumsound Pack Vol. 2', folder: '01-Kickdrum' },
+                    { pack: 'I.L.L. Will - Drumsound Pack Vol. 2', folder: '02-Snares' },
+                    { pack: 'I.L.L. Will - Drumsound Pack Vol. 2', folder: '04-Hi Hats' },
+                    { pack: 'I.L.L. Will - Drumsound Pack Vol. 3', folder: '01-Kickdrum' },
+                    { pack: 'I.L.L. Will - Drumsound Pack Vol. 3', folder: '02-Snares' },
+                    { pack: 'I.L.L. Will - Drumsound Pack Vol. 3', folder: '04-Hi Hats' }
+                ];
+                
+                for (const testCase of testCases) {
+                    console.log(`\n🧪 Testing: ${testCase.pack} -> ${testCase.folder}`);
+                    
+                    const trackId = folderNameToTrackId(testCase.folder);
+                    console.log(`   Generated Track ID: "${trackId}"`);
+                    
+                    const samplesResponse = await fetch(`/api/discover-samples?pack=${encodeURIComponent(testCase.pack)}&folder=${encodeURIComponent(testCase.folder)}`);
+                    const samplesData = await samplesResponse.json();
+                    
+                    if (samplesData.samples && samplesData.samples.length > 0) {
+                        console.log(`   ✅ ${samplesData.samples.length} samples found`);
+                        console.log(`   First sample: ${samplesData.samples[0]}`);
+                        
+                        const sampleUrl = `/sample-packs/${encodeURIComponent(testCase.pack)}/${encodeURIComponent(testCase.folder)}/${encodeURIComponent(samplesData.samples[0])}`;
+                        console.log(`   Sample URL: ${sampleUrl}`);
+                        
+                    } else {
+                        console.log(`   ❌ No samples found for ${testCase.folder}`);
+                    }
+                }
+                
+            } catch (error) {
+                console.error('❌ Debug failed:', error);
+            }
+        }
+        
+        window.addEventListener('load', () => {
+            setTimeout(debugTrackIds, 500);
+        });
+    </script>
+</head>
+<body>
+    <h1>Debug Track ID Generation</h1>
+    <p>This tool analyzes the exact Track ID generation and sample loading process.</p>
+    <p><strong>Check browser console for results!</strong></p>
+    <br>
+    <button onclick="debugTrackIds()">Run Debug Again</button>
+    <br><br>
+    <a href="/">Back to Sequencer</a>
+</body>
+</html>

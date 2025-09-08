@@ -1,0 +1,181 @@
+/* Wood Panel Styles */
+.wood-panel-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* Wood Panels */
+.wood-panel-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.wood-panel-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.wood-panel-left img,
+.wood-panel-right img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  filter: drop-shadow(2px 0 8px rgba(0, 0, 0, 0.5));
+}
+
+/* Main Content Area */
+.drum-machine-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 120px; /* Space for wood panels */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Hardware Look Background */
+.hardware-panel {
+  background: linear-gradient(180deg, 
+    #3a3a3a 0%, 
+    #2a2a2a 10%,
+    #1f1f1f 50%,
+    #2a2a2a 90%,
+    #3a3a3a 100%
+  );
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .drum-machine-content {
+    padding: 30px 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wood-panel-left,
+  .wood-panel-right {
+    display: none; /* Hide on mobile for better UX */
+  }
+  
+  .drum-machine-content {
+    padding: 20px;
+  }
+  
+  .hardware-panel {
+    border-radius: 8px;
+    padding: 16px;
+  }
+}
+
+/* Metal Plate Effect for Logo Area */
+.metal-plate {
+  background: linear-gradient(135deg,
+    #c4c4c4 0%,
+    #f0f0f0 20%,
+    #c4c4c4 40%,
+    #a0a0a0 60%,
+    #c4c4c4 80%,
+    #f0f0f0 100%
+  );
+  padding: 12px 24px;
+  border-radius: 4px;
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.metal-plate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: metalShine 8s infinite;
+}
+
+@keyframes metalShine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Screw Details */
+.screw {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 30% 30%,
+    #e0e0e0 0%,
+    #a0a0a0 40%,
+    #606060 100%
+  );
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 1px 2px rgba(0, 0, 0, 0.5),
+    0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.screw::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.screw.top-left {
+  top: 8px;
+  left: 8px;
+}
+
+.screw.top-right {
+  top: 8px;
+  right: 8px;
+}
+
+.screw.bottom-left {
+  bottom: 8px;
+  left: 8px;
+}
+
+.screw.bottom-right {
+  bottom: 8px;
+  right: 8px;
+}

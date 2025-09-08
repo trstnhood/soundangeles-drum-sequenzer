@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundAngeles-Drum-Sequenzer Library - Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .example-header {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #e1e5e9;
+        }
+        
+        .example-controls {
+            background: #ffffff;
+            padding: 20px;
+            border-bottom: 1px solid #e1e5e9;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .example-btn {
+            padding: 8px 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .example-btn:hover {
+            background: #0056b3;
+        }
+        
+        #drum-sequencer-container {
+            /* Container for the drum sequencer */
+        }
+        
+        .code-section {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+        }
+        
+        .code-section h3 {
+            margin-top: 0;
+        }
+        
+        pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Example Header -->
+    <div class="example-header">
+        <h1>🥁 SoundAngeles-Drum-Sequenzer JavaScript Library</h1>
+        <p>Standalone JavaScript SoundAngeles-Drum-Sequenzer für jede Website</p>
+    </div>
+    
+    <!-- Example Controls -->
+    <div class="example-controls">
+        <button class="example-btn" onclick="sequencer.play()">▶️ Play</button>
+        <button class="example-btn" onclick="sequencer.pause()">⏸️ Pause</button>
+        <button class="example-btn" onclick="sequencer.stop()">⏹️ Stop</button>
+        <button class="example-btn" onclick="sequencer.clear()">🔄 Clear</button>
+        <button class="example-btn" onclick="loadExamplePattern()">🎵 Load Example</button>
+        <button class="example-btn" onclick="exportPattern()">💾 Export</button>
+        <button class="example-btn" onclick="importPattern()">📁 Import</button>
+    </div>
+    
+    <!-- Drum Sequencer Container -->
+    <div id="drum-sequencer-container"></div>
+    
+    <!-- Usage Examples -->
+    <div class="code-section">
+        <h3>🚀 Schnelle Integration</h3>
+        <p>Füge diese Dateien zu deiner Website hinzu:</p>
+        <pre><code>&lt;!-- Drum Sequencer Library --&gt;
+&lt;script src="path/to/drum-sequencer-library.js"&gt;&lt;/script&gt;
+
+&lt;!-- Container Element --&gt;
+&lt;div id="my-drum-sequencer"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  // Initialisiere den Drum Sequencer
+  const sequencer = new DrumSequencer('#my-drum-sequencer', {
+    bpm: 120,
+    selectedKit: 'classic-808',
+    darkMode: false
+  });
+&lt;/script&gt;</code></pre>
+    </div>
+    
+    <div class="code-section">
+        <h3>⚙️ Erweiterte Nutzung</h3>
+        <pre><code>// Drum Sequencer mit allen Optionen
+const sequencer = new DrumSequencer('#container', {
+  bpm: 140,                    // Tempo
+  selectedKit: 'trap-pack',    // Sample Kit
+  darkMode: true               // Dunkles Theme
+});
+
+// Programmatisch steuern
+sequencer.play();              // Wiedergabe starten
+sequencer.pause();             // Pausieren
+sequencer.stop();              // Stoppen
+sequencer.clear();             // Pattern löschen
+
+// Pattern setzen (16 Steps, true = aktiv)
+sequencer.setPattern('kick', [true, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false]);
+
+// Pattern exportieren/importieren
+const pattern = sequencer.exportPattern();
+sequencer.importPattern(pattern);
+
+// Sequencer entfernen
+sequencer.destroy();</code></pre>
+    </div>
+    
+    <div class="code-section">
+        <h3>🎛️ Verfügbare Sample Kits</h3>
+        <ul>
+            <li><strong>classic-808</strong> - Vintage 808 drum machine sounds</li>
+            <li><strong>trap-pack</strong> - Modern trap and hip-hop drums</li>
+            <li><strong>techno-pack</strong> - Dark techno and industrial sounds</li>
+        </ul>
+    </div>
+    
+    <div class="code-section">
+        <h3>📱 Features</h3>
+        <ul>
+            <li>✅ Funktioniert in jedem modernen Browser</li>
+            <li>✅ Keine Abhängigkeiten (Vanilla JavaScript)</li>
+            <li>✅ Responsive Design (Desktop + Mobile)</li>
+            <li>✅ Web Audio API für präzise Timing</li>
+            <li>✅ Drei professionelle Sample Kits</li>
+            <li>✅ Dunkles/Helles Theme</li>
+            <li>✅ Pattern Export/Import</li>
+            <li>✅ Programmierbare API</li>
+            <li>✅ Touch-optimiert für Mobile</li>
+        </ul>
+    </div>
+
+    <!-- Load the Drum Sequencer Library -->
+    <script src="/src/lib/drum-sequencer-library.js"></script>
+    
+    <script>
+        // Initialize the drum sequencer
+        const sequencer = new DrumSequencer('#drum-sequencer-container', {
+            bpm: 120,
+            selectedKit: 'classic-808',
+            darkMode: false
+        });
+        
+        // Example functions for the demo
+        function loadExamplePattern() {
+            // Load a demo pattern
+            sequencer.setPattern('kick', [true, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false]);
+            sequencer.setPattern('snare', [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false]);
+            sequencer.setPattern('hihat', [false, false, true, false, false, false, true, false, false, false, true, false, false, false, true, false]);
+            alert('🎵 Example pattern loaded! Click PLAY to hear it.');
+        }
+        
+        function exportPattern() {
+            const pattern = sequencer.exportPattern();
+            const json = JSON.stringify(pattern, null, 2);
+            
+            // Create download
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'drum-pattern.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('💾 Pattern exported as JSON file!');
+        }
+        
+        function importPattern() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            
+            input.onchange = function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        try {
+                            const pattern = JSON.parse(e.target.result);
+                            sequencer.importPattern(pattern);
+                            alert('📁 Pattern successfully imported!');
+                        } catch (error) {
+                            alert('❌ Error importing pattern: ' + error.message);
+                        }
+                    };
+                    reader.readAsText(file);
+                }
+            };
+            
+            input.click();
+        }
+        
+        // Show some usage info
+        console.log('🥁 Drum Sequencer Library loaded!');
+        console.log('Usage: sequencer.play(), sequencer.pause(), sequencer.stop()');
+        console.log('API:', sequencer);
+    </script>
+</body>
+</html>

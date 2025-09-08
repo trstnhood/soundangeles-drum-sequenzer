@@ -1,0 +1,660 @@
+/* SoundAngeles Drum Sequencer - Custom Styles */
+
+.soundangeles-drum-sequencer {
+  /* Custom CSS Variables */
+  --sa-primary: #DB1215;
+  --sa-background: #FFFFFF;
+  --sa-surface: #F8F8F8;
+  --sa-text: #000000;
+  --sa-text-muted: #666666;
+  --sa-border: #E0E0E0;
+  --sa-hover: #FF4444;
+}
+
+/* Responsive Container */
+.soundangeles-drum-sequencer .max-w-6xl {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* DESKTOP-ONLY VERSION - Mobile/Tablet will use separate components */
+
+/* Tablet styles removed - will use separate TabletSequencer component */
+
+/* Touch styles removed - will be handled in Mobile/Tablet components */
+
+/* Embedded Mode Styles */
+.soundangeles-drum-sequencer.embedded-mode {
+  border-radius: 0;
+  box-shadow: none;
+  min-height: auto !important;
+}
+
+.soundangeles-drum-sequencer.embedded-mode .text-center.mb-8 {
+  display: none;
+}
+
+.soundangeles-drum-sequencer.embedded-mode .text-center.mt-8 {
+  display: none;
+}
+
+/* RADIX UI SLIDER OVERRIDES - Direct Approach */
+
+/* 1. Slider Root Container */
+.soundangeles-drum-sequencer [data-radix-slider-root] {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 20px !important;
+  cursor: pointer !important;
+}
+
+/* 2. Slider Track - ALWAYS VISIBLE */
+.soundangeles-drum-sequencer [data-radix-slider-track] {
+  position: relative !important;
+  flex-grow: 1 !important;
+  height: 6px !important;
+  background-color: #666666 !important;
+  border: 1px solid #555555 !important;
+  border-radius: 3px !important;
+}
+
+/* 3. Slider Range (Filled portion) */
+.soundangeles-drum-sequencer [data-radix-slider-range] {
+  position: absolute !important;
+  height: 100% !important;
+  background-color: var(--sa-primary) !important;
+  border-radius: 3px 0 0 3px !important;
+}
+
+/* 4. Slider Thumb (Handle) */
+.soundangeles-drum-sequencer [data-radix-slider-thumb] {
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+  background-color: var(--sa-primary) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 8px rgba(219, 18, 21, 0.4) !important;
+  cursor: grab !important;
+  z-index: 10 !important;
+}
+
+.soundangeles-drum-sequencer [data-radix-slider-thumb]:hover {
+  background-color: #FF4444 !important;
+  transform: scale(1.05) !important;
+  transition: all 0.2s ease !important;
+}
+
+.soundangeles-drum-sequencer [data-radix-slider-thumb]:focus {
+  background-color: var(--sa-primary) !important;
+  box-shadow: 0 0 0 3px rgba(219, 18, 21, 0.2), 0 2px 8px rgba(219, 18, 21, 0.4) !important;
+  outline: none !important;
+}
+
+/* Fallback: Native HTML5 range sliders (falls Radix nicht funktioniert) */
+.soundangeles-drum-sequencer input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #666666;
+  border-radius: 3px;
+  border: 1px solid #555555;
+  outline: none;
+}
+
+.soundangeles-drum-sequencer input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--sa-primary);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 8px rgba(219, 18, 21, 0.4);
+  cursor: grab;
+}
+
+.soundangeles-drum-sequencer input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: var(--sa-primary);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 8px rgba(219, 18, 21, 0.4);
+  cursor: grab;
+}
+
+/* Button Hover Effects */
+.soundangeles-drum-sequencer button:not(:disabled):hover {
+  transition: all 0.2s ease;
+}
+
+/* Pad Animation */
+.soundangeles-drum-sequencer button[class*="w-12"]:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.soundangeles-drum-sequencer .animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Print Styles */
+@media print {
+  .soundangeles-drum-sequencer {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .soundangeles-drum-sequencer button {
+    border: 1px solid black !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .soundangeles-drum-sequencer {
+    --sa-primary: #FF0000;
+    --sa-border: #000000;
+  }
+}
+
+/* DESKTOP-ONLY INSTRUMENT GRID */
+.instrument-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* Desktop: 8 columns (1 row) */
+}
+
+/* MITTLERE REIHE RESPONSIVE */
+.mittlere-reihe-responsive {
+  display: flex;
+  flex-direction: column; /* Default: Vertikal gestapelt für Mobile/Tablet */
+  gap: 1.5rem;
+}
+
+.mittlere-reihe-responsive .quantisierung-sektion,
+.mittlere-reihe-responsive .bpm-sektion,
+.mittlere-reihe-responsive .transport-sektion {
+  width: 100%; /* Volle Breite für Mobile/Tablet */
+  flex: none;
+}
+
+/* Gleiche Höhe NUR für Quantization und BPM Container */
+.mittlere-reihe-responsive .quantisierung-sektion,
+.mittlere-reihe-responsive .bpm-sektion {
+  min-height: 80px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* BPM SEKTION MOBILE/TABLET OPTIMIERUNGEN */
+@media (max-width: 1023px) {
+  /* Hauptcontainer: Sauberer Flex-Flow ohne Überlagerung */
+  .soundangeles-drum-sequencer {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+  
+  /* Sequenzer-Reihe: Kein negativer Margin mehr */
+  .unterste-reihe {
+    margin-top: 0 !important;
+    padding-top: 2rem !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  
+  /* Mittlere Reihe: Fester Abstand nach unten */
+  .mittlere-reihe-responsive {
+    margin-bottom: 2rem !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  .bpm-container {
+    flex-direction: row !important;
+    justify-content: flex-start !important; /* Left alignment for mobile/tablet */
+    align-items: center !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+  
+  .bpm-sektion .flex.gap-1 {
+    gap: 0.75rem;
+  }
+  
+  /* BPM Up/Down Buttons - Größer für Mobile/Tablet */
+  .bpm-sektion .w-8.h-6 {
+    width: 3rem !important;
+    height: 2.5rem !important;
+    font-size: 1.125rem;
+  }
+  
+  
+  
+  /* TRANSPORT SEKTION MOBILE/TABLET - Column Layout (consistent with tablet rules) */
+  .transport-sektion {
+    display: flex !important;
+    flex-direction: column !important; /* CONSISTENT: Column layout for all responsive */
+    align-items: flex-start !important; /* LEFT alignment */
+    justify-content: flex-start !important; /* LEFT justification */
+    gap: 1rem !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  .transport-sektion > div {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Transport Buttons - Kompakter für horizontales Layout */
+  .transport-sektion .flex.gap-4.mb-4.justify-center {
+    gap: 1rem !important;
+    margin-bottom: 0 !important;
+    justify-content: flex-start !important;
+  }
+  
+  /* Banks Sektion kompakter */
+  .transport-sektion .flex.flex-col.gap-2.items-center {
+    gap: 0.5rem !important;
+    justify-content: flex-end !important;
+  }
+}
+
+/* BRIDGE DESKTOP (1024px-1199px) - CRITICAL FIX for responsive gap */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  /* Normal desktop layout without hardware panels */
+  .mittlere-reihe-responsive {
+    flex-direction: row !important;
+    align-items: stretch !important;
+    gap: 1.5rem !important;
+  }
+  
+  .mittlere-reihe-responsive .quantisierung-sektion {
+    flex: 1 !important;
+  }
+  
+  .mittlere-reihe-responsive .bpm-sektion,
+  .mittlere-reihe-responsive .transport-sektion {
+    flex: none !important;
+    width: auto !important;
+    display: flex !important;
+    visibility: visible !important;
+  }
+  
+  /* Ensure Transport container is visible in this critical range - CONSISTENT LEFT ALIGNMENT */
+  .transport-sektion {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* LEFT alignment for Bridge Desktop */
+    justify-content: flex-start !important; /* LEFT justification for Bridge Desktop */
+    gap: 1rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 20 !important;
+  }
+  
+  .bpm-sektion .w-8.h-6 {
+    width: auto !important;
+    height: 2.5rem !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* 8-column grid for instruments */
+  .instrument-controls-grid {
+    grid-template-columns: repeat(8, 1fr) !important;
+  }
+}
+
+/* 🔒 HARDWARE DESKTOP (1200px+) - LOCKED AGAINST CHANGES */
+@media (min-width: 1200px) {
+  /* DESKTOP LAYOUT - DO NOT MODIFY */
+  .mittlere-reihe-responsive {
+    flex-direction: row !important;
+    align-items: stretch !important;
+  }
+  
+  .mittlere-reihe-responsive .quantisierung-sektion {
+    flex: 1 !important;
+  }
+  
+  .mittlere-reihe-responsive .bpm-sektion,
+  .mittlere-reihe-responsive .transport-sektion {
+    flex: none !important;
+    width: auto !important;
+  }
+  
+  /* DESKTOP TRANSPORT - PRESERVE ORIGINAL PROPORTIONS */
+  .transport-sektion {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    /* LOCKED: Do not change these desktop proportions */
+  }
+  
+  .bpm-sektion .w-8.h-6 {
+    width: auto !important;
+    height: 2.5rem !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .instrument-controls-grid {
+    grid-template-columns: repeat(8, 1fr) !important;
+  }
+  
+  /* DESKTOP VOLUME KNOBS - LOCKED */
+  .volume-knob-container {
+    transform: scale(1.34) !important; /* Desktop original size */
+  }
+  
+  /* DESKTOP BPM CONTAINER - CENTER ALIGNMENT PRESERVED */
+  .bpm-container {
+    justify-content: center !important; /* Desktop keeps center alignment */
+  }
+}
+
+/* MOBILE-ONLY SPEZIFISCHE OPTIMIERUNGEN */
+@media (max-width: 767px) {
+  /* Transport Container: COMPACT MOBILE LAYOUT - Horizontal with grouped elements */
+  .transport-sektion {
+    display: flex !important;
+    flex-direction: row !important; /* HORIZONTAL for compact mobile */
+    align-items: center !important; /* CENTER alignment */
+    justify-content: space-between !important; /* SPACE BETWEEN for efficient use */
+    gap: 0.5rem !important; /* Smaller gap for compact layout */
+    flex-wrap: nowrap !important;
+    padding: 0.5rem 0 !important; /* Compact padding */
+  }
+  
+  /* Play Button Group - COMPACT for mobile horizontal layout */
+  .transport-sektion .flex.gap-4.mb-4.justify-center {
+    justify-content: flex-start !important;
+    gap: 0.5rem !important; /* Compact gap */
+    margin-bottom: 0 !important; /* No bottom margin in horizontal layout */
+    flex: none !important; /* Don't grow */
+  }
+  
+  /* PLAY und Clear Buttons dominant groß (30% größer) */
+  .transport-sektion .flex.gap-4.mb-4.justify-center button {
+    padding: 1rem 2rem !important;
+    font-size: 1.3rem !important;
+    min-height: 57px !important;
+    min-width: 104px !important;
+    font-weight: bold !important;
+  }
+  
+  /* Banks + Clear Group - RIGHT SIDE for mobile horizontal layout */
+  .transport-sektion .flex.flex-col.gap-2.items-center {
+    align-items: center !important; /* CENTER alignment for compact group */
+    justify-content: center !important; /* CENTER justification */
+    gap: 0.5rem !important; /* Compact gap between banks and clear */
+    flex: none !important; /* Don't grow */
+  }
+  
+  /* Bank Buttons: 2:1 Verhältnis für Mobile (breiter für besseren Text) */
+  .transport-sektion .flex.flex-col.gap-2.items-center button {
+    width: 4rem !important;
+    height: 2rem !important;
+    font-size: 0.875rem !important;
+    font-weight: bold !important;
+  }
+  
+  /* COPY/WAIT/DONE Buttons: Ebenfalls 2:1 für konsistentes Design */
+  .transport-sektion .flex.flex-row.gap-2.items-center button {
+    width: 4rem !important;
+    height: 2rem !important;
+    font-size: 0.75rem !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+  }
+  
+  /* Volume Knobs: Weitere 5% größer (1.5 * 1.05 = 1.575) */
+  .rotary-knob-mid {
+    transform: scale(1.575) !important;
+    margin: 0.95rem !important;
+  }
+  
+  /* Container für Volume Knobs anpassen */
+  .instrument-controls-grid .rotary-knob {
+    padding: 1rem !important;
+  }
+  
+  /* Instrument Container mehr Abstand für größere Knobs */
+  .instrument-controls-grid {
+    gap: 2rem 1rem !important;
+    padding: 1rem !important;
+  }
+}
+
+/* TABLET SPEZIFISCHE OPTIMIERUNGEN */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Volume Knobs: Gleiche Größe wie Mobile-Version */
+  .rotary-knob-mid {
+    transform: scale(1.575) !important;
+    margin: 0.95rem !important;
+  }
+  
+  /* Container für Volume Knobs anpassen */
+  .instrument-controls-grid .rotary-knob {
+    padding: 1rem !important;
+  }
+  
+  /* Instrument Container mehr Abstand für größere Knobs */
+  .instrument-controls-grid {
+    gap: 2rem 1rem !important;
+    padding: 1rem !important;
+  }
+  
+  /* Mittlere Reihe: CSS Grid für bessere Kontrolle */
+  .mittlere-reihe-responsive {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Quantisierung: Erste Reihe, volle Breite */
+  .mittlere-reihe-responsive .quantisierung-sektion {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+  }
+  
+  /* BPM + Transport: Zweite Reihe nebeneinander */
+  .mittlere-reihe-responsive .bpm-sektion {
+    grid-column: 1;
+    grid-row: 2;
+    width: auto;
+  }
+  
+  .mittlere-reihe-responsive .transport-sektion {
+    grid-column: 2;
+    grid-row: 2;
+    width: auto;
+  }
+  
+  /* Grid für zweite Reihe definieren */
+  .mittlere-reihe-responsive {
+    grid-template-columns: 1fr 1.5fr !important;
+    grid-template-areas: 
+      "quantization quantization"
+      "bmp transport" !important;
+  }
+  
+  .mittlere-reihe-responsive .quantisierung-sektion {
+    grid-area: quantization;
+  }
+  
+  .mittlere-reihe-responsive .bpm-sektion {
+    grid-area: bmp;
+  }
+  
+  .mittlere-reihe-responsive .transport-sektion {
+    grid-area: transport;
+    justify-content: flex-start !important; /* CONSISTENT: Left alignment */
+    align-items: flex-start !important;     /* CONSISTENT: Left alignment */
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 15 !important;
+  }
+  
+  /* Transport Container Buttons - CONSISTENT left alignment */
+  .transport-sektion .flex.gap-4.mb-4.justify-center {
+    justify-content: flex-start !important; /* CONSISTENT: Left alignment */
+    margin-bottom: 0 !important;
+  }
+  
+  .transport-sektion .flex.flex-col.gap-2.items-center {
+    align-items: flex-start !important; /* CONSISTENT: Left alignment */
+    justify-content: flex-start !important; /* CONSISTENT: Left alignment */
+  }
+  
+  /* BPM Container: Elemente in einer Reihe halten, left aligned */
+  .bpm-container {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    justify-content: flex-start !important; /* Left alignment for tablet */
+  }
+  
+  
+  /* BPM Display kompakter */
+  .bpm-sektion .text-2xl {
+    font-size: 1.5rem !important;
+    padding: 0.25rem 0.5rem !important;
+    min-width: 50px !important;
+    width: 50px !important;
+  }
+  
+  /* Up/Down Buttons kompakter */
+  .bpm-sektion .w-8.h-6 {
+    width: 2rem !important;
+    height: 2rem !important;
+    font-size: 1rem !important;
+  }
+  
+}
+
+/* Dark Mode Support (optional) */
+@media (prefers-color-scheme: dark) {
+  .soundangeles-drum-sequencer.dark-mode {
+    --sa-background: #1a1a1a;
+    --sa-surface: #2a2a2a;
+    --sa-text: #FFFFFF;
+    --sa-text-muted: #999999;
+    --sa-border: #404040;
+  }
+}
+
+/* Volume Knob Responsive Scaling */
+.volume-knob-container {
+  transform: scale(1.34); /* Desktop - unchanged */
+}
+
+/* Tablet Volume Knobs: 15% smaller than desktop */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .volume-knob-container {
+    transform: scale(1.14); /* 1.34 * 0.85 = ~1.14 */
+  }
+}
+
+/* Bridge Desktop Volume Knobs: Standard desktop size */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .volume-knob-container {
+    transform: scale(1.34); /* Same as desktop */
+  }
+}
+
+/* Mobile: standard size */
+@media (max-width: 767px) {
+  .volume-knob-container {
+    transform: scale(1.0);
+  }
+}
+
+/* LEGACY TABLET RULES - Now only applies to true tablets 768px-1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  /* CRITICAL FIX: Ensure all containers stay visible during resize */
+  .bpm-sektion, .transport-sektion, .quantisierung-sektion {
+    width: 100% !important;
+    max-width: none !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  
+  /* Transport container - EXPLICIT visibility rules to prevent disappearing */
+  .transport-sektion {
+    display: flex !important;
+    flex-direction: column !important; /* Same layout as Desktop */
+    align-items: flex-start !important; /* LEFT alignment for tablet */
+    justify-content: flex-start !important; /* LEFT justification for tablet */
+    gap: 1rem !important;              /* Same gap as Desktop - NO SCALING */
+    visibility: visible !important;
+    opacity: 1 !important;
+    /* NO transform scaling - preserves tight spacing like Desktop */
+  }
+  
+  /* BPM Controls - left aligned for tablet */
+  .bpm-container {
+    justify-content: flex-start !important; /* Left alignment for tablet */
+  }
+  
+  .bpm-container button {
+    min-width: 60px !important;
+    min-height: 50px !important;
+    font-size: 1.1rem !important;
+  }
+  
+  /* TABLET TRANSPORT BUTTONS - Simple approach that works */
+  .transport-sektion button {
+    font-size: 1rem !important;         /* Slightly larger text for tablet */
+    /* Let buttons maintain their natural Desktop proportions */
+    /* Just make them slightly more touch-friendly without changing aspect ratios */
+  }
+  
+  /* Quantization buttons - larger for tablet */
+  .quantisierung-sektion button {
+    min-height: 50px !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Mobile: Even more optimization */
+@media (max-width: 767px) {
+  .bpm-sektion, .transport-sektion, .quantisierung-sektion {
+    width: 100% !important;
+    padding: 12px 0px !important;
+  }
+  
+  /* Make all buttons touch-friendly on mobile */
+  .bpm-container button,
+  .transport-sektion button,
+  .quantisierung-sektion button {
+    min-height: 44px !important;
+    font-size: 1rem !important;
+  }
+}

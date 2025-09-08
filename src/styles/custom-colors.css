@@ -1,0 +1,112 @@
+/* 
+ * DRUM SEQUENCER CUSTOM COLORS
+ * Customize all colors here
+ */
+
+:root {
+  /* BASIC INTERFACE COLORS */
+  --background: 220 25% 8%;
+  --foreground: 0 0% 95%;
+  --card: 220 20% 12%;
+  --card-foreground: 0 0% 95%;
+  --secondary: 220 15% 15%;
+  --secondary-foreground: 0 0% 90%;
+  --muted: 220 15% 15%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 220 15% 18%;
+  --accent-foreground: 0 0% 95%;
+  --border: 220 15% 20%;
+  --input: 220 15% 15%;
+
+  /* NEON COLORS FOR DRUM TRACKS */
+  --neon-blue: 196 100% 50%;
+  --neon-green: 120 100% 50%;
+  --neon-pink: 320 100% 70%;
+  --neon-cyan: 180 100% 50%;
+  --neon-yellow: 60 100% 50%;
+  --neon-purple: 270 100% 70%;
+
+  /* SPECIAL AREAS */
+  --grid-inactive: 220 15% 20%;
+  --grid-active: 196 100% 50%;
+  --track-bg: 220 20% 12%;
+  --control-bg: 220 15% 15%;
+  --control-border: 220 15% 25%;
+
+  /* WARNING COLORS */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 95%;
+  --ring: 196 100% 50%;
+}
+
+/* CYBERPUNK PURPLE THEME - uncomment to use */
+/*
+:root {
+  --background: 260 30% 8%;
+  --foreground: 300 20% 95%;
+  --card: 260 25% 12%;
+  --card-foreground: 300 20% 95%;
+  --secondary: 260 20% 15%;
+  --secondary-foreground: 300 15% 90%;
+  --muted: 260 20% 15%;
+  --muted-foreground: 300 10% 65%;
+  --accent: 260 20% 18%;
+  --accent-foreground: 300 20% 95%;
+  --border: 260 20% 20%;
+  --input: 260 20% 15%;
+  --neon-blue: 270 100% 60%;
+  --neon-green: 150 100% 50%;
+  --neon-pink: 320 100% 70%;
+  --neon-cyan: 190 100% 50%;
+  --neon-yellow: 50 100% 60%;
+  --neon-purple: 280 100% 70%;
+}
+*/
+
+/* RETRO GREEN THEME - uncomment to use */
+/*
+:root {
+  --background: 120 20% 8%;
+  --foreground: 120 10% 95%;
+  --card: 120 15% 12%;
+  --card-foreground: 120 10% 95%;
+  --secondary: 120 10% 15%;
+  --secondary-foreground: 120 5% 90%;
+  --muted: 120 10% 15%;
+  --muted-foreground: 120 5% 65%;
+  --accent: 120 10% 18%;
+  --accent-foreground: 120 10% 95%;
+  --border: 120 10% 20%;
+  --input: 120 10% 15%;
+  --neon-blue: 200 100% 50%;
+  --neon-green: 120 100% 50%;
+  --neon-pink: 320 100% 70%;
+  --neon-cyan: 180 100% 50%;
+  --neon-yellow: 60 100% 50%;
+  --neon-purple: 270 100% 70%;
+}
+*/
+
+/* ORANGE FIRE THEME - uncomment to use */
+/*
+:root {
+  --background: 20 40% 8%;
+  --foreground: 20 10% 95%;
+  --card: 20 35% 12%;
+  --card-foreground: 20 10% 95%;
+  --secondary: 20 25% 15%;
+  --secondary-foreground: 20 5% 90%;
+  --muted: 20 25% 15%;
+  --muted-foreground: 20 5% 65%;
+  --accent: 20 25% 18%;
+  --accent-foreground: 20 10% 95%;
+  --border: 20 25% 20%;
+  --input: 20 25% 15%;
+  --neon-blue: 220 100% 60%;
+  --neon-green: 120 100% 50%;
+  --neon-pink: 340 100% 70%;
+  --neon-cyan: 180 100% 50%;
+  --neon-yellow: 40 100% 60%;
+  --neon-purple: 280 100% 70%;
+}
+*/

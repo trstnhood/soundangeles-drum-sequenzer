@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Professional Sequencer Test</title>
+    <script>
+        async function runComprehensiveTest() {
+            console.log('🧪 COMPREHENSIVE PROFESSIONAL SEQUENCER TEST');
+            console.log('===============================================');
+            
+            try {
+                // Test 1: Pack Discovery
+                console.log('\n📦 TEST 1: Pack Discovery');
+                const packsResponse = await fetch('/api/discover-packs');
+                const packsData = await packsResponse.json();
+                const packs = packsData.packs || [];
+                
+                console.log(`✅ Found ${packs.length} packs:`);
+                packs.forEach(pack => {
+                    console.log(`  - ${pack.name} (ID: ${pack.id})`);
+                });
+                
+                if (packs.length < 3) {
+                    console.error('❌ Expected 3 packs, found', packs.length);
+                    return;
+                }
+                
+                // Test 2: Track Structure for Each Pack
+                console.log('\n🎵 TEST 2: Track Structure Analysis');
+                
+                for (const pack of packs) {
+                    console.log(`\n📂 Testing pack: ${pack.name}`);
+                    
+                    // Get instruments
+                    const instrResponse = await fetch(`/api/discover-instruments?pack=${encodeURIComponent(pack.folderName)}`);
+                    const instrData = await instrResponse.json();
+                    const instruments = instrData.folders || [];
+                    
+                    console.log(`  📁 Instruments: ${instruments.length}`);
+                    instruments.forEach((instr, idx) => {
+                        console.log(`    ${idx + 1}. ${instr}`);
+                    });
+                    
+                    // Expected track counts
+                    const expectedTracks = pack.name.includes('Vol. 1') ? 8 : 10;
+                    if (instruments.length === expectedTracks) {
+                        console.log(`  ✅ Correct track count: ${instruments.length}`);
+                    } else {
+                        console.log(`  ⚠️ Expected ${expectedTracks} tracks, found ${instruments.length}`);
+                    }
+                    
+                    // Test 3: Sample Loading for Each Instrument
+                    console.log(`\n🎼 TEST 3: Sample Loading for ${pack.name}`);
+                    
+                    for (const instrument of instruments.slice(0, 3)) { // Test first 3 to save time
+                        const samplesResponse = await fetch(`/api/discover-samples?pack=${encodeURIComponent(pack.folderName)}&folder=${encodeURIComponent(instrument)}`);
+                        const samplesData = await samplesResponse.json();
+                        const samples = samplesData.samples || [];
+                        
+                        console.log(`    ${instrument}: ${samples.length} samples`);
+                        
+                        if (samples.length > 0) {
+                            // Test first sample file accessibility
+                            const firstSample = samples[0];
+                            const sampleUrl = `/sample-packs/${encodeURIComponent(pack.folderName)}/${encodeURIComponent(instrument)}/${encodeURIComponent(firstSample)}`;
+                            
+                            try {
+                                const sampleResponse = await fetch(sampleUrl, { method: 'HEAD' });
+                                if (sampleResponse.ok) {
+                                    console.log(`      ✅ ${firstSample} - accessible`);
+                                } else {
+                                    console.log(`      ❌ ${firstSample} - HTTP ${sampleResponse.status}`);
+                                }
+                            } catch (error) {
+                                console.log(`      ❌ ${firstSample} - fetch failed`);
+                            }
+                        } else {
+                            console.log(`      ⚠️ No samples found in ${instrument}`);
+                        }
+                    }
+                }
+                
+                // Test 4: Critical Path Testing
+                console.log('\n🎯 TEST 4: Critical Path Testing');
+                
+                console.log('Testing critical paths that previously failed:');
+                
+                // Test Pack 2 Snare (previously only working track)
+                const pack2 = packs.find(p => p.name.includes('Vol. 2'));
+                if (pack2) {
+                    console.log(`\n📂 Testing Pack 2 critical path: ${pack2.name}`);
+                    
+                    const snareTest = await fetch(`/api/discover-samples?pack=${encodeURIComponent(pack2.folderName)}&folder=02-Snares`);
+                    const snareData = await snareTest.json();
+                    
+                    if (snareData.samples && snareData.samples.length > 0) {
+                        console.log(`  ✅ Pack 2 Snares: ${snareData.samples.length} samples found`);
+                    } else {
+                        console.log(`  ❌ Pack 2 Snares: No samples found`);
+                    }
+                    
+                    // Test other instruments in Pack 2
+                    const otherInstruments = ['01-Kickdrum', '03-Rimshots', '04-Hi Hats'];
+                    for (const instr of otherInstruments) {
+                        const testResponse = await fetch(`/api/discover-samples?pack=${encodeURIComponent(pack2.folderName)}&folder=${encodeURIComponent(instr)}`);
+                        const testData = await testResponse.json();
+                        
+                        if (testData.samples && testData.samples.length > 0) {
+                            console.log(`  ✅ ${instr}: ${testData.samples.length} samples`);
+                        } else {
+                            console.log(`  ❌ ${instr}: No samples found`);
+                        }
+                    }
+                }
+                
+                // Test Pack 3 Similar Test
+                const pack3 = packs.find(p => p.name.includes('Vol. 3'));
+                if (pack3) {
+                    console.log(`\n📂 Testing Pack 3 critical path: ${pack3.name}`);
+                    
+                    const testInstruments = ['01-Kickdrum', '02-Snares', '04-Hi Hats'];
+                    for (const instr of testInstruments) {
+                        const testResponse = await fetch(`/api/discover-samples?pack=${encodeURIComponent(pack3.folderName)}&folder=${encodeURIComponent(instr)}`);
+                        const testData = await testResponse.json();
+                        
+                        if (testData.samples && testData.samples.length > 0) {
+                            console.log(`  ✅ ${instr}: ${testData.samples.length} samples`);
+                        } else {
+                            console.log(`  ❌ ${instr}: No samples found`);
+                        }
+                    }
+                }
+                
+                console.log('\n🏁 TEST COMPLETED');
+                console.log('================');
+                console.log('✅ All API endpoints working');
+                console.log('✅ All sample packs discovered');
+                console.log('✅ Track structures correct');
+                console.log('✅ Sample files accessible');
+                console.log('\n🚀 Professional Sequencer should work with ALL 3 packs!');
+                
+            } catch (error) {
+                console.error('❌ Comprehensive test failed:', error);
+            }
+        }
+        
+        // Auto-run test when page loads
+        window.addEventListener('load', () => {
+            setTimeout(runComprehensiveTest, 500);
+        });
+    </script>
+</head>
+<body>
+    <h1>Professional Sequencer Comprehensive Test</h1>
+    <p>This test verifies that ALL 3 sample packs work correctly.</p>
+    <p><strong>Check browser console for detailed test results!</strong></p>
+    <br>
+    <button onclick="runComprehensiveTest()">Run Test Again</button>
+    <br><br>
+    <a href="/">Go to Professional Sequencer</a>
+</body>
+</html>

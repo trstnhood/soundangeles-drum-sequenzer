@@ -1,0 +1,204 @@
+/* SoundAngeles Drum Sequencer - DESKTOP-ONLY Styles */
+
+.soundangeles-drum-sequencer {
+  /* Custom CSS Variables */
+  --sa-primary: #DB1215;
+  --sa-background: #FFFFFF;
+  --sa-surface: #F8F8F8;
+  --sa-text: #000000;
+  --sa-text-muted: #666666;
+  --sa-border: #E0E0E0;
+  --sa-hover: #FF4444;
+}
+
+/* Desktop Container */
+.soundangeles-drum-sequencer .max-w-6xl {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Embedded Mode Styles */
+.soundangeles-drum-sequencer.embedded-mode {
+  border-radius: 0;
+  box-shadow: none;
+  min-height: auto !important;
+}
+
+.soundangeles-drum-sequencer.embedded-mode .text-center.mb-8 {
+  display: none;
+}
+
+.soundangeles-drum-sequencer.embedded-mode .text-center.mt-8 {
+  display: none;
+}
+
+/* RADIX UI SLIDER OVERRIDES */
+.soundangeles-drum-sequencer [data-radix-slider-root] {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 20px !important;
+  cursor: pointer !important;
+}
+
+.soundangeles-drum-sequencer [data-radix-slider-track] {
+  position: relative !important;
+  flex-grow: 1 !important;
+  height: 6px !important;
+  background-color: #666666 !important;
+  border: 1px solid #555555 !important;
+  border-radius: 3px !important;
+}
+
+.soundangeles-drum-sequencer [data-radix-slider-range] {
+  position: absolute !important;
+  height: 100% !important;
+  background-color: var(--sa-primary) !important;
+  border-radius: 3px 0 0 3px !important;
+}
+
+.soundangeles-drum-sequencer [data-radix-slider-thumb] {
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+  background-color: var(--sa-primary) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 8px rgba(219, 18, 21, 0.4) !important;
+  cursor: grab !important;
+  z-index: 10 !important;
+}
+
+.soundangeles-drum-sequencer [data-radix-slider-thumb]:hover {
+  background-color: #FF4444 !important;
+  transform: scale(1.05) !important;
+  transition: all 0.2s ease !important;
+}
+
+.soundangeles-drum-sequencer [data-radix-slider-thumb]:focus {
+  background-color: var(--sa-primary) !important;
+  box-shadow: 0 0 0 3px rgba(219, 18, 21, 0.2), 0 2px 8px rgba(219, 18, 21, 0.4) !important;
+  outline: none !important;
+}
+
+/* Fallback: Native HTML5 range sliders */
+.soundangeles-drum-sequencer input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #666666;
+  border-radius: 3px;
+  border: 1px solid #555555;
+  outline: none;
+}
+
+.soundangeles-drum-sequencer input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--sa-primary);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 8px rgba(219, 18, 21, 0.4);
+  cursor: grab;
+}
+
+.soundangeles-drum-sequencer input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: var(--sa-primary);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 8px rgba(219, 18, 21, 0.4);
+  cursor: grab;
+}
+
+/* Button Hover Effects */
+.soundangeles-drum-sequencer button:not(:disabled):hover {
+  transition: all 0.2s ease;
+}
+
+/* Pad Animation */
+.soundangeles-drum-sequencer button[class*="w-12"]:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.soundangeles-drum-sequencer .animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* DESKTOP INSTRUMENT GRID - 8 columns */
+.instrument-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+/* DESKTOP MIDDLE ROW - Horizontal Layout */
+.mittlere-reihe-responsive {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.mittlere-reihe-responsive .quantisierung-sektion {
+  flex: 1;
+}
+
+.mittlere-reihe-responsive .bpm-sektion,
+.mittlere-reihe-responsive .transport-sektion {
+  flex: none;
+  width: auto;
+}
+
+/* DESKTOP VOLUME KNOBS */
+.volume-knob-container {
+  transform: scale(1.34);
+}
+
+/* Print Styles */
+@media print {
+  .soundangeles-drum-sequencer {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .soundangeles-drum-sequencer button {
+    border: 1px solid black !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .soundangeles-drum-sequencer {
+    --sa-primary: #FF0000;
+    --sa-border: #000000;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .soundangeles-drum-sequencer.dark-mode {
+    --sa-background: #1a1a1a;
+    --sa-surface: #2a2a2a;
+    --sa-text: #FFFFFF;
+    --sa-text-muted: #999999;
+    --sa-border: #404040;
+  }
+}

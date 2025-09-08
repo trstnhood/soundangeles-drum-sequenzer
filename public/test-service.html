@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service Test</title>
+    <script type="module">
+        // Test the SampleResolutionService directly
+        async function testService() {
+            console.log('🧪 Starting SampleResolutionService test...');
+            
+            try {
+                // Test pack discovery
+                const response = await fetch('/api/discover-packs');
+                const data = await response.json();
+                console.log('✅ Packs discovered:', data.packs.map(p => p.name));
+                
+                if (data.packs.length > 0) {
+                    const firstPack = data.packs[0];
+                    console.log(`🔍 Testing pack: ${firstPack.name} (ID: ${firstPack.id})`);
+                    
+                    // Test instrument discovery
+                    const instResponse = await fetch(`/api/discover-instruments?pack=${encodeURIComponent(firstPack.folderName)}`);
+                    const instData = await instResponse.json();
+                    console.log('✅ Instruments discovered:', instData.folders);
+                    
+                    if (instData.folders.length > 0) {
+                        const firstFolder = instData.folders[0];
+                        console.log(`🎵 Testing folder: ${firstFolder}`);
+                        
+                        // Test sample discovery
+                        const sampleResponse = await fetch(`/api/discover-samples?pack=${encodeURIComponent(firstPack.folderName)}&folder=${encodeURIComponent(firstFolder)}`);
+                        const sampleData = await sampleResponse.json();
+                        console.log('✅ Samples discovered:', sampleData.samples);
+                        
+                        if (sampleData.samples.length > 0) {
+                            const firstSample = sampleData.samples[0];
+                            const sampleUrl = `/sample-packs/${encodeURIComponent(firstPack.folderName)}/${encodeURIComponent(firstFolder)}/${encodeURIComponent(firstSample)}`;
+                            console.log(`🎼 Testing sample URL: ${sampleUrl}`);
+                            
+                            // Test if sample file is accessible
+                            const sampleFileResponse = await fetch(sampleUrl, { method: 'HEAD' });
+                            if (sampleFileResponse.ok) {
+                                console.log('✅ Sample file accessible!');
+                            } else {
+                                console.error('❌ Sample file not accessible:', sampleFileResponse.status);
+                            }
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('❌ Service test failed:', error);
+            }
+        }
+        
+        // Auto-run test when page loads
+        window.addEventListener('load', testService);
+    </script>
+</head>
+<body>
+    <h1>SampleResolutionService Test</h1>
+    <p>Check browser console for test results...</p>
+    <button onclick="location.reload()">Rerun Test</button>
+    <br><br>
+    <a href="/">Back to Main App</a>
+</body>
+</html>

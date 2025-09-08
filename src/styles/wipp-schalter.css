@@ -1,0 +1,196 @@
+/* Wipp-Schalter Styles */
+.wipp-container {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.wipp-schalter {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  min-width: 140px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 18px;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 1px 2px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.15s ease-out;
+}
+
+/* Aktives Instrument (Rot) */
+.wipp-schalter.active .wipp-left,
+.wipp-schalter.active .wipp-right {
+  background: linear-gradient(135deg, #c93026 0%, #a52419 100%);
+  transition: all 0.15s ease-out;
+}
+
+.wipp-schalter.active .wipp-left.pressed {
+  background: linear-gradient(135deg, #c93026 0%, #e53e33 100%);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.wipp-schalter.active .wipp-right.pressed {
+  background: linear-gradient(135deg, #e53e33 0%, #c93026 100%);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.wipp-schalter.active .wipp-left:not(.pressed):has(~ .wipp-right.pressed) {
+  background: linear-gradient(135deg, #81180e 0%, #6a130b 100%);
+}
+
+.wipp-schalter.active .wipp-right:not(.pressed):has(~ .wipp-left.pressed) {
+  background: linear-gradient(135deg, #81180e 0%, #6a130b 100%);
+}
+
+/* Inaktive Instrumente (Grau) */
+.wipp-schalter.inactive .wipp-left,
+.wipp-schalter.inactive .wipp-right {
+  background: linear-gradient(135deg, #d4d4d4 0%, #b8b8b8 100%);
+  transition: all 0.15s ease-out;
+}
+
+.wipp-schalter.inactive .wipp-left.pressed {
+  background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.wipp-schalter.inactive .wipp-right.pressed {
+  background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.wipp-schalter.inactive .wipp-left:not(.pressed):has(~ .wipp-right.pressed) {
+  background: linear-gradient(135deg, #c1bfbf 0%, #a8a6a6 100%);
+}
+
+.wipp-schalter.inactive .wipp-right:not(.pressed):has(~ .wipp-left.pressed) {
+  background: linear-gradient(135deg, #c1bfbf 0%, #a8a6a6 100%);
+}
+
+/* Schalter Buttons */
+.wipp-left,
+.wipp-right {
+  flex: 0 0 40px;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  transition: all 0.15s ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wipp-left {
+  border-radius: 18px 0 0 18px;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.wipp-right {
+  border-radius: 0 18px 18px 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Center Display */
+.wipp-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  pointer-events: none;
+  z-index: 10;
+  position: relative;
+}
+
+.wipp-instrument-name {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.wipp-counter {
+  font-size: 10px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Arrow Icons */
+.wipp-arrow {
+  color: rgba(255, 255, 255, 0.8);
+  transition: transform 0.15s ease-out;
+}
+
+.wipp-left.pressed .wipp-arrow {
+  transform: translateX(-2px);
+}
+
+.wipp-right.pressed .wipp-arrow {
+  transform: translateX(2px);
+}
+
+/* Hover Effects */
+@media (hover: hover) {
+  .wipp-left:hover:not(.pressed),
+  .wipp-right:hover:not(.pressed) {
+    filter: brightness(1.1);
+  }
+}
+
+/* Active State Feedback */
+.wipp-left:active,
+.wipp-right:active {
+  transform: scale(0.98);
+}
+
+/* Focus States for Accessibility */
+.wipp-left:focus-visible,
+.wipp-right:focus-visible {
+  outline: 2px solid #c93026;
+  outline-offset: 2px;
+}
+
+/* Mobile Touch Optimization */
+@media (max-width: 768px) {
+  .wipp-schalter {
+    min-width: 120px;
+    height: 44px; /* iOS touch target */
+  }
+  
+  .wipp-left,
+  .wipp-right {
+    flex: 0 0 44px;
+  }
+}
+
+/* Disabled State */
+.wipp-schalter.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Animation for spring-back effect */
+@keyframes springBack {
+  0% { transform: scale(0.95); }
+  60% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.wipp-schalter {
+  animation: springBack 0.15s ease-out;
+}
