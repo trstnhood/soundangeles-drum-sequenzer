@@ -1,973 +1,3239 @@
 {
   "packs": [
     {
-      "id": "ill-will-vol-1",
-      "name": "I.L.L. Will - Drumsound Pack Vol. 1",
-      "description": "Professional drum samples - I.L.L. Will - Drumsound Pack Vol. 1",
-      "folderName": "I.L.L. Will - Drumsound Pack Vol. 1",
-      "coverImage": "ILLWILL-Drum-Kit-Vol-1-1.jpg",
+      "id": "pack1",
+      "name": "Pack Vol. 1",
+      "description": "I.L.L. Will Drumsound Pack Volume 1 - Professional drum samples",
+      "coverImage": "/sample-packs-mp3/Pack_Vol_1/ILLWILL-Drum-Kit-Vol-1-1.jpg",
+      "folderName": "Pack_Vol_1",
       "instruments": [
-        {
-          "id": "kick",
-          "name": "01-Kick",
-          "displayName": "Kick",
-          "samples": [
-            "Kick Drum 1.mp3",
-            "Kick Drum 10.mp3",
-            "Kick Drum 11.mp3",
-            "Kick Drum 12.mp3",
-            "Kick Drum 13.mp3",
-            "Kick Drum 14.mp3",
-            "Kick Drum 15.mp3",
-            "Kick Drum 16.mp3",
-            "Kick Drum 2.mp3",
-            "Kick Drum 3.mp3",
-            "Kick Drum 4.mp3",
-            "Kick Drum 5.mp3",
-            "Kick Drum 6.mp3",
-            "Kick Drum 7.mp3",
-            "Kick Drum 8.mp3",
-            "Kick Drum 9.mp3"
-          ]
-        },
-        {
-          "id": "snare",
-          "name": "02-Snare",
-          "displayName": "Snare",
-          "samples": [
-            "Snare 1.mp3",
-            "Snare 10.mp3",
-            "Snare 11.mp3",
-            "Snare 12.mp3",
-            "Snare 13.mp3",
-            "Snare 14.mp3",
-            "Snare 15.mp3",
-            "Snare 16.mp3",
-            "Snare 2.mp3",
-            "Snare 3.mp3",
-            "Snare 4.mp3",
-            "Snare 5.mp3",
-            "Snare 6.mp3",
-            "Snare 7.mp3",
-            "Snare 8.mp3",
-            "Snare 9.mp3",
-            "Snare_Rimshot 1.mp3",
-            "Snare_Rimshot 2.mp3",
-            "Snare_Rimshot 3.mp3",
-            "Snare_Rimshot 4.mp3",
-            "Snare_Rimshot 5.mp3",
-            "Snare_Rimshot 6.mp3",
-            "Snare_Rimshot 7.mp3",
-            "Snare_Rimshot 8.mp3"
-          ]
-        },
-        {
-          "id": "hihat",
-          "name": "03-Hi-hat",
-          "displayName": "Hi Hat",
-          "samples": [
-            "Hi-hat 1.mp3",
-            "Hi-hat 10.mp3",
-            "Hi-hat 11.mp3",
-            "Hi-hat 12.mp3",
-            "Hi-hat 13.mp3",
-            "Hi-hat 14.mp3",
-            "Hi-hat 15.mp3",
-            "Hi-hat 16.mp3",
-            "Hi-hat 2.mp3",
-            "Hi-hat 3.mp3",
-            "Hi-hat 4.mp3",
-            "Hi-hat 5.mp3",
-            "Hi-hat 6.mp3",
-            "Hi-hat 7.mp3",
-            "Hi-hat 8.mp3",
-            "Hi-hat 9.mp3"
-          ]
-        },
-        {
-          "id": "open-hat",
-          "name": "04-Open hat",
-          "displayName": "Open Hat",
-          "samples": [
-            "Open Hi-hat 1.mp3",
-            "Open Hi-hat 2.mp3",
-            "Open Hi-hat 3.mp3",
-            "Open Hi-hat 4.mp3",
-            "Open Hi-hat 5.mp3",
-            "Open Hi-hat 6.mp3",
-            "Open Hi-hat 7.mp3",
-            "Open Hi-hat 8.mp3"
-          ]
-        },
-        {
-          "id": "cym",
-          "name": "05-Cym",
-          "displayName": "Cym",
-          "samples": [
-            "Ride 1.mp3",
-            "Ride 2.mp3",
-            "Ride 3.mp3",
-            "Ride 4.mp3",
-            "Ride 5.mp3",
-            "Ride 6.mp3",
-            "Ride 7.mp3",
-            "Ride 8.mp3"
-          ]
-        },
-        {
-          "id": "clap",
-          "name": "06-clap",
-          "displayName": "Clap",
-          "samples": [
-            "Handclap 1.mp3",
-            "Handclap 2.mp3",
-            "Handclap 3.mp3",
-            "Handclap 4.mp3",
-            "Handclap 5.mp3",
-            "Handclap 6.mp3",
-            "Handclap 7.mp3",
-            "Handclap 8.mp3"
-          ]
-        },
-        {
-          "id": "perc",
-          "name": "07-Perc",
-          "displayName": "Perc",
-          "samples": [
-            "Casta.mp3",
-            "Cow.mp3",
-            "Perc 2.mp3",
-            "Perc.mp3",
-            "Shaker 1.mp3",
-            "Shaker 2.mp3",
-            "Shaker 3.mp3",
-            "Shaker 4.mp3",
-            "Shaker 5.mp3",
-            "Shaker 6.mp3",
-            "Shaker 7.mp3",
-            "Shaker 8.mp3",
-            "Stick 2.mp3",
-            "Stick 3.mp3",
-            "Stick 4.mp3",
-            "Stick 5.mp3",
-            "Stick.mp3",
-            "Tri.mp3"
-          ]
-        },
-        {
-          "id": "conga",
-          "name": "08-Conga",
-          "displayName": "Conga",
-          "samples": [
-            "Con 2.mp3",
-            "Con.mp3",
-            "Conga Slide.mp3",
-            "Tam.mp3",
-            "Tim.mp3",
-            "Tom.mp3"
-          ]
-        }
+        "01-KICK",
+        "02-SNARE",
+        "03-HI-HAT",
+        "04-OPEN",
+        "05-RIDE",
+        "06-CLAP",
+        "07-PERC",
+        "08-CONGA"
       ]
     },
     {
-      "id": "ill-will-vol-2",
-      "name": "I.L.L. Will - Drumsound Pack Vol. 2",
-      "description": "Professional drum samples - I.L.L. Will - Drumsound Pack Vol. 2",
-      "folderName": "I.L.L. Will - Drumsound Pack Vol. 2",
-      "coverImage": "ILLWILL-Drum-Kit-Vol-2-1.jpg",
+      "id": "pack2",
+      "name": "Pack Vol. 2",
+      "description": "I.L.L. Will Drumsound Pack Volume 2 - Extended drum collection",
+      "coverImage": "/sample-packs-mp3/Pack_Vol_2/ILLWILL-Drum-Kit-Vol-2-1.jpg",
+      "folderName": "Pack_Vol_2",
       "instruments": [
-        {
-          "id": "kick",
-          "name": "01-Kick",
-          "displayName": "Kick",
-          "samples": [
-            "Bass Drum old 10.mp3",
-            "Bass Drum old 11.mp3",
-            "Bass Drum old 12.mp3",
-            "Bass Drum old 13.mp3",
-            "Bass Drum old 14.mp3",
-            "Bass Drum old 15.mp3",
-            "Bass Drum old 16.mp3",
-            "Bass Drum old 2.mp3",
-            "Bass Drum old 3.mp3",
-            "Bass Drum old 4.mp3",
-            "Bass Drum old 5.mp3",
-            "Bass Drum old 6.mp3",
-            "Bass Drum old 7.mp3",
-            "Bass Drum old 8.mp3",
-            "Bass Drum old 89.mp3",
-            "Bass Drum old 9.mp3",
-            "Bass Drum old bones.mp3",
-            "Bass Drum old clear 2.mp3",
-            "Bass Drum old clear 3.mp3",
-            "Bass Drum old clear 4.mp3",
-            "Bass Drum old clear 5.mp3",
-            "Bass Drum old clear.mp3",
-            "Bass Drum old filter 2.mp3",
-            "Bass Drum old filter 3.mp3",
-            "Bass Drum old filter 4.mp3",
-            "Bass Drum old filter.mp3",
-            "Bass Drum old roomy 5.mp3",
-            "Bass Drum old roomy 6.mp3",
-            "Bass Drum old roomy.mp3",
-            "Bass Drum old short 2.mp3",
-            "Bass Drum old short 3.mp3",
-            "Bass Drum old short 4.mp3",
-            "Bass Drum old short 5.mp3",
-            "Bass Drum old short 6.mp3",
-            "Bass Drum old short 7.mp3",
-            "Bass Drum old short 8.mp3",
-            "Bass Drum old short punchy 2.mp3",
-            "Bass Drum old short punchy.mp3",
-            "Bass Drum old short roomy.mp3",
-            "Bass Drum old short.mp3",
-            "Bass Drum old smokey 2.mp3",
-            "Bass Drum old smokey.mp3",
-            "Bass Drum old.mp3",
-            "Bass Drum poppy.mp3",
-            "Bass Drum present raw 2.mp3",
-            "Bass Drum present raw.mp3",
-            "Bass Drum present.mp3",
-            "Bass Drum rotten thick.mp3",
-            "Bass Drum rotten.mp3",
-            "Bass Drum thin.mp3"
-          ]
-        },
-        {
-          "id": "snare",
-          "name": "02-Snare",
-          "displayName": "Snare",
-          "samples": [
-            "Snare 80s 2.mp3",
-            "Snare 80s.mp3",
-            "Snare 90s new jack.mp3",
-            "Snare Clubby 1.mp3",
-            "Snare Clubby 2.mp3",
-            "Snare Clubby wide thick.mp3",
-            "Snare Clubby.mp3",
-            "Snare GWJ.mp3",
-            "Snare Gun 2.mp3",
-            "Snare Gun 3.mp3",
-            "Snare Gun short.mp3",
-            "Snare Gun.mp3",
-            "Snare almost clean 2.mp3",
-            "Snare almost clean.mp3",
-            "Snare crisp.mp3",
-            "Snare direct.mp3",
-            "Snare dull.mp3",
-            "Snare dusty 2.mp3",
-            "Snare dusty 3.mp3",
-            "Snare dusty 4.mp3",
-            "Snare dusty 5.mp3",
-            "Snare dusty.mp3",
-            "Snare fingersnap.mp3",
-            "Snare in your face 2.mp3",
-            "Snare in your face 3.mp3",
-            "Snare in your face 4.mp3",
-            "Snare in your face 5.mp3",
-            "Snare in your face 6.mp3",
-            "Snare in your face 7.mp3",
-            "Snare in your face short.mp3",
-            "Snare in your face thin.mp3",
-            "Snare in your face.mp3",
-            "Snare long tail.mp3",
-            "Snare massiv short.mp3",
-            "Snare mellow massiv 2.mp3",
-            "Snare mellow massiv.mp3",
-            "Snare metal 2.mp3",
-            "Snare metal.mp3",
-            "Snare metallic hard.mp3",
-            "Snare metallic mellow.mp3",
-            "Snare new jack.mp3",
-            "Snare nice 2.mp3",
-            "Snare nice 3.mp3",
-            "Snare nice-dry.mp3",
-            "Snare nice-old 2.mp3",
-            "Snare nice-old.mp3",
-            "Snare nice.mp3",
-            "Snare nicethick.mp3",
-            "Snare old clear.mp3",
-            "Snare old wide.mp3",
-            "Snare_Rimshot 1.mp3",
-            "Snare_Rimshot 10.mp3",
-            "Snare_Rimshot 11.mp3",
-            "Snare_Rimshot 12.mp3",
-            "Snare_Rimshot 13.mp3",
-            "Snare_Rimshot 14.mp3",
-            "Snare_Rimshot 15.mp3",
-            "Snare_Rimshot 16.mp3",
-            "Snare_Rimshot 17.mp3",
-            "Snare_Rimshot 18.mp3",
-            "Snare_Rimshot 19.mp3",
-            "Snare_Rimshot 2.mp3",
-            "Snare_Rimshot 20.mp3",
-            "Snare_Rimshot 21.mp3",
-            "Snare_Rimshot 22.mp3",
-            "Snare_Rimshot 23.mp3",
-            "Snare_Rimshot 24.mp3",
-            "Snare_Rimshot 25.mp3",
-            "Snare_Rimshot 3.mp3",
-            "Snare_Rimshot 4.mp3",
-            "Snare_Rimshot 5.mp3",
-            "Snare_Rimshot 6.mp3",
-            "Snare_Rimshot 7.mp3",
-            "Snare_Rimshot 8.mp3",
-            "Snare_Rimshot 9.mp3"
-          ]
-        },
-        {
-          "id": "hi-hat",
-          "name": "03-Hi Hat",
-          "displayName": "Hi Hat",
-          "samples": [
-            "HH 1.mp3",
-            "HH 10.mp3",
-            "HH 11.mp3",
-            "HH 12.mp3",
-            "HH 12bit 10.mp3",
-            "HH 12bit 11.mp3",
-            "HH 12bit 12.mp3",
-            "HH 12bit 13.mp3",
-            "HH 12bit 14.mp3",
-            "HH 12bit 15.mp3",
-            "HH 12bit 16.mp3",
-            "HH 12bit 17.mp3",
-            "HH 12bit 18.mp3",
-            "HH 12bit 2.mp3",
-            "HH 12bit 3.mp3",
-            "HH 12bit 4.mp3",
-            "HH 12bit 5.mp3",
-            "HH 12bit 6.mp3",
-            "HH 12bit 7.mp3",
-            "HH 12bit 8.mp3",
-            "HH 12bit 9.mp3",
-            "HH 12bit.mp3",
-            "HH 13.mp3",
-            "HH 14.mp3",
-            "HH 15.mp3",
-            "HH 16.mp3",
-            "HH 17.mp3",
-            "HH 18.mp3",
-            "HH 19.mp3",
-            "HH 2.mp3",
-            "HH 20.mp3",
-            "HH 3.mp3",
-            "HH 4.mp3",
-            "HH 5.mp3",
-            "HH 6.mp3",
-            "HH 7.mp3",
-            "HH 8.mp3",
-            "HH 9.mp3",
-            "HH dirty 10.mp3",
-            "HH dirty 11.mp3",
-            "HH dirty 12.mp3",
-            "HH dirty 13.mp3",
-            "HH dirty 2.mp3",
-            "HH dirty 3.mp3",
-            "HH dirty 4.mp3",
-            "HH dirty 5.mp3",
-            "HH dirty 6.mp3",
-            "HH dirty 7.mp3",
-            "HH dirty 8.mp3",
-            "HH dirty 9.mp3"
-          ]
-        },
-        {
-          "id": "open-hat",
-          "name": "04-Open Hat",
-          "displayName": "Open Hat",
-          "samples": [
-            "Ohh 10.mp3",
-            "Ohh 11.mp3",
-            "Ohh 12.mp3",
-            "Ohh 13.mp3",
-            "Ohh 14.mp3",
-            "Ohh 15.mp3",
-            "Ohh 16.mp3",
-            "Ohh 17.mp3",
-            "Ohh 18.mp3",
-            "Ohh 19.mp3",
-            "Ohh 2.mp3",
-            "Ohh 20.mp3",
-            "Ohh 21.mp3",
-            "Ohh 22.mp3",
-            "Ohh 23.mp3",
-            "Ohh 24.mp3",
-            "Ohh 25.mp3",
-            "Ohh 26.mp3",
-            "Ohh 3.mp3",
-            "Ohh 4.mp3",
-            "Ohh 5.mp3",
-            "Ohh 6.mp3",
-            "Ohh 7.mp3",
-            "Ohh 8.mp3",
-            "Ohh 9.mp3"
-          ]
-        },
-        {
-          "id": "cym",
-          "name": "05-Cym",
-          "displayName": "Cym",
-          "samples": [
-            " cymbal01.mp3",
-            " cymbal07.mp3",
-            " cymbal08.mp3",
-            " cymbal09.mp3",
-            " cymbal12.mp3",
-            "16A R.CUP1-S.mp3",
-            "18AMB RI.1-S.mp3",
-            "18AMB RI.2-S.mp3",
-            "18OLD KZC4-S.mp3",
-            "20BRI39A.mp3",
-            "22RID39A.mp3",
-            "Brush Crash Cymbal.mp3",
-            "Brush Ride Cymbal.mp3",
-            "Brush Ride.mp3",
-            "Brush Sizzle Crash Cymbal.mp3",
-            "CHINA.mp3",
-            "CR13.mp3",
-            "CR5.mp3",
-            "crash sweet.mp3",
-            "cymbal easy.mp3",
-            "cymbal high.mp3",
-            "cymbal long.mp3",
-            "cymbal loud 2.mp3",
-            "cymbal openhht2.mp3",
-            "cymbal silent long.mp3"
-          ]
-        },
-        {
-          "id": "perc",
-          "name": "06-Perc",
-          "displayName": "Perc",
-          "samples": [
-            "Afro drum 2.mp3",
-            "Afro drum 3.mp3",
-            "Afro drum 4.mp3",
-            "Afro drum.mp3",
-            "Antz.mp3",
-            "Bell 2.mp3",
-            "Bell 3.mp3",
-            "Bell bell 4.mp3",
-            "Bell.mp3",
-            "Bottle 1.mp3",
-            "Bottle 2.mp3",
-            "Bottle 3.mp3",
-            "Bottle 4.mp3",
-            "Cabasa short.mp3",
-            "Cabasa.mp3",
-            "Castanets 2.mp3",
-            "Castanets.mp3",
-            "Clave 2.mp3",
-            "Clave.mp3",
-            "Conga 1.mp3",
-            "Conga 10.mp3",
-            "Conga 11.mp3",
-            "Conga 12.mp3",
-            "Conga 13.mp3",
-            "Conga 14.mp3",
-            "Conga 15.mp3",
-            "Conga 2.mp3",
-            "Conga 3.mp3",
-            "Conga 4.mp3",
-            "Conga 5.mp3",
-            "Conga 6.mp3",
-            "Conga 7.mp3",
-            "Conga 8.mp3",
-            "Conga 9.mp3",
-            "Conga slide 2.mp3",
-            "Conga slide.mp3",
-            "Cowbell 2.mp3",
-            "Cowbell 3.mp3",
-            "Cowbell.mp3",
-            "Cuica 2.mp3",
-            "Cuica.mp3",
-            "Guiro 2.mp3",
-            "Guiro.mp3",
-            "Shaker 2.mp3",
-            "Shaker 3.mp3",
-            "Shaker 4.mp3",
-            "Shaker 5.mp3",
-            "Tom 1.mp3",
-            "Tom 10.mp3",
-            "Tom 11.mp3",
-            "Tom 12.mp3",
-            "Tom 13.mp3",
-            "Tom 14.mp3",
-            "Tom 15.mp3",
-            "Tom 16.mp3",
-            "Tom 17.mp3",
-            "Tom 18.mp3",
-            "Tom 19.mp3",
-            "Tom 2.mp3",
-            "Tom 20.mp3",
-            "Tom 3.mp3",
-            "Tom 4.mp3",
-            "Tom 5.mp3",
-            "Tom 6.mp3",
-            "Tom 7.mp3",
-            "Tom 8.mp3",
-            "Tom 9.mp3",
-            "belltree 1.mp3",
-            "belltree 3.mp3",
-            "belltree 4.mp3"
-          ]
-        },
-        {
-          "id": "snip",
-          "name": "07-Snip",
-          "displayName": "Snip",
-          "samples": [
-            "Fingersnap 1.mp3",
-            "Fingersnap 10.mp3",
-            "Fingersnap 11.mp3",
-            "Fingersnap 12.mp3",
-            "Fingersnap 13.mp3",
-            "Fingersnap 14.mp3",
-            "Fingersnap 15.mp3",
-            "Fingersnap 16.mp3",
-            "Fingersnap 17.mp3",
-            "Fingersnap 18.mp3",
-            "Fingersnap 19.mp3",
-            "Fingersnap 2.mp3",
-            "Fingersnap 20.mp3",
-            "Fingersnap 3.mp3",
-            "Fingersnap 4.mp3",
-            "Fingersnap 5.mp3",
-            "Fingersnap 6.mp3",
-            "Fingersnap 7.mp3",
-            "Fingersnap 8.mp3",
-            "Fingersnap 9.mp3"
-          ]
-        },
-        {
-          "id": "clap",
-          "name": "08-Clap",
-          "displayName": "Clap",
-          "samples": [
-            "Handclap 1.mp3",
-            "Handclap 10.mp3",
-            "Handclap 11.mp3",
-            "Handclap 12.mp3",
-            "Handclap 13.mp3",
-            "Handclap 14.mp3",
-            "Handclap 15.mp3",
-            "Handclap 16.mp3",
-            "Handclap 17.mp3",
-            "Handclap 18.mp3",
-            "Handclap 19.mp3",
-            "Handclap 2.mp3",
-            "Handclap 20.mp3",
-            "Handclap 3.mp3",
-            "Handclap 4.mp3",
-            "Handclap 5.mp3",
-            "Handclap 6.mp3",
-            "Handclap 7.mp3",
-            "Handclap 8.mp3",
-            "Handclap 9.mp3"
-          ]
-        }
+        "01-KICK",
+        "02-SNARE",
+        "03-HI-HAT",
+        "04-OPEN",
+        "05-CYM",
+        "06-PERC",
+        "07-SNIP",
+        "08-CLAP"
       ]
     },
     {
-      "id": "ill-will-vol-3",
-      "name": "I.L.L. Will - Drumsound Pack Vol. 3",
-      "description": "Professional drum samples - I.L.L. Will - Drumsound Pack Vol. 3",
-      "folderName": "I.L.L. Will - Drumsound Pack Vol. 3",
-      "coverImage": "ILLWILL-Drum-Kit-Vol-3.jpg",
+      "id": "pack3",
+      "name": "Pack Vol. 3",
+      "description": "I.L.L. Will Drumsound Pack Volume 3 - Advanced drum samples",
+      "coverImage": "/sample-packs-mp3/Pack_Vol_3/ILLWILL-Drum-Kit-Vol-3.jpg",
+      "folderName": "Pack_Vol_3",
       "instruments": [
+        "01-KICK",
+        "02-SNARE",
+        "03-HI-HAT",
+        "04-OPEN",
+        "05-CYM",
+        "06-PERC",
+        "07-SNIP",
+        "08-CLAP"
+      ]
+    }
+  ],
+  "instruments": {
+    "Pack_Vol_1": [
+      "01-KICK",
+      "02-SNARE",
+      "03-HI-HAT",
+      "04-OPEN",
+      "05-RIDE",
+      "06-CLAP",
+      "07-PERC",
+      "08-CONGA"
+    ],
+    "Pack_Vol_2": [
+      "01-KICK",
+      "02-SNARE",
+      "03-HI-HAT",
+      "04-OPEN",
+      "05-CYM",
+      "06-PERC",
+      "07-SNIP",
+      "08-CLAP"
+    ],
+    "Pack_Vol_3": [
+      "01-KICK",
+      "02-SNARE",
+      "03-HI-HAT",
+      "04-OPEN",
+      "05-CYM",
+      "06-PERC",
+      "07-SNIP",
+      "08-CLAP"
+    ]
+  },
+  "samples": {
+    "Pack_Vol_1": {
+      "01-KICK": [
         {
-          "id": "kick",
-          "name": "01-Kick",
-          "displayName": "Kick",
-          "samples": [
-            "Bass Drum 808 long.mp3",
-            "Bass Drum 808 short filter.mp3",
-            "Bass Drum big shorty 10.mp3",
-            "Bass Drum big shorty 11.mp3",
-            "Bass Drum big shorty 12.mp3",
-            "Bass Drum big shorty 13.mp3",
-            "Bass Drum big shorty 14.mp3",
-            "Bass Drum big shorty 15.mp3",
-            "Bass Drum big shorty 2.mp3",
-            "Bass Drum big shorty 3.mp3",
-            "Bass Drum big shorty 4.mp3",
-            "Bass Drum big shorty 5.mp3",
-            "Bass Drum big shorty 6.mp3",
-            "Bass Drum big shorty 7.mp3",
-            "Bass Drum big shorty 8.mp3",
-            "Bass Drum big shorty 9.mp3",
-            "Bass Drum big shorty.mp3",
-            "Bass Drum direct dirty.mp3",
-            "Bass Drum filter.mp3",
-            "Bass Drum hh 2.mp3",
-            "Bass Drum hh.mp3",
-            "Bass Drum mighty 2.mp3",
-            "Bass Drum mighty clear 2.mp3",
-            "Bass Drum mighty clear.mp3",
-            "Bass Drum mighty.mp3",
-            "Bass Drum old - 808.mp3",
-            "Bass Drum old - mighty 10.mp3",
-            "Bass Drum old - mighty 11.mp3",
-            "Bass Drum old - mighty 12.mp3",
-            "Bass Drum old - mighty 13.mp3",
-            "Bass Drum old - mighty 14.mp3",
-            "Bass Drum old - mighty 15.mp3",
-            "Bass Drum old - mighty 16.mp3",
-            "Bass Drum old - mighty 17.mp3",
-            "Bass Drum old - mighty 18.mp3",
-            "Bass Drum old - mighty 19.mp3",
-            "Bass Drum old - mighty 2.mp3",
-            "Bass Drum old - mighty 20.mp3",
-            "Bass Drum old - mighty 21.mp3",
-            "Bass Drum old - mighty 22.mp3",
-            "Bass Drum old - mighty 3.mp3",
-            "Bass Drum old - mighty 4.mp3",
-            "Bass Drum old - mighty 5.mp3",
-            "Bass Drum old - mighty 6.mp3",
-            "Bass Drum old - mighty 7.mp3",
-            "Bass Drum old - mighty 8.mp3",
-            "Bass Drum old - mighty 9.mp3",
-            "Bass Drum old - mighty.mp3",
-            "Bass Drum old - punchy 2.mp3",
-            "Bass Drum old - punchy.mp3"
-          ]
+          "name": "Kick1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick1.mp3"
         },
         {
-          "id": "snare",
-          "name": "02-Snare",
-          "displayName": "Snare",
-          "samples": [
-            "Snare Poppie 2.mp3",
-            "Snare Poppie.mp3",
-            "Snare Rotten loud.mp3",
-            "Snare Rotten short.mp3",
-            "Snare Short&loud.mp3",
-            "Snare Short&thin.mp3",
-            "Snare Short.mp3",
-            "Snare Smooth 2.mp3",
-            "Snare Smooth&thick.mp3",
-            "Snare Smooth.mp3",
-            "Snare old&short.mp3",
-            "Snare piccolo 2.mp3",
-            "Snare piccolo 3.mp3",
-            "Snare piccolo high.mp3",
-            "Snare piccolo.mp3",
-            "Snare rolly.mp3",
-            "Snare rusty 2.mp3",
-            "Snare rusty.mp3",
-            "Snare schepper 2.mp3",
-            "Snare schepper 3.mp3",
-            "Snare schepper.mp3",
-            "Snare slappy wide.mp3",
-            "Snare slappy.mp3",
-            "Snare soft&hard.mp3",
-            "Snare thick&bassy.mp3",
-            "Snare thick&snappy 2.mp3",
-            "Snare thick&snappy.mp3",
-            "Snare thick&thin.mp3",
-            "Snare thick.mp3",
-            "Snare thicky.mp3",
-            "Snare thin.mp3",
-            "Snare wide 2.mp3",
-            "Snare wide 3.mp3",
-            "Snare wide.mp3",
-            "Snare woody 2.mp3",
-            "Snare woody 3.mp3",
-            "Snare woody 4.mp3",
-            "Snare woody Bass.mp3",
-            "Snare woody hard 3.mp3",
-            "Snare woody hard.mp3",
-            "Snare woody high 2.mp3",
-            "Snare woody high.mp3",
-            "Snare woody inyoface.mp3",
-            "Snare woody long.mp3",
-            "Snare woody slap 2.mp3",
-            "Snare woody slap sshort.mp3",
-            "Snare woody slap.mp3",
-            "Snare woody tail.mp3",
-            "Snare woody&short.mp3",
-            "Snare woody.mp3",
-            "Snare_Rimshot 26.mp3",
-            "Snare_Rimshot 27.mp3",
-            "Snare_Rimshot 28.mp3",
-            "Snare_Rimshot 29.mp3",
-            "Snare_Rimshot 30.mp3",
-            "Snare_Rimshot 31.mp3",
-            "Snare_Rimshot 32.mp3",
-            "Snare_Rimshot 33.mp3",
-            "Snare_Rimshot 34.mp3",
-            "Snare_Rimshot 35.mp3",
-            "Snare_Rimshot 36.mp3",
-            "Snare_Rimshot 37.mp3",
-            "Snare_Rimshot 38.mp3",
-            "Snare_Rimshot 39.mp3",
-            "Snare_Rimshot 40.mp3",
-            "Snare_Rimshot 41.mp3",
-            "Snare_Rimshot 42.mp3",
-            "Snare_Rimshot 43.mp3",
-            "Snare_Rimshot 44.mp3",
-            "Snare_Rimshot 45.mp3",
-            "Snare_Rimshot 46.mp3",
-            "Snare_Rimshot 47.mp3",
-            "Snare_Rimshot 48.mp3",
-            "Snare_Rimshot 49.mp3",
-            "Snare_Rimshot 50.mp3"
-          ]
+          "name": "Kick10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick10.mp3"
         },
         {
-          "id": "hi-hat",
-          "name": "03-Hi Hat",
-          "displayName": "Hi Hat",
-          "samples": [
-            "HH dirty 14.mp3",
-            "HH dirty 15.mp3",
-            "HH dirty 16.mp3",
-            "HH dirty 17.mp3",
-            "HH dirty 18.mp3",
-            "HH dirty 19.mp3",
-            "HH dirty 20.mp3",
-            "HH dirty 22.mp3",
-            "HH dirty 23.mp3",
-            "HH dirty 24.mp3",
-            "HH dirty 25.mp3",
-            "HH dirty 26.mp3",
-            "HH dirty 27.mp3",
-            "HH dirty 28.mp3",
-            "HH dirty 29.mp3",
-            "HH dirty 30.mp3",
-            "HH dirty 31.mp3",
-            "HH dirty 32.mp3",
-            "HH dirty 33.mp3",
-            "HH dirty 34.mp3",
-            "HH dirty.mp3",
-            "HH short 10.mp3",
-            "HH short 11.mp3",
-            "HH short 12.mp3",
-            "HH short 13.mp3",
-            "HH short 14.mp3",
-            "HH short 15.mp3",
-            "HH short 16.mp3",
-            "HH short 17.mp3",
-            "HH short 18.mp3",
-            "HH short 19.mp3",
-            "HH short 2.mp3",
-            "HH short 3.mp3",
-            "HH short 4.mp3",
-            "HH short 5.mp3",
-            "HH short 6.mp3",
-            "HH short 7.mp3",
-            "HH short 8.mp3",
-            "HH short 9.mp3",
-            "HH short.mp3",
-            "HH thick 2.mp3",
-            "HH thick 3.mp3",
-            "HH thick 4.mp3",
-            "HH thick 5.mp3",
-            "HH thick 6.mp3",
-            "HH thick 7.mp3",
-            "HH thick.mp3",
-            "HH very short.mp3",
-            "HH woody 2.mp3",
-            "HH woody.mp3"
-          ]
+          "name": "Kick11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick11.mp3"
         },
         {
-          "id": "open-hat",
-          "name": "04-Open Hat",
-          "displayName": "Open Hat",
-          "samples": [
-            "Ohh dirty 1.mp3",
-            "Ohh long 2.mp3",
-            "Ohh long.mp3",
-            "Ohh raw 10.mp3",
-            "Ohh raw 11 long.mp3",
-            "Ohh raw 12.mp3",
-            "Ohh raw 2.mp3",
-            "Ohh raw 3 long.mp3",
-            "Ohh raw 4 long.mp3",
-            "Ohh raw 5.mp3",
-            "Ohh raw 6.mp3",
-            "Ohh raw 7.mp3",
-            "Ohh raw 8.mp3",
-            "Ohh raw 9.mp3",
-            "Ohh raw.mp3",
-            "Ohh short 2.mp3",
-            "Ohh short 3.mp3",
-            "Ohh short 4.mp3",
-            "Ohh short 5.mp3",
-            "Ohh short 6.mp3",
-            "Ohh short 7.mp3",
-            "Ohh short 8.mp3",
-            "Ohh short 9.mp3",
-            "Ohh short.mp3",
-            "Ohh.mp3"
-          ]
+          "name": "Kick12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick12.mp3"
         },
         {
-          "id": "cym",
-          "name": "05-Cym",
-          "displayName": "Cym",
-          "samples": [
-            "CYMBAL01.mp3",
-            "CYMBAL07.mp3",
-            "CYMBAL08.mp3",
-            "CYMBAL09.mp3",
-            "CYMBAL12.mp3",
-            "CymRide.mp3",
-            "D4CYMB29.mp3",
-            "D4CYMB30.mp3",
-            "D4CYMB31.mp3",
-            "D4CYMB33.mp3",
-            "D4CYMB34.mp3",
-            "D4CYMB35.mp3",
-            "D4CYMB36.mp3",
-            "D4CYMB37.mp3",
-            "M20 RIDE2.mp3",
-            "MG RIDE2.mp3",
-            "cymbal silent1.mp3",
-            "cymbal02.mp3",
-            "cymbal03.mp3",
-            "cymbal04.mp3",
-            "cymbal05.mp3",
-            "cymbal06.mp3",
-            "cymbal10.mp3",
-            "cymbal11.mp3",
-            "hand cymbal.mp3"
-          ]
+          "name": "Kick13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick13.mp3"
         },
         {
-          "id": "perc",
-          "name": "06-Perc",
-          "displayName": "Perc",
-          "samples": [
-            "Shaker 10.mp3",
-            "Shaker 11.mp3",
-            "Shaker 12.mp3",
-            "Shaker 13.mp3",
-            "Shaker 14.mp3",
-            "Shaker 15.mp3",
-            "Shaker 16.mp3",
-            "Shaker 6.mp3",
-            "Shaker 7.mp3",
-            "Shaker 8.mp3",
-            "Shaker 9.mp3",
-            "Shaker short.mp3",
-            "Shaker slide.mp3",
-            "Shaker.mp3",
-            "Shakerlike.mp3",
-            "Sleight bells 2.mp3",
-            "Sleight bells 3.mp3",
-            "Sleight bells 4.mp3",
-            "Sleight bells.mp3",
-            "Tamborine short 2.mp3",
-            "Tamborine short 3.mp3",
-            "Tamborine short.mp3",
-            "Timbale high.mp3",
-            "Timbale higher.mp3",
-            "Timpani 1.mp3",
-            "Timpani 2.mp3",
-            "Timpani 3.mp3",
-            "Timpani 4 low.mp3",
-            "Timpani 5.mp3",
-            "Timpani 6.mp3",
-            "Timpani slide.mp3",
-            "Timpani.mp3",
-            "Tom 21.mp3",
-            "Tom 22.mp3",
-            "Tom 23.mp3",
-            "Tom Barry 2.mp3",
-            "Tom Barry 3.mp3",
-            "Tom Barry 4.mp3",
-            "Tom Barry 5.mp3",
-            "Tom Barry.mp3",
-            "Tom dry 1.mp3",
-            "Tom dry 2.mp3",
-            "Tom dry 3.mp3",
-            "Tom dry 4.mp3",
-            "Tom even lower.mp3",
-            "Tom high 2.mp3",
-            "Tom high 3.mp3",
-            "Tom high.mp3",
-            "Tom low 2.mp3",
-            "Tom low 3.mp3",
-            "Tom low.mp3",
-            "Tom very low.mp3",
-            "Triangle.mp3",
-            "Vibraslap 2.mp3",
-            "Vibraslap.mp3",
-            "Whistle.mp3",
-            "Wood.mp3",
-            "Woodstick 10.mp3",
-            "Woodstick 11.mp3",
-            "Woodstick 12.mp3",
-            "Woodstick 13.mp3",
-            "Woodstick 2.mp3",
-            "Woodstick 3.mp3",
-            "Woodstick 4.mp3",
-            "Woodstick 5.mp3",
-            "Woodstick 6.mp3",
-            "Woodstick 7.mp3",
-            "Woodstick 8.mp3",
-            "Woodstick 9.mp3",
-            "Woodstick.mp3"
-          ]
+          "name": "Kick14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick14.mp3"
         },
         {
-          "id": "snip",
-          "name": "07-snip",
-          "displayName": "Snip",
-          "samples": [
-            "Fingersnap 21.mp3",
-            "Fingersnap 22.mp3",
-            "Fingersnap 23.mp3",
-            "Fingersnap 24.mp3",
-            "Fingersnap 25.mp3",
-            "Fingersnap 26.mp3",
-            "Fingersnap 27.mp3",
-            "Fingersnap 28.mp3",
-            "Fingersnap 29.mp3",
-            "Fingersnap 30.mp3",
-            "Fingersnap 31.mp3",
-            "Fingersnap 32.mp3",
-            "Fingersnap 33.mp3",
-            "Fingersnap 34.mp3",
-            "Fingersnap 35.mp3",
-            "Fingersnap 36.mp3",
-            "Fingersnap 37.mp3",
-            "Fingersnap 38.mp3",
-            "Fingersnap 39.mp3",
-            "Fingersnap 40.mp3"
-          ]
+          "name": "Kick15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick15.mp3"
         },
         {
-          "id": "claps",
-          "name": "08-claps",
-          "displayName": "Claps",
-          "samples": [
-            "Handclap 21.mp3",
-            "Handclap 22.mp3",
-            "Handclap 23.mp3",
-            "Handclap 24.mp3",
-            "Handclap 25.mp3",
-            "Handclap 26.mp3",
-            "Handclap 27.mp3",
-            "Handclap 28.mp3",
-            "Handclap 29.mp3",
-            "Handclap 30.mp3",
-            "Handclap 31.mp3",
-            "Handclap 32.mp3",
-            "Handclap 33.mp3",
-            "Handclap 34.mp3",
-            "Handclap 35.mp3",
-            "Handclap 36.mp3",
-            "Handclap 37.mp3",
-            "Handclap 38.mp3",
-            "Handclap 39.mp3",
-            "Handclap 40.mp3"
-          ]
+          "name": "Kick16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick16.mp3"
+        },
+        {
+          "name": "Kick2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick2.mp3"
+        },
+        {
+          "name": "Kick3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick3.mp3"
+        },
+        {
+          "name": "Kick4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick4.mp3"
+        },
+        {
+          "name": "Kick5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick5.mp3"
+        },
+        {
+          "name": "Kick6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick6.mp3"
+        },
+        {
+          "name": "Kick7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick7.mp3"
+        },
+        {
+          "name": "Kick8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick8.mp3"
+        },
+        {
+          "name": "Kick9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick9.mp3"
+        }
+      ],
+      "02-SNARE": [
+        {
+          "name": "Snare1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare1.mp3"
+        },
+        {
+          "name": "Snare10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare10.mp3"
+        },
+        {
+          "name": "Snare11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare11.mp3"
+        },
+        {
+          "name": "Snare12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare12.mp3"
+        },
+        {
+          "name": "Snare13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare13.mp3"
+        },
+        {
+          "name": "Snare14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare14.mp3"
+        },
+        {
+          "name": "Snare15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare15.mp3"
+        },
+        {
+          "name": "Snare16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare16.mp3"
+        },
+        {
+          "name": "Snare17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare17.mp3"
+        },
+        {
+          "name": "Snare18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare18.mp3"
+        },
+        {
+          "name": "Snare19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare19.mp3"
+        },
+        {
+          "name": "Snare2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare2.mp3"
+        },
+        {
+          "name": "Snare20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare20.mp3"
+        },
+        {
+          "name": "Snare21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare21.mp3"
+        },
+        {
+          "name": "Snare22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare22.mp3"
+        },
+        {
+          "name": "Snare23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare23.mp3"
+        },
+        {
+          "name": "Snare24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare24.mp3"
+        },
+        {
+          "name": "Snare3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare3.mp3"
+        },
+        {
+          "name": "Snare4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare4.mp3"
+        },
+        {
+          "name": "Snare5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare5.mp3"
+        },
+        {
+          "name": "Snare6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare6.mp3"
+        },
+        {
+          "name": "Snare7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare7.mp3"
+        },
+        {
+          "name": "Snare8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare8.mp3"
+        },
+        {
+          "name": "Snare9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare9.mp3"
+        }
+      ],
+      "03-HI-HAT": [
+        {
+          "name": "Hi-Hat1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat1.mp3"
+        },
+        {
+          "name": "Hi-Hat10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat10.mp3"
+        },
+        {
+          "name": "Hi-Hat11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat11.mp3"
+        },
+        {
+          "name": "Hi-Hat12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat12.mp3"
+        },
+        {
+          "name": "Hi-Hat13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat13.mp3"
+        },
+        {
+          "name": "Hi-Hat14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat14.mp3"
+        },
+        {
+          "name": "Hi-Hat15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat15.mp3"
+        },
+        {
+          "name": "Hi-Hat16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat16.mp3"
+        },
+        {
+          "name": "Hi-Hat2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat2.mp3"
+        },
+        {
+          "name": "Hi-Hat3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat3.mp3"
+        },
+        {
+          "name": "Hi-Hat4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat4.mp3"
+        },
+        {
+          "name": "Hi-Hat5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat5.mp3"
+        },
+        {
+          "name": "Hi-Hat6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat6.mp3"
+        },
+        {
+          "name": "Hi-Hat7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat7.mp3"
+        },
+        {
+          "name": "Hi-Hat8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat8.mp3"
+        },
+        {
+          "name": "Hi-Hat9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat9.mp3"
+        }
+      ],
+      "04-OPEN": [
+        {
+          "name": "Open1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open1.mp3"
+        },
+        {
+          "name": "Open2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open2.mp3"
+        },
+        {
+          "name": "Open3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open3.mp3"
+        },
+        {
+          "name": "Open4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open4.mp3"
+        },
+        {
+          "name": "Open5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open5.mp3"
+        },
+        {
+          "name": "Open6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open6.mp3"
+        },
+        {
+          "name": "Open7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open7.mp3"
+        },
+        {
+          "name": "Open8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open8.mp3"
+        }
+      ],
+      "05-RIDE": [
+        {
+          "name": "Ride1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride1.mp3"
+        },
+        {
+          "name": "Ride2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride2.mp3"
+        },
+        {
+          "name": "Ride3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride3.mp3"
+        },
+        {
+          "name": "Ride4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride4.mp3"
+        },
+        {
+          "name": "Ride5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride5.mp3"
+        },
+        {
+          "name": "Ride6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride6.mp3"
+        },
+        {
+          "name": "Ride7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride7.mp3"
+        },
+        {
+          "name": "Ride8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride8.mp3"
+        }
+      ],
+      "06-CLAP": [
+        {
+          "name": "Clap1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap1.mp3"
+        },
+        {
+          "name": "Clap2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap2.mp3"
+        },
+        {
+          "name": "Clap3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap3.mp3"
+        },
+        {
+          "name": "Clap4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap4.mp3"
+        },
+        {
+          "name": "Clap5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap5.mp3"
+        },
+        {
+          "name": "Clap6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap6.mp3"
+        },
+        {
+          "name": "Clap7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap7.mp3"
+        },
+        {
+          "name": "Clap8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap8.mp3"
+        }
+      ],
+      "07-PERC": [
+        {
+          "name": "perc1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc1.mp3"
+        },
+        {
+          "name": "perc10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc10.mp3"
+        },
+        {
+          "name": "perc11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc11.mp3"
+        },
+        {
+          "name": "perc12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc12.mp3"
+        },
+        {
+          "name": "perc13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc13.mp3"
+        },
+        {
+          "name": "perc14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc14.mp3"
+        },
+        {
+          "name": "perc15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc15.mp3"
+        },
+        {
+          "name": "perc16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc16.mp3"
+        },
+        {
+          "name": "perc17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc17.mp3"
+        },
+        {
+          "name": "perc18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc18.mp3"
+        },
+        {
+          "name": "perc2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc2.mp3"
+        },
+        {
+          "name": "perc3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc3.mp3"
+        },
+        {
+          "name": "perc4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc4.mp3"
+        },
+        {
+          "name": "perc5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc5.mp3"
+        },
+        {
+          "name": "perc6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc6.mp3"
+        },
+        {
+          "name": "perc7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc7.mp3"
+        },
+        {
+          "name": "perc8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc8.mp3"
+        },
+        {
+          "name": "perc9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/07-PERC/perc9.mp3"
+        }
+      ],
+      "08-CONGA": [
+        {
+          "name": "Conga1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/08-CONGA/Conga1.mp3"
+        },
+        {
+          "name": "Conga2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/08-CONGA/Conga2.mp3"
+        },
+        {
+          "name": "Conga3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/08-CONGA/Conga3.mp3"
+        },
+        {
+          "name": "Conga4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/08-CONGA/Conga4.mp3"
+        },
+        {
+          "name": "Conga5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/08-CONGA/Conga5.mp3"
+        },
+        {
+          "name": "Conga6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_1/08-CONGA/Conga6.mp3"
+        }
+      ]
+    },
+    "Pack_Vol_2": {
+      "01-KICK": [
+        {
+          "name": "Kick1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick1.mp3"
+        },
+        {
+          "name": "Kick10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick10.mp3"
+        },
+        {
+          "name": "Kick11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick11.mp3"
+        },
+        {
+          "name": "Kick12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick12.mp3"
+        },
+        {
+          "name": "Kick13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick13.mp3"
+        },
+        {
+          "name": "Kick14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick14.mp3"
+        },
+        {
+          "name": "Kick15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick15.mp3"
+        },
+        {
+          "name": "Kick16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick16.mp3"
+        },
+        {
+          "name": "Kick17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick17.mp3"
+        },
+        {
+          "name": "Kick18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick18.mp3"
+        },
+        {
+          "name": "Kick19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick19.mp3"
+        },
+        {
+          "name": "Kick2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick2.mp3"
+        },
+        {
+          "name": "Kick20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick20.mp3"
+        },
+        {
+          "name": "Kick21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick21.mp3"
+        },
+        {
+          "name": "Kick22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick22.mp3"
+        },
+        {
+          "name": "Kick23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick23.mp3"
+        },
+        {
+          "name": "Kick24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick24.mp3"
+        },
+        {
+          "name": "Kick25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick25.mp3"
+        },
+        {
+          "name": "Kick26.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick26.mp3"
+        },
+        {
+          "name": "Kick27.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick27.mp3"
+        },
+        {
+          "name": "Kick28.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick28.mp3"
+        },
+        {
+          "name": "Kick29.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick29.mp3"
+        },
+        {
+          "name": "Kick3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick3.mp3"
+        },
+        {
+          "name": "Kick30.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick30.mp3"
+        },
+        {
+          "name": "Kick31.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick31.mp3"
+        },
+        {
+          "name": "Kick32.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick32.mp3"
+        },
+        {
+          "name": "Kick33.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick33.mp3"
+        },
+        {
+          "name": "Kick34.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick34.mp3"
+        },
+        {
+          "name": "Kick35.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick35.mp3"
+        },
+        {
+          "name": "Kick36.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick36.mp3"
+        },
+        {
+          "name": "Kick37.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick37.mp3"
+        },
+        {
+          "name": "Kick38.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick38.mp3"
+        },
+        {
+          "name": "Kick39.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick39.mp3"
+        },
+        {
+          "name": "Kick4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick4.mp3"
+        },
+        {
+          "name": "Kick40.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick40.mp3"
+        },
+        {
+          "name": "Kick41.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick41.mp3"
+        },
+        {
+          "name": "Kick42.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick42.mp3"
+        },
+        {
+          "name": "Kick43.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick43.mp3"
+        },
+        {
+          "name": "Kick44.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick44.mp3"
+        },
+        {
+          "name": "Kick45.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick45.mp3"
+        },
+        {
+          "name": "Kick46.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick46.mp3"
+        },
+        {
+          "name": "Kick47.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick47.mp3"
+        },
+        {
+          "name": "Kick48.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick48.mp3"
+        },
+        {
+          "name": "Kick49.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick49.mp3"
+        },
+        {
+          "name": "Kick5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick5.mp3"
+        },
+        {
+          "name": "Kick50.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick50.mp3"
+        },
+        {
+          "name": "Kick6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick6.mp3"
+        },
+        {
+          "name": "Kick7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick7.mp3"
+        },
+        {
+          "name": "Kick8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick8.mp3"
+        },
+        {
+          "name": "Kick9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick9.mp3"
+        }
+      ],
+      "02-SNARE": [
+        {
+          "name": "Snare1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare1.mp3"
+        },
+        {
+          "name": "Snare10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare10.mp3"
+        },
+        {
+          "name": "Snare11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare11.mp3"
+        },
+        {
+          "name": "Snare12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare12.mp3"
+        },
+        {
+          "name": "Snare13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare13.mp3"
+        },
+        {
+          "name": "Snare14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare14.mp3"
+        },
+        {
+          "name": "Snare15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare15.mp3"
+        },
+        {
+          "name": "Snare16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare16.mp3"
+        },
+        {
+          "name": "Snare17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare17.mp3"
+        },
+        {
+          "name": "Snare18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare18.mp3"
+        },
+        {
+          "name": "Snare19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare19.mp3"
+        },
+        {
+          "name": "Snare2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare2.mp3"
+        },
+        {
+          "name": "Snare20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare20.mp3"
+        },
+        {
+          "name": "Snare21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare21.mp3"
+        },
+        {
+          "name": "Snare22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare22.mp3"
+        },
+        {
+          "name": "Snare23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare23.mp3"
+        },
+        {
+          "name": "Snare24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare24.mp3"
+        },
+        {
+          "name": "Snare25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare25.mp3"
+        },
+        {
+          "name": "Snare26.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare26.mp3"
+        },
+        {
+          "name": "Snare27.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare27.mp3"
+        },
+        {
+          "name": "Snare28.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare28.mp3"
+        },
+        {
+          "name": "Snare29.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare29.mp3"
+        },
+        {
+          "name": "Snare3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare3.mp3"
+        },
+        {
+          "name": "Snare30.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare30.mp3"
+        },
+        {
+          "name": "Snare31.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare31.mp3"
+        },
+        {
+          "name": "Snare32.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare32.mp3"
+        },
+        {
+          "name": "Snare33.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare33.mp3"
+        },
+        {
+          "name": "Snare34.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare34.mp3"
+        },
+        {
+          "name": "Snare35.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare35.mp3"
+        },
+        {
+          "name": "Snare36.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare36.mp3"
+        },
+        {
+          "name": "Snare37.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare37.mp3"
+        },
+        {
+          "name": "Snare38.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare38.mp3"
+        },
+        {
+          "name": "Snare39.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare39.mp3"
+        },
+        {
+          "name": "Snare4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare4.mp3"
+        },
+        {
+          "name": "Snare40.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare40.mp3"
+        },
+        {
+          "name": "Snare41.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare41.mp3"
+        },
+        {
+          "name": "Snare42.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare42.mp3"
+        },
+        {
+          "name": "Snare43.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare43.mp3"
+        },
+        {
+          "name": "Snare44.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare44.mp3"
+        },
+        {
+          "name": "Snare45.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare45.mp3"
+        },
+        {
+          "name": "Snare46.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare46.mp3"
+        },
+        {
+          "name": "Snare47.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare47.mp3"
+        },
+        {
+          "name": "Snare48.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare48.mp3"
+        },
+        {
+          "name": "Snare49.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare49.mp3"
+        },
+        {
+          "name": "Snare5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare5.mp3"
+        },
+        {
+          "name": "Snare50.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare50.mp3"
+        },
+        {
+          "name": "Snare51.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare51.mp3"
+        },
+        {
+          "name": "Snare52.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare52.mp3"
+        },
+        {
+          "name": "Snare53.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare53.mp3"
+        },
+        {
+          "name": "Snare54.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare54.mp3"
+        },
+        {
+          "name": "Snare55.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare55.mp3"
+        },
+        {
+          "name": "Snare56.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare56.mp3"
+        },
+        {
+          "name": "Snare57.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare57.mp3"
+        },
+        {
+          "name": "Snare58.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare58.mp3"
+        },
+        {
+          "name": "Snare59.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare59.mp3"
+        },
+        {
+          "name": "Snare6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare6.mp3"
+        },
+        {
+          "name": "Snare60.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare60.mp3"
+        },
+        {
+          "name": "Snare61.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare61.mp3"
+        },
+        {
+          "name": "Snare62.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare62.mp3"
+        },
+        {
+          "name": "Snare63.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare63.mp3"
+        },
+        {
+          "name": "Snare64.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare64.mp3"
+        },
+        {
+          "name": "Snare65.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare65.mp3"
+        },
+        {
+          "name": "Snare66.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare66.mp3"
+        },
+        {
+          "name": "Snare67.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare67.mp3"
+        },
+        {
+          "name": "Snare68.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare68.mp3"
+        },
+        {
+          "name": "Snare69.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare69.mp3"
+        },
+        {
+          "name": "Snare7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare7.mp3"
+        },
+        {
+          "name": "Snare70.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare70.mp3"
+        },
+        {
+          "name": "Snare71.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare71.mp3"
+        },
+        {
+          "name": "Snare72.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare72.mp3"
+        },
+        {
+          "name": "Snare73.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare73.mp3"
+        },
+        {
+          "name": "Snare74.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare74.mp3"
+        },
+        {
+          "name": "Snare75.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare75.mp3"
+        },
+        {
+          "name": "Snare8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare8.mp3"
+        },
+        {
+          "name": "Snare9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare9.mp3"
+        }
+      ],
+      "03-HI-HAT": [
+        {
+          "name": "Hi-Hat1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat1.mp3"
+        },
+        {
+          "name": "Hi-Hat10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat10.mp3"
+        },
+        {
+          "name": "Hi-Hat11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat11.mp3"
+        },
+        {
+          "name": "Hi-Hat12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat12.mp3"
+        },
+        {
+          "name": "Hi-Hat13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat13.mp3"
+        },
+        {
+          "name": "Hi-Hat14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat14.mp3"
+        },
+        {
+          "name": "Hi-Hat15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat15.mp3"
+        },
+        {
+          "name": "Hi-Hat16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat16.mp3"
+        },
+        {
+          "name": "Hi-Hat17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat17.mp3"
+        },
+        {
+          "name": "Hi-Hat18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat18.mp3"
+        },
+        {
+          "name": "Hi-Hat19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat19.mp3"
+        },
+        {
+          "name": "Hi-Hat2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat2.mp3"
+        },
+        {
+          "name": "Hi-Hat20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat20.mp3"
+        },
+        {
+          "name": "Hi-Hat21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat21.mp3"
+        },
+        {
+          "name": "Hi-Hat22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat22.mp3"
+        },
+        {
+          "name": "Hi-Hat23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat23.mp3"
+        },
+        {
+          "name": "Hi-Hat24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat24.mp3"
+        },
+        {
+          "name": "Hi-Hat25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat25.mp3"
+        },
+        {
+          "name": "Hi-Hat26.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat26.mp3"
+        },
+        {
+          "name": "Hi-Hat27.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat27.mp3"
+        },
+        {
+          "name": "Hi-Hat28.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat28.mp3"
+        },
+        {
+          "name": "Hi-Hat29.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat29.mp3"
+        },
+        {
+          "name": "Hi-Hat3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat3.mp3"
+        },
+        {
+          "name": "Hi-Hat30.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat30.mp3"
+        },
+        {
+          "name": "Hi-Hat31.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat31.mp3"
+        },
+        {
+          "name": "Hi-Hat32.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat32.mp3"
+        },
+        {
+          "name": "Hi-Hat33.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat33.mp3"
+        },
+        {
+          "name": "Hi-Hat34.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat34.mp3"
+        },
+        {
+          "name": "Hi-Hat35.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat35.mp3"
+        },
+        {
+          "name": "Hi-Hat36.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat36.mp3"
+        },
+        {
+          "name": "Hi-Hat37.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat37.mp3"
+        },
+        {
+          "name": "Hi-Hat38.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat38.mp3"
+        },
+        {
+          "name": "Hi-Hat39.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat39.mp3"
+        },
+        {
+          "name": "Hi-Hat4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat4.mp3"
+        },
+        {
+          "name": "Hi-Hat40.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat40.mp3"
+        },
+        {
+          "name": "Hi-Hat41.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat41.mp3"
+        },
+        {
+          "name": "Hi-Hat42.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat42.mp3"
+        },
+        {
+          "name": "Hi-Hat43.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat43.mp3"
+        },
+        {
+          "name": "Hi-Hat44.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat44.mp3"
+        },
+        {
+          "name": "Hi-Hat45.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat45.mp3"
+        },
+        {
+          "name": "Hi-Hat46.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat46.mp3"
+        },
+        {
+          "name": "Hi-Hat47.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat47.mp3"
+        },
+        {
+          "name": "Hi-Hat48.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat48.mp3"
+        },
+        {
+          "name": "Hi-Hat49.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat49.mp3"
+        },
+        {
+          "name": "Hi-Hat5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat5.mp3"
+        },
+        {
+          "name": "Hi-Hat50.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat50.mp3"
+        },
+        {
+          "name": "Hi-Hat6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat6.mp3"
+        },
+        {
+          "name": "Hi-Hat7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat7.mp3"
+        },
+        {
+          "name": "Hi-Hat8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat8.mp3"
+        },
+        {
+          "name": "Hi-Hat9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Hi-Hat9.mp3"
+        }
+      ],
+      "04-OPEN": [
+        {
+          "name": "Open1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open1.mp3"
+        },
+        {
+          "name": "Open10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open10.mp3"
+        },
+        {
+          "name": "Open11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open11.mp3"
+        },
+        {
+          "name": "Open12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open12.mp3"
+        },
+        {
+          "name": "Open13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open13.mp3"
+        },
+        {
+          "name": "Open14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open14.mp3"
+        },
+        {
+          "name": "Open15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open15.mp3"
+        },
+        {
+          "name": "Open16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open16.mp3"
+        },
+        {
+          "name": "Open17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open17.mp3"
+        },
+        {
+          "name": "Open18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open18.mp3"
+        },
+        {
+          "name": "Open19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open19.mp3"
+        },
+        {
+          "name": "Open2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open2.mp3"
+        },
+        {
+          "name": "Open20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open20.mp3"
+        },
+        {
+          "name": "Open21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open21.mp3"
+        },
+        {
+          "name": "Open22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open22.mp3"
+        },
+        {
+          "name": "Open23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open23.mp3"
+        },
+        {
+          "name": "Open24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open24.mp3"
+        },
+        {
+          "name": "Open25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open25.mp3"
+        },
+        {
+          "name": "Open3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open3.mp3"
+        },
+        {
+          "name": "Open4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open4.mp3"
+        },
+        {
+          "name": "Open5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open5.mp3"
+        },
+        {
+          "name": "Open6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open6.mp3"
+        },
+        {
+          "name": "Open7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open7.mp3"
+        },
+        {
+          "name": "Open8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open8.mp3"
+        },
+        {
+          "name": "Open9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/04-OPEN/Open9.mp3"
+        }
+      ],
+      "05-CYM": [
+        {
+          "name": "Cym1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym1.mp3"
+        },
+        {
+          "name": "Cym10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym10.mp3"
+        },
+        {
+          "name": "Cym11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym11.mp3"
+        },
+        {
+          "name": "Cym12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym12.mp3"
+        },
+        {
+          "name": "Cym13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym13.mp3"
+        },
+        {
+          "name": "Cym14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym14.mp3"
+        },
+        {
+          "name": "Cym15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym15.mp3"
+        },
+        {
+          "name": "Cym16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym16.mp3"
+        },
+        {
+          "name": "Cym17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym17.mp3"
+        },
+        {
+          "name": "Cym18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym18.mp3"
+        },
+        {
+          "name": "Cym19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym19.mp3"
+        },
+        {
+          "name": "Cym2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym2.mp3"
+        },
+        {
+          "name": "Cym20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym20.mp3"
+        },
+        {
+          "name": "Cym21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym21.mp3"
+        },
+        {
+          "name": "Cym22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym22.mp3"
+        },
+        {
+          "name": "Cym23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym23.mp3"
+        },
+        {
+          "name": "Cym24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym24.mp3"
+        },
+        {
+          "name": "Cym25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym25.mp3"
+        },
+        {
+          "name": "Cym3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym3.mp3"
+        },
+        {
+          "name": "Cym4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym4.mp3"
+        },
+        {
+          "name": "Cym5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym5.mp3"
+        },
+        {
+          "name": "Cym6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym6.mp3"
+        },
+        {
+          "name": "Cym7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym7.mp3"
+        },
+        {
+          "name": "Cym8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym8.mp3"
+        },
+        {
+          "name": "Cym9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/05-CYM/Cym9.mp3"
+        }
+      ],
+      "06-PERC": [
+        {
+          "name": "Perc1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc1.mp3"
+        },
+        {
+          "name": "Perc10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc10.mp3"
+        },
+        {
+          "name": "Perc11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc11.mp3"
+        },
+        {
+          "name": "Perc12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc12.mp3"
+        },
+        {
+          "name": "Perc13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc13.mp3"
+        },
+        {
+          "name": "Perc14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc14.mp3"
+        },
+        {
+          "name": "Perc15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc15.mp3"
+        },
+        {
+          "name": "Perc16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc16.mp3"
+        },
+        {
+          "name": "Perc17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc17.mp3"
+        },
+        {
+          "name": "Perc18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc18.mp3"
+        },
+        {
+          "name": "Perc19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc19.mp3"
+        },
+        {
+          "name": "Perc2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc2.mp3"
+        },
+        {
+          "name": "Perc20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc20.mp3"
+        },
+        {
+          "name": "Perc21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc21.mp3"
+        },
+        {
+          "name": "Perc22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc22.mp3"
+        },
+        {
+          "name": "Perc23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc23.mp3"
+        },
+        {
+          "name": "Perc24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc24.mp3"
+        },
+        {
+          "name": "Perc25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc25.mp3"
+        },
+        {
+          "name": "Perc26.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc26.mp3"
+        },
+        {
+          "name": "Perc27.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc27.mp3"
+        },
+        {
+          "name": "Perc28.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc28.mp3"
+        },
+        {
+          "name": "Perc29.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc29.mp3"
+        },
+        {
+          "name": "Perc3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc3.mp3"
+        },
+        {
+          "name": "Perc30.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc30.mp3"
+        },
+        {
+          "name": "Perc31.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc31.mp3"
+        },
+        {
+          "name": "Perc32.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc32.mp3"
+        },
+        {
+          "name": "Perc33.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc33.mp3"
+        },
+        {
+          "name": "Perc34.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc34.mp3"
+        },
+        {
+          "name": "Perc35.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc35.mp3"
+        },
+        {
+          "name": "Perc36.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc36.mp3"
+        },
+        {
+          "name": "Perc37.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc37.mp3"
+        },
+        {
+          "name": "Perc38.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc38.mp3"
+        },
+        {
+          "name": "Perc39.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc39.mp3"
+        },
+        {
+          "name": "Perc4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc4.mp3"
+        },
+        {
+          "name": "Perc40.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc40.mp3"
+        },
+        {
+          "name": "Perc41.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc41.mp3"
+        },
+        {
+          "name": "Perc42.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc42.mp3"
+        },
+        {
+          "name": "Perc43.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc43.mp3"
+        },
+        {
+          "name": "Perc44.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc44.mp3"
+        },
+        {
+          "name": "Perc45.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc45.mp3"
+        },
+        {
+          "name": "Perc46.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc46.mp3"
+        },
+        {
+          "name": "Perc47.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc47.mp3"
+        },
+        {
+          "name": "Perc48.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc48.mp3"
+        },
+        {
+          "name": "Perc49.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc49.mp3"
+        },
+        {
+          "name": "Perc5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc5.mp3"
+        },
+        {
+          "name": "Perc50.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc50.mp3"
+        },
+        {
+          "name": "Perc51.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc51.mp3"
+        },
+        {
+          "name": "Perc52.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc52.mp3"
+        },
+        {
+          "name": "Perc53.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc53.mp3"
+        },
+        {
+          "name": "Perc54.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc54.mp3"
+        },
+        {
+          "name": "Perc55.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc55.mp3"
+        },
+        {
+          "name": "Perc56.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc56.mp3"
+        },
+        {
+          "name": "Perc57.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc57.mp3"
+        },
+        {
+          "name": "Perc58.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc58.mp3"
+        },
+        {
+          "name": "Perc59.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc59.mp3"
+        },
+        {
+          "name": "Perc6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc6.mp3"
+        },
+        {
+          "name": "Perc60.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc60.mp3"
+        },
+        {
+          "name": "Perc61.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc61.mp3"
+        },
+        {
+          "name": "Perc62.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc62.mp3"
+        },
+        {
+          "name": "Perc63.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc63.mp3"
+        },
+        {
+          "name": "Perc64.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc64.mp3"
+        },
+        {
+          "name": "Perc65.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc65.mp3"
+        },
+        {
+          "name": "Perc66.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc66.mp3"
+        },
+        {
+          "name": "Perc67.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc67.mp3"
+        },
+        {
+          "name": "Perc68.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc68.mp3"
+        },
+        {
+          "name": "Perc69.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc69.mp3"
+        },
+        {
+          "name": "Perc7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc7.mp3"
+        },
+        {
+          "name": "Perc70.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc70.mp3"
+        },
+        {
+          "name": "Perc8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc8.mp3"
+        },
+        {
+          "name": "Perc9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/06-PERC/Perc9.mp3"
+        }
+      ],
+      "07-SNIP": [
+        {
+          "name": "Snip1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip1.mp3"
+        },
+        {
+          "name": "Snip10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip10.mp3"
+        },
+        {
+          "name": "Snip11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip11.mp3"
+        },
+        {
+          "name": "Snip12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip12.mp3"
+        },
+        {
+          "name": "Snip13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip13.mp3"
+        },
+        {
+          "name": "Snip14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip14.mp3"
+        },
+        {
+          "name": "Snip15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip15.mp3"
+        },
+        {
+          "name": "Snip16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip16.mp3"
+        },
+        {
+          "name": "Snip17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip17.mp3"
+        },
+        {
+          "name": "Snip18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip18.mp3"
+        },
+        {
+          "name": "Snip19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip19.mp3"
+        },
+        {
+          "name": "Snip2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip2.mp3"
+        },
+        {
+          "name": "Snip20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip20.mp3"
+        },
+        {
+          "name": "Snip3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip3.mp3"
+        },
+        {
+          "name": "Snip4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip4.mp3"
+        },
+        {
+          "name": "Snip5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip5.mp3"
+        },
+        {
+          "name": "Snip6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip6.mp3"
+        },
+        {
+          "name": "Snip7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip7.mp3"
+        },
+        {
+          "name": "Snip8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip8.mp3"
+        },
+        {
+          "name": "Snip9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/07-SNIP/Snip9.mp3"
+        }
+      ],
+      "08-CLAP": [
+        {
+          "name": "Clap1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap1.mp3"
+        },
+        {
+          "name": "Clap10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap10.mp3"
+        },
+        {
+          "name": "Clap11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap11.mp3"
+        },
+        {
+          "name": "Clap12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap12.mp3"
+        },
+        {
+          "name": "Clap13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap13.mp3"
+        },
+        {
+          "name": "Clap14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap14.mp3"
+        },
+        {
+          "name": "Clap15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap15.mp3"
+        },
+        {
+          "name": "Clap16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap16.mp3"
+        },
+        {
+          "name": "Clap17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap17.mp3"
+        },
+        {
+          "name": "Clap18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap18.mp3"
+        },
+        {
+          "name": "Clap19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap19.mp3"
+        },
+        {
+          "name": "Clap2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap2.mp3"
+        },
+        {
+          "name": "Clap20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap20.mp3"
+        },
+        {
+          "name": "Clap3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap3.mp3"
+        },
+        {
+          "name": "Clap4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap4.mp3"
+        },
+        {
+          "name": "Clap5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap5.mp3"
+        },
+        {
+          "name": "Clap6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap6.mp3"
+        },
+        {
+          "name": "Clap7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap7.mp3"
+        },
+        {
+          "name": "Clap8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap8.mp3"
+        },
+        {
+          "name": "Clap9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_2/08-CLAP/Clap9.mp3"
+        }
+      ]
+    },
+    "Pack_Vol_3": {
+      "01-KICK": [
+        {
+          "name": "Kick1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick1.mp3"
+        },
+        {
+          "name": "Kick10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick10.mp3"
+        },
+        {
+          "name": "Kick11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick11.mp3"
+        },
+        {
+          "name": "Kick12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick12.mp3"
+        },
+        {
+          "name": "Kick13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick13.mp3"
+        },
+        {
+          "name": "Kick14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick14.mp3"
+        },
+        {
+          "name": "Kick15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick15.mp3"
+        },
+        {
+          "name": "Kick16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick16.mp3"
+        },
+        {
+          "name": "Kick17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick17.mp3"
+        },
+        {
+          "name": "Kick18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick18.mp3"
+        },
+        {
+          "name": "Kick19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick19.mp3"
+        },
+        {
+          "name": "Kick2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick2.mp3"
+        },
+        {
+          "name": "Kick20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick20.mp3"
+        },
+        {
+          "name": "Kick21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick21.mp3"
+        },
+        {
+          "name": "Kick22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick22.mp3"
+        },
+        {
+          "name": "Kick23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick23.mp3"
+        },
+        {
+          "name": "Kick24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick24.mp3"
+        },
+        {
+          "name": "Kick25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick25.mp3"
+        },
+        {
+          "name": "Kick26.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick26.mp3"
+        },
+        {
+          "name": "Kick27.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick27.mp3"
+        },
+        {
+          "name": "Kick28.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick28.mp3"
+        },
+        {
+          "name": "Kick29.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick29.mp3"
+        },
+        {
+          "name": "Kick3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick3.mp3"
+        },
+        {
+          "name": "Kick30.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick30.mp3"
+        },
+        {
+          "name": "Kick31.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick31.mp3"
+        },
+        {
+          "name": "Kick32.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick32.mp3"
+        },
+        {
+          "name": "Kick33.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick33.mp3"
+        },
+        {
+          "name": "Kick34.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick34.mp3"
+        },
+        {
+          "name": "Kick35.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick35.mp3"
+        },
+        {
+          "name": "Kick36.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick36.mp3"
+        },
+        {
+          "name": "Kick37.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick37.mp3"
+        },
+        {
+          "name": "Kick38.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick38.mp3"
+        },
+        {
+          "name": "Kick39.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick39.mp3"
+        },
+        {
+          "name": "Kick4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick4.mp3"
+        },
+        {
+          "name": "Kick40.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick40.mp3"
+        },
+        {
+          "name": "Kick41.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick41.mp3"
+        },
+        {
+          "name": "Kick42.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick42.mp3"
+        },
+        {
+          "name": "Kick43.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick43.mp3"
+        },
+        {
+          "name": "Kick44.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick44.mp3"
+        },
+        {
+          "name": "Kick45.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick45.mp3"
+        },
+        {
+          "name": "Kick46.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick46.mp3"
+        },
+        {
+          "name": "Kick47.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick47.mp3"
+        },
+        {
+          "name": "Kick48.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick48.mp3"
+        },
+        {
+          "name": "Kick49.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick49.mp3"
+        },
+        {
+          "name": "Kick5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick5.mp3"
+        },
+        {
+          "name": "Kick50.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick50.mp3"
+        },
+        {
+          "name": "Kick6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick6.mp3"
+        },
+        {
+          "name": "Kick7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick7.mp3"
+        },
+        {
+          "name": "Kick8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick8.mp3"
+        },
+        {
+          "name": "Kick9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick9.mp3"
+        }
+      ],
+      "02-SNARE": [
+        {
+          "name": "Snare1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare1.mp3"
+        },
+        {
+          "name": "Snare10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare10.mp3"
+        },
+        {
+          "name": "Snare11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare11.mp3"
+        },
+        {
+          "name": "Snare12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare12.mp3"
+        },
+        {
+          "name": "Snare13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare13.mp3"
+        },
+        {
+          "name": "Snare14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare14.mp3"
+        },
+        {
+          "name": "Snare15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare15.mp3"
+        },
+        {
+          "name": "Snare16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare16.mp3"
+        },
+        {
+          "name": "Snare17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare17.mp3"
+        },
+        {
+          "name": "Snare18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare18.mp3"
+        },
+        {
+          "name": "Snare19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare19.mp3"
+        },
+        {
+          "name": "Snare2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare2.mp3"
+        },
+        {
+          "name": "Snare20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare20.mp3"
+        },
+        {
+          "name": "Snare21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare21.mp3"
+        },
+        {
+          "name": "Snare22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare22.mp3"
+        },
+        {
+          "name": "Snare23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare23.mp3"
+        },
+        {
+          "name": "Snare24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare24.mp3"
+        },
+        {
+          "name": "Snare25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare25.mp3"
+        },
+        {
+          "name": "Snare26.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare26.mp3"
+        },
+        {
+          "name": "Snare27.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare27.mp3"
+        },
+        {
+          "name": "Snare28.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare28.mp3"
+        },
+        {
+          "name": "Snare29.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare29.mp3"
+        },
+        {
+          "name": "Snare3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare3.mp3"
+        },
+        {
+          "name": "Snare30.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare30.mp3"
+        },
+        {
+          "name": "Snare31.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare31.mp3"
+        },
+        {
+          "name": "Snare32.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare32.mp3"
+        },
+        {
+          "name": "Snare33.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare33.mp3"
+        },
+        {
+          "name": "Snare34.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare34.mp3"
+        },
+        {
+          "name": "Snare35.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare35.mp3"
+        },
+        {
+          "name": "Snare36.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare36.mp3"
+        },
+        {
+          "name": "Snare37.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare37.mp3"
+        },
+        {
+          "name": "Snare38.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare38.mp3"
+        },
+        {
+          "name": "Snare39.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare39.mp3"
+        },
+        {
+          "name": "Snare4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare4.mp3"
+        },
+        {
+          "name": "Snare40.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare40.mp3"
+        },
+        {
+          "name": "Snare41.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare41.mp3"
+        },
+        {
+          "name": "Snare42.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare42.mp3"
+        },
+        {
+          "name": "Snare43.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare43.mp3"
+        },
+        {
+          "name": "Snare44.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare44.mp3"
+        },
+        {
+          "name": "Snare45.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare45.mp3"
+        },
+        {
+          "name": "Snare46.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare46.mp3"
+        },
+        {
+          "name": "Snare47.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare47.mp3"
+        },
+        {
+          "name": "Snare48.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare48.mp3"
+        },
+        {
+          "name": "Snare49.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare49.mp3"
+        },
+        {
+          "name": "Snare5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare5.mp3"
+        },
+        {
+          "name": "Snare50.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare50.mp3"
+        },
+        {
+          "name": "Snare51.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare51.mp3"
+        },
+        {
+          "name": "Snare52.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare52.mp3"
+        },
+        {
+          "name": "Snare53.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare53.mp3"
+        },
+        {
+          "name": "Snare54.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare54.mp3"
+        },
+        {
+          "name": "Snare55.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare55.mp3"
+        },
+        {
+          "name": "Snare56.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare56.mp3"
+        },
+        {
+          "name": "Snare57.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare57.mp3"
+        },
+        {
+          "name": "Snare58.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare58.mp3"
+        },
+        {
+          "name": "Snare59.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare59.mp3"
+        },
+        {
+          "name": "Snare6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare6.mp3"
+        },
+        {
+          "name": "Snare60.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare60.mp3"
+        },
+        {
+          "name": "Snare61.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare61.mp3"
+        },
+        {
+          "name": "Snare62.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare62.mp3"
+        },
+        {
+          "name": "Snare63.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare63.mp3"
+        },
+        {
+          "name": "Snare64.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare64.mp3"
+        },
+        {
+          "name": "Snare65.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare65.mp3"
+        },
+        {
+          "name": "Snare66.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare66.mp3"
+        },
+        {
+          "name": "Snare67.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare67.mp3"
+        },
+        {
+          "name": "Snare68.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare68.mp3"
+        },
+        {
+          "name": "Snare69.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare69.mp3"
+        },
+        {
+          "name": "Snare7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare7.mp3"
+        },
+        {
+          "name": "Snare70.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare70.mp3"
+        },
+        {
+          "name": "Snare71.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare71.mp3"
+        },
+        {
+          "name": "Snare72.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare72.mp3"
+        },
+        {
+          "name": "Snare73.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare73.mp3"
+        },
+        {
+          "name": "Snare74.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare74.mp3"
+        },
+        {
+          "name": "Snare75.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare75.mp3"
+        },
+        {
+          "name": "Snare8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare8.mp3"
+        },
+        {
+          "name": "Snare9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare9.mp3"
+        }
+      ],
+      "03-HI-HAT": [
+        {
+          "name": "Hi-Hat1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat1.mp3"
+        },
+        {
+          "name": "Hi-Hat10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat10.mp3"
+        },
+        {
+          "name": "Hi-Hat11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat11.mp3"
+        },
+        {
+          "name": "Hi-Hat12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat12.mp3"
+        },
+        {
+          "name": "Hi-Hat13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat13.mp3"
+        },
+        {
+          "name": "Hi-Hat14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat14.mp3"
+        },
+        {
+          "name": "Hi-Hat15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat15.mp3"
+        },
+        {
+          "name": "Hi-Hat16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat16.mp3"
+        },
+        {
+          "name": "Hi-Hat17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat17.mp3"
+        },
+        {
+          "name": "Hi-Hat18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat18.mp3"
+        },
+        {
+          "name": "Hi-Hat19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat19.mp3"
+        },
+        {
+          "name": "Hi-Hat2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat2.mp3"
+        },
+        {
+          "name": "Hi-Hat20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat20.mp3"
+        },
+        {
+          "name": "Hi-Hat21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat21.mp3"
+        },
+        {
+          "name": "Hi-Hat22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat22.mp3"
+        },
+        {
+          "name": "Hi-Hat23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat23.mp3"
+        },
+        {
+          "name": "Hi-Hat24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat24.mp3"
+        },
+        {
+          "name": "Hi-Hat25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat25.mp3"
+        },
+        {
+          "name": "Hi-Hat26.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat26.mp3"
+        },
+        {
+          "name": "Hi-Hat27.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat27.mp3"
+        },
+        {
+          "name": "Hi-Hat28.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat28.mp3"
+        },
+        {
+          "name": "Hi-Hat29.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat29.mp3"
+        },
+        {
+          "name": "Hi-Hat3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat3.mp3"
+        },
+        {
+          "name": "Hi-Hat30.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat30.mp3"
+        },
+        {
+          "name": "Hi-Hat31.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat31.mp3"
+        },
+        {
+          "name": "Hi-Hat32.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat32.mp3"
+        },
+        {
+          "name": "Hi-Hat33.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat33.mp3"
+        },
+        {
+          "name": "Hi-Hat34.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat34.mp3"
+        },
+        {
+          "name": "Hi-Hat35.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat35.mp3"
+        },
+        {
+          "name": "Hi-Hat36.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat36.mp3"
+        },
+        {
+          "name": "Hi-Hat37.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat37.mp3"
+        },
+        {
+          "name": "Hi-Hat38.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat38.mp3"
+        },
+        {
+          "name": "Hi-Hat39.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat39.mp3"
+        },
+        {
+          "name": "Hi-Hat4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat4.mp3"
+        },
+        {
+          "name": "Hi-Hat40.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat40.mp3"
+        },
+        {
+          "name": "Hi-Hat41.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat41.mp3"
+        },
+        {
+          "name": "Hi-Hat42.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat42.mp3"
+        },
+        {
+          "name": "Hi-Hat43.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat43.mp3"
+        },
+        {
+          "name": "Hi-Hat44.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat44.mp3"
+        },
+        {
+          "name": "Hi-Hat45.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat45.mp3"
+        },
+        {
+          "name": "Hi-Hat46.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat46.mp3"
+        },
+        {
+          "name": "Hi-Hat47.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat47.mp3"
+        },
+        {
+          "name": "Hi-Hat48.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat48.mp3"
+        },
+        {
+          "name": "Hi-Hat49.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat49.mp3"
+        },
+        {
+          "name": "Hi-Hat5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat5.mp3"
+        },
+        {
+          "name": "Hi-Hat50.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat50.mp3"
+        },
+        {
+          "name": "Hi-Hat6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat6.mp3"
+        },
+        {
+          "name": "Hi-Hat7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat7.mp3"
+        },
+        {
+          "name": "Hi-Hat8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat8.mp3"
+        },
+        {
+          "name": "Hi-Hat9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Hi-Hat9.mp3"
+        }
+      ],
+      "04-OPEN": [
+        {
+          "name": "Open1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open1.mp3"
+        },
+        {
+          "name": "Open10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open10.mp3"
+        },
+        {
+          "name": "Open11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open11.mp3"
+        },
+        {
+          "name": "Open12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open12.mp3"
+        },
+        {
+          "name": "Open13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open13.mp3"
+        },
+        {
+          "name": "Open14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open14.mp3"
+        },
+        {
+          "name": "Open15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open15.mp3"
+        },
+        {
+          "name": "Open16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open16.mp3"
+        },
+        {
+          "name": "Open17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open17.mp3"
+        },
+        {
+          "name": "Open18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open18.mp3"
+        },
+        {
+          "name": "Open19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open19.mp3"
+        },
+        {
+          "name": "Open2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open2.mp3"
+        },
+        {
+          "name": "Open20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open20.mp3"
+        },
+        {
+          "name": "Open21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open21.mp3"
+        },
+        {
+          "name": "Open22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open22.mp3"
+        },
+        {
+          "name": "Open23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open23.mp3"
+        },
+        {
+          "name": "Open24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open24.mp3"
+        },
+        {
+          "name": "Open25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open25.mp3"
+        },
+        {
+          "name": "Open3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open3.mp3"
+        },
+        {
+          "name": "Open4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open4.mp3"
+        },
+        {
+          "name": "Open5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open5.mp3"
+        },
+        {
+          "name": "Open6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open6.mp3"
+        },
+        {
+          "name": "Open7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open7.mp3"
+        },
+        {
+          "name": "Open8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open8.mp3"
+        },
+        {
+          "name": "Open9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/04-OPEN/Open9.mp3"
+        }
+      ],
+      "05-CYM": [
+        {
+          "name": "Cym1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym1.mp3"
+        },
+        {
+          "name": "Cym10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym10.mp3"
+        },
+        {
+          "name": "Cym11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym11.mp3"
+        },
+        {
+          "name": "Cym12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym12.mp3"
+        },
+        {
+          "name": "Cym13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym13.mp3"
+        },
+        {
+          "name": "Cym14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym14.mp3"
+        },
+        {
+          "name": "Cym15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym15.mp3"
+        },
+        {
+          "name": "Cym16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym16.mp3"
+        },
+        {
+          "name": "Cym17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym17.mp3"
+        },
+        {
+          "name": "Cym18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym18.mp3"
+        },
+        {
+          "name": "Cym19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym19.mp3"
+        },
+        {
+          "name": "Cym2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym2.mp3"
+        },
+        {
+          "name": "Cym20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym20.mp3"
+        },
+        {
+          "name": "Cym21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym21.mp3"
+        },
+        {
+          "name": "Cym22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym22.mp3"
+        },
+        {
+          "name": "Cym23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym23.mp3"
+        },
+        {
+          "name": "Cym24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym24.mp3"
+        },
+        {
+          "name": "Cym25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym25.mp3"
+        },
+        {
+          "name": "Cym3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym3.mp3"
+        },
+        {
+          "name": "Cym4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym4.mp3"
+        },
+        {
+          "name": "Cym5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym5.mp3"
+        },
+        {
+          "name": "Cym6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym6.mp3"
+        },
+        {
+          "name": "Cym7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym7.mp3"
+        },
+        {
+          "name": "Cym8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym8.mp3"
+        },
+        {
+          "name": "Cym9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/05-CYM/Cym9.mp3"
+        }
+      ],
+      "06-PERC": [
+        {
+          "name": "Perc1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc1.mp3"
+        },
+        {
+          "name": "Perc10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc10.mp3"
+        },
+        {
+          "name": "Perc11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc11.mp3"
+        },
+        {
+          "name": "Perc12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc12.mp3"
+        },
+        {
+          "name": "Perc13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc13.mp3"
+        },
+        {
+          "name": "Perc14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc14.mp3"
+        },
+        {
+          "name": "Perc15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc15.mp3"
+        },
+        {
+          "name": "Perc16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc16.mp3"
+        },
+        {
+          "name": "Perc17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc17.mp3"
+        },
+        {
+          "name": "Perc18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc18.mp3"
+        },
+        {
+          "name": "Perc19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc19.mp3"
+        },
+        {
+          "name": "Perc2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc2.mp3"
+        },
+        {
+          "name": "Perc20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc20.mp3"
+        },
+        {
+          "name": "Perc21.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc21.mp3"
+        },
+        {
+          "name": "Perc22.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc22.mp3"
+        },
+        {
+          "name": "Perc23.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc23.mp3"
+        },
+        {
+          "name": "Perc24.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc24.mp3"
+        },
+        {
+          "name": "Perc25.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc25.mp3"
+        },
+        {
+          "name": "Perc26.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc26.mp3"
+        },
+        {
+          "name": "Perc27.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc27.mp3"
+        },
+        {
+          "name": "Perc28.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc28.mp3"
+        },
+        {
+          "name": "Perc29.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc29.mp3"
+        },
+        {
+          "name": "Perc3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc3.mp3"
+        },
+        {
+          "name": "Perc30.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc30.mp3"
+        },
+        {
+          "name": "Perc31.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc31.mp3"
+        },
+        {
+          "name": "Perc32.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc32.mp3"
+        },
+        {
+          "name": "Perc33.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc33.mp3"
+        },
+        {
+          "name": "Perc34.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc34.mp3"
+        },
+        {
+          "name": "Perc35.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc35.mp3"
+        },
+        {
+          "name": "Perc36.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc36.mp3"
+        },
+        {
+          "name": "Perc37.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc37.mp3"
+        },
+        {
+          "name": "Perc38.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc38.mp3"
+        },
+        {
+          "name": "Perc39.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc39.mp3"
+        },
+        {
+          "name": "Perc4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc4.mp3"
+        },
+        {
+          "name": "Perc40.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc40.mp3"
+        },
+        {
+          "name": "Perc41.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc41.mp3"
+        },
+        {
+          "name": "Perc42.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc42.mp3"
+        },
+        {
+          "name": "Perc43.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc43.mp3"
+        },
+        {
+          "name": "Perc44.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc44.mp3"
+        },
+        {
+          "name": "Perc45.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc45.mp3"
+        },
+        {
+          "name": "Perc46.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc46.mp3"
+        },
+        {
+          "name": "Perc47.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc47.mp3"
+        },
+        {
+          "name": "Perc48.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc48.mp3"
+        },
+        {
+          "name": "Perc49.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc49.mp3"
+        },
+        {
+          "name": "Perc5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc5.mp3"
+        },
+        {
+          "name": "Perc50.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc50.mp3"
+        },
+        {
+          "name": "Perc51.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc51.mp3"
+        },
+        {
+          "name": "Perc52.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc52.mp3"
+        },
+        {
+          "name": "Perc53.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc53.mp3"
+        },
+        {
+          "name": "Perc54.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc54.mp3"
+        },
+        {
+          "name": "Perc55.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc55.mp3"
+        },
+        {
+          "name": "Perc56.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc56.mp3"
+        },
+        {
+          "name": "Perc57.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc57.mp3"
+        },
+        {
+          "name": "Perc58.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc58.mp3"
+        },
+        {
+          "name": "Perc59.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc59.mp3"
+        },
+        {
+          "name": "Perc6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc6.mp3"
+        },
+        {
+          "name": "Perc60.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc60.mp3"
+        },
+        {
+          "name": "Perc61.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc61.mp3"
+        },
+        {
+          "name": "Perc62.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc62.mp3"
+        },
+        {
+          "name": "Perc63.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc63.mp3"
+        },
+        {
+          "name": "Perc64.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc64.mp3"
+        },
+        {
+          "name": "Perc65.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc65.mp3"
+        },
+        {
+          "name": "Perc66.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc66.mp3"
+        },
+        {
+          "name": "Perc67.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc67.mp3"
+        },
+        {
+          "name": "Perc68.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc68.mp3"
+        },
+        {
+          "name": "Perc69.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc69.mp3"
+        },
+        {
+          "name": "Perc7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc7.mp3"
+        },
+        {
+          "name": "Perc70.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc70.mp3"
+        },
+        {
+          "name": "Perc8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc8.mp3"
+        },
+        {
+          "name": "Perc9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/06-PERC/Perc9.mp3"
+        }
+      ],
+      "07-SNIP": [
+        {
+          "name": "Snip1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip1.mp3"
+        },
+        {
+          "name": "Snip10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip10.mp3"
+        },
+        {
+          "name": "Snip11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip11.mp3"
+        },
+        {
+          "name": "Snip12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip12.mp3"
+        },
+        {
+          "name": "Snip13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip13.mp3"
+        },
+        {
+          "name": "Snip14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip14.mp3"
+        },
+        {
+          "name": "Snip15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip15.mp3"
+        },
+        {
+          "name": "Snip16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip16.mp3"
+        },
+        {
+          "name": "Snip17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip17.mp3"
+        },
+        {
+          "name": "Snip18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip18.mp3"
+        },
+        {
+          "name": "Snip19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip19.mp3"
+        },
+        {
+          "name": "Snip2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip2.mp3"
+        },
+        {
+          "name": "Snip20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip20.mp3"
+        },
+        {
+          "name": "Snip3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip3.mp3"
+        },
+        {
+          "name": "Snip4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip4.mp3"
+        },
+        {
+          "name": "Snip5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip5.mp3"
+        },
+        {
+          "name": "Snip6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip6.mp3"
+        },
+        {
+          "name": "Snip7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip7.mp3"
+        },
+        {
+          "name": "Snip8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip8.mp3"
+        },
+        {
+          "name": "Snip9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/07-SNIP/Snip9.mp3"
+        }
+      ],
+      "08-CLAP": [
+        {
+          "name": "Clap1.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap1.mp3"
+        },
+        {
+          "name": "Clap10.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap10.mp3"
+        },
+        {
+          "name": "Clap11.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap11.mp3"
+        },
+        {
+          "name": "Clap12.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap12.mp3"
+        },
+        {
+          "name": "Clap13.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap13.mp3"
+        },
+        {
+          "name": "Clap14.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap14.mp3"
+        },
+        {
+          "name": "Clap15.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap15.mp3"
+        },
+        {
+          "name": "Clap16.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap16.mp3"
+        },
+        {
+          "name": "Clap17.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap17.mp3"
+        },
+        {
+          "name": "Clap18.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap18.mp3"
+        },
+        {
+          "name": "Clap19.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap19.mp3"
+        },
+        {
+          "name": "Clap2.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap2.mp3"
+        },
+        {
+          "name": "Clap20.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap20.mp3"
+        },
+        {
+          "name": "Clap3.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap3.mp3"
+        },
+        {
+          "name": "Clap4.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap4.mp3"
+        },
+        {
+          "name": "Clap5.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap5.mp3"
+        },
+        {
+          "name": "Clap6.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap6.mp3"
+        },
+        {
+          "name": "Clap7.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap7.mp3"
+        },
+        {
+          "name": "Clap8.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap8.mp3"
+        },
+        {
+          "name": "Clap9.mp3",
+          "path": "/sample-packs-mp3/Pack_Vol_3/08-CLAP/Clap9.mp3"
         }
       ]
     }
-  ]
+  }
 }
