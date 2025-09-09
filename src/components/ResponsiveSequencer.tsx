@@ -11,33 +11,36 @@ const ResponsiveSequencer = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
       
-      // Hardware-Computer braucht mindestens 1400px für professionelle Hardware-Fidelity
-      // Unter 1400px würde das Hardware-Design gequetscht aussehen (Tablets zeigen sonst abgeschnittene Desktop-Version)
-      if (width >= 1400) {
+      // Responsive Desktop ab 1200px - Skalierung macht Desktop-Experience für mehr Geräte verfügbar
+      // Unter 1200px -> Mobile Version (wie ursprünglich)
+      if (width >= 1200) {
         setMode('desktop');
         
-        // Intelligente Skalierung für Desktop-Version (±20% Flexibilität)
-        // Basis: 1200px bei 1500px Viewport = 1.0 scale
-        const baseViewportWidth = 1500;
-        const minScale = 0.8;  // 80% minimum
-        const maxScale = 1.2;  // 120% maximum
+        // Intelligente Skalierung für Desktop-Version (erweitert: 60%-120% Flexibilität)
+        // Basis: 1200px Hardware-Design passt sich an 1200px-2000px+ Viewports an
+        const minScale = 0.6;  // 60% minimum für sehr kleine Desktop-Fenster
+        const maxScale = 1.2;  // 120% maximum für große Displays
         
         // Berechne Skalierung basierend auf verfügbarem Platz
         const availableWidth = width - 40; // 20px padding links+rechts
         const availableHeight = height - 40; // 20px padding oben+unten
         
-        // Skalierung basierend auf Breite
+        // Skalierung basierend auf Breite (1200px = 100%)
         let widthScale = availableWidth / 1200;
         
-        // Skalierung basierend auf Höhe (um Abschneiden zu verhindern)
-        // Desktop-Version braucht ca. 800px Höhe
+        // Skalierung basierend auf Höhe (Desktop braucht ~800px Höhe = 100%)
         let heightScale = availableHeight / 800;
         
         // Verwende die kleinere Skalierung (damit alles reinpasst)
         let calculatedScale = Math.min(widthScale, heightScale);
         
-        // Begrenze auf ±20% Range
+        // Erweiterte Skalierungs-Range: 60%-120%
         calculatedScale = Math.max(minScale, Math.min(maxScale, calculatedScale));
+        
+        // Extra: Bei 1200px-1300px sanfte Einführung (nicht zu klein)
+        if (width >= 1200 && width <= 1300 && calculatedScale < 0.85) {
+          calculatedScale = Math.max(0.85, calculatedScale);
+        }
         
         setScaleFactor(calculatedScale);
       } else {
