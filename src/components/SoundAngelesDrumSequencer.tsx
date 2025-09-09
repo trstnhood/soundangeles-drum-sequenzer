@@ -463,43 +463,43 @@ export default function SoundAngelesDrumSequencer({ embedded = false }: SoundAng
             coverImage: '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/ILLWILL-Drum-Kit-Vol-1-1.jpg',
             categories: {
               'Kick Drums': { samples: [
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/01-Kick Drums/Kick Drum 1.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/01-Kick Drums/Kick Drum 2.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/01-Kick Drums/Kick Drum 3.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/01-Kick Drums/Kick Drum 4.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/01-Kick Drums/Kick Drum 5.mp3'
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/01-Kick/Kick Drum 1.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/01-Kick/Kick Drum 2.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/01-Kick/Kick Drum 3.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/01-Kick/Kick Drum 4.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/01-Kick/Kick Drum 5.mp3'
               ] },
               'Snares': { samples: [
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/02-Snares/Snare 1.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/02-Snares/Snare 2.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/02-Snares/Snare 3.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/02-Snares/Snare 4.mp3'
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/02-Snare/Snare 1.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/02-Snare/Snare 2.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/02-Snare/Snare 3.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/02-Snare/Snare 4.mp3'
               ] },
               'Rimshot': { samples: [
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/03-Rimshot/Rimshot 1.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/03-Rimshot/Rimshot 2.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/03-Rimshot/Rimshot 3.mp3'
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/03-Hi-hat/Hi-hat 1.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/03-Hi-hat/Hi-hat 2.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/03-Hi-hat/Hi-hat 3.mp3'
               ] },
               'Hi-hats': { samples: [
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/04-Hi-hats/Hi-hat 1.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/04-Hi-hats/Hi-hat 2.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/04-Hi-hats/Hi-hat 3.mp3'
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/04-Open hat/Open Hi-hat 1.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/04-Open hat/Open Hi-hat 2.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/04-Open hat/Open Hi-hat 3.mp3'
               ] },
               'Open Hi-hats': { samples: [
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/05-Open hi-hats/Open Hi-hat 1.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/05-Open hi-hats/Open Hi-hat 2.mp3'
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/05-Cym/Ride 1.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/05-Cym/Ride 2.mp3'
               ] },
               'Ride': { samples: [
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/06-Ride/Ride 1.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/06-Ride/Ride 2.mp3'
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/06-clap/Handclap 1.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/06-clap/Handclap 2.mp3'
               ] },
               'Hand claps': { samples: [
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/07-Hand claps/Handclap 1.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/07-Hand claps/Handclap 2.mp3'
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/07-Perc/Perc.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/07-Perc/Perc 2.mp3'
               ] },
               'Percussion': { samples: [
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/08-Various Percussions/Perc.mp3',
-                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/08-Various Percussions/Perc 2.mp3'
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/08-Conga/Con.mp3',
+                '/sample-packs-mp3/I.L.L. Will - Drumsound Pack Vol. 1/08-Conga/Con 2.mp3'
               ] }
             }
           },
