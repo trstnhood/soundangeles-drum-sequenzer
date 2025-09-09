@@ -36,6 +36,11 @@ export class ProfessionalAudioEngine {
   private nextStepTime: number = 0;
   private schedulerInterval: number | null = null;
   
+  // 🚀 LAZY LOADING SYSTEM
+  private loadingPromises: Map<string, Promise<AudioBuffer | null>> = new Map();
+  private samplePaths: Map<string, string> = new Map(); // trackId -> sample path
+  private pendingLoads: Set<string> = new Set(); // Track which samples are currently loading
+  
   // Professional timing constants
   private readonly LOOKAHEAD_TIME = 25.0; // Check every 25ms
   private readonly SCHEDULE_AHEAD_TIME = 0.1; // Schedule 100ms ahead
@@ -155,6 +160,97 @@ export class ProfessionalAudioEngine {
   }
 
   /**
+   * 🚀 LAZY LOADING: Register sample path for later loading
+   */
+  registerSamplePath(trackId: string, samplePath: string): void {
+    this.samplePaths.set(trackId, samplePath);
+    console.log(`📝 Registered sample path: ${trackId} -> ${samplePath.split('/').pop()}`);
+  }
+
+  /**
+   * 🚀 LAZY LOADING: Load sample on demand (when first needed)
+   */
+  async ensureSampleLoaded(trackId: string): Promise<boolean> {
+    const samplePath = this.samplePaths.get(trackId);
+    if (!samplePath) {
+      console.warn(`⚠️ No sample path registered for track: ${trackId}`);
+      return false;
+    }
+
+    // Already cached?
+    if (this.sampleCache.has(samplePath)) {
+      return true;
+    }
+
+    // Already loading?
+    if (this.loadingPromises.has(samplePath)) {
+      console.log(`⏳ Waiting for sample to load: ${trackId}`);
+      const buffer = await this.loadingPromises.get(samplePath);
+      return buffer !== null;
+    }
+
+    // Start loading
+    console.log(`🚀 Lazy loading sample: ${trackId} -> ${samplePath.split('/').pop()}`);
+    this.pendingLoads.add(trackId);
+    
+    const loadPromise = this.loadSample(samplePath);
+    this.loadingPromises.set(samplePath, loadPromise);
+    
+    try {
+      const buffer = await loadPromise;
+      this.pendingLoads.delete(trackId);
+      
+      if (buffer) {
+        console.log(`✅ Lazy load complete: ${trackId}`);
+        return true;
+      } else {
+        console.error(`❌ Lazy load failed: ${trackId}`);
+        return false;
+      }
+    } catch (error) {
+      this.pendingLoads.delete(trackId);
+      this.loadingPromises.delete(samplePath);
+      console.error(`❌ Lazy load error for ${trackId}:`, error);
+      return false;
+    }
+  }
+
+  /**
+   * 🚀 LAZY LOADING: Play sample with automatic loading
+   */
+  async playTrackSample(trackId: string, volume: number = 1.0, time?: number): Promise<void> {
+    // Ensure sample is loaded first
+    const loaded = await this.ensureSampleLoaded(trackId);
+    if (!loaded) {
+      console.error(`❌ Could not load sample for track: ${trackId}`);
+      return;
+    }
+
+    // Get the sample path and play it
+    const samplePath = this.samplePaths.get(trackId);
+    if (samplePath) {
+      this.playSample(samplePath, volume, time);
+    }
+  }
+
+  /**
+   * 🚀 LAZY LOADING: Check if sample is currently loading
+   */
+  isTrackLoading(trackId: string): boolean {
+    return this.pendingLoads.has(trackId);
+  }
+
+  /**
+   * 🚀 LAZY LOADING: Get loading status for UI
+   */
+  getLoadingStatus(): { loading: string[], total: number } {
+    return {
+      loading: Array.from(this.pendingLoads),
+      total: this.samplePaths.size
+    };
+  }
+
+  /**
    * Update pattern for a track - LIVE EDITING
    */
   updatePattern(trackId: string, stepIndex: number, active: boolean): void {
@@ -252,10 +348,10 @@ export class ProfessionalAudioEngine {
   private scheduleStep(stepIndex: number, baseTime: number): void {
     const activeTracks = this.getActiveTracksForStep(stepIndex);
     
-    // Trigger callback for each active track with groove-adjusted timing
-    activeTracks.forEach(trackId => {
+    // 🚀 LAZY LOADING: Play samples on-demand with groove-adjusted timing
+    activeTracks.forEach(async (trackId) => {
       const track = this.tracks.get(trackId);
-      if (track && this.onStepCallback) {
+      if (track) {
         // GROOVE INTEGRATION: Calculate timing offset for this step
         const grooveOffset = this.calculateGrooveOffset(track, stepIndex);
         const adjustedTime = baseTime + grooveOffset;
@@ -265,7 +361,13 @@ export class ProfessionalAudioEngine {
           console.log(`🎵 Groove: track=${trackId}, step=${stepIndex}, offset=${(grooveOffset * 1000).toFixed(1)}ms`);
         }
         
-        this.onStepCallback(trackId, track.selectedSampleId, track.volume, adjustedTime);
+        // Use lazy loading system to play sample
+        await this.playTrackSample(trackId, track.volume, adjustedTime);
+        
+        // Also trigger callback if it exists (for UI updates)
+        if (this.onStepCallback) {
+          this.onStepCallback(trackId, track.selectedSampleId, track.volume, adjustedTime);
+        }
       }
     });
   }

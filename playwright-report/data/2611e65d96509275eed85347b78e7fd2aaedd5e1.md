@@ -1,0 +1,118 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - img "Cover" [ref=e6]
+        - button "Previous Sample Pack" [disabled] [ref=e7]:
+          - img [ref=e8]
+        - button "Next Sample Pack" [ref=e10] [cursor=pointer]:
+          - img [ref=e11] [cursor=pointer]
+      - button "€4.90" [ref=e15] [cursor=pointer]:
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e20] [cursor=pointer]: €4.90
+    - generic [ref=e21]:
+      - button "PLAY" [ref=e23] [cursor=pointer]:
+        - img [ref=e24] [cursor=pointer]
+        - text: PLAY
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - button "-" [ref=e28] [cursor=pointer]
+          - generic [ref=e29]: "100"
+          - button "+" [ref=e30] [cursor=pointer]
+        - generic [ref=e31]:
+          - button "NORMAL" [ref=e32] [cursor=pointer]
+          - button "LIGHT" [ref=e33] [cursor=pointer]
+          - button "SWING" [ref=e34] [cursor=pointer]
+      - generic [ref=e35]:
+        - generic [ref=e39]: BPM
+        - generic [ref=e44]: QUANTIZATION
+      - generic [ref=e48]: INSTRUMENTS
+      - generic [ref=e50]:
+        - button "KICK" [ref=e51] [cursor=pointer]:
+          - generic [ref=e52] [cursor=pointer]: KICK
+        - button "SNARE" [ref=e54] [cursor=pointer]:
+          - generic [ref=e55] [cursor=pointer]: SNARE
+        - button "HI-HAT" [ref=e57] [cursor=pointer]:
+          - generic [ref=e58] [cursor=pointer]: HI-HAT
+        - button "OPEN" [ref=e60] [cursor=pointer]:
+          - generic [ref=e61] [cursor=pointer]: OPEN
+        - button "RIDE" [ref=e63] [cursor=pointer]:
+          - generic [ref=e64] [cursor=pointer]: RIDE
+        - button "CLAP" [ref=e66] [cursor=pointer]:
+          - generic [ref=e67] [cursor=pointer]: CLAP
+        - button "PERC" [ref=e69] [cursor=pointer]:
+          - generic [ref=e70] [cursor=pointer]: PERC
+        - button "CONGA" [ref=e72] [cursor=pointer]:
+          - generic [ref=e73] [cursor=pointer]: CONGA
+      - heading "STEP SEQUENCER" [level=3] [ref=e77]
+      - generic [ref=e79]:
+        - generic [ref=e81]:
+          - button "1" [active] [ref=e82] [cursor=pointer]:
+            - generic [ref=e83] [cursor=pointer]: "1"
+          - button "2" [ref=e84] [cursor=pointer]:
+            - generic [ref=e85] [cursor=pointer]: "2"
+          - button "3" [ref=e86] [cursor=pointer]:
+            - generic [ref=e87] [cursor=pointer]: "3"
+          - button "4" [ref=e88] [cursor=pointer]:
+            - generic [ref=e89] [cursor=pointer]: "4"
+          - button "5" [ref=e90] [cursor=pointer]:
+            - generic [ref=e91] [cursor=pointer]: "5"
+          - button "6" [ref=e92] [cursor=pointer]:
+            - generic [ref=e93] [cursor=pointer]: "6"
+          - button "7" [ref=e94] [cursor=pointer]:
+            - generic [ref=e95] [cursor=pointer]: "7"
+          - button "8" [ref=e96] [cursor=pointer]:
+            - generic [ref=e97] [cursor=pointer]: "8"
+        - generic [ref=e109]:
+          - button "9" [ref=e110] [cursor=pointer]:
+            - generic [ref=e111] [cursor=pointer]: "9"
+          - button "10" [ref=e112] [cursor=pointer]:
+            - generic [ref=e113] [cursor=pointer]: "10"
+          - button "11" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115] [cursor=pointer]: "11"
+          - button "12" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117] [cursor=pointer]: "12"
+          - button "13" [ref=e118] [cursor=pointer]:
+            - generic [ref=e119] [cursor=pointer]: "13"
+          - button "14" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121] [cursor=pointer]: "14"
+          - button "15" [ref=e122] [cursor=pointer]:
+            - generic [ref=e123] [cursor=pointer]: "15"
+          - button "16" [ref=e124] [cursor=pointer]:
+            - generic [ref=e125] [cursor=pointer]: "16"
+      - heading "INSTRUMENT CONTROL" [level=3] [ref=e137]
+      - generic [ref=e139]:
+        - generic [ref=e141]:
+          - button "←" [ref=e142] [cursor=pointer]
+          - generic [ref=e143]: 1/16
+          - button "→" [ref=e144] [cursor=pointer]
+        - generic [ref=e149]:
+          - generic [ref=e150]:
+            - generic [ref=e151]: KICK
+            - text: SAMPLES
+          - generic [ref=e152]:
+            - generic [ref=e153]: KICK
+            - text: VOLUME 70%
+      - heading "BANKS" [level=3] [ref=e156]
+      - generic [ref=e158]:
+        - button "Pattern Bank A (Active)" [ref=e159] [cursor=pointer]: A
+        - button "Pattern Bank B" [ref=e160] [cursor=pointer]: B
+        - button "Pattern Bank C" [ref=e161] [cursor=pointer]: C
+        - button "Pattern Bank D" [ref=e162] [cursor=pointer]: D
+        - combobox [ref=e163] [cursor=pointer]:
+          - generic: COPY
+          - img [ref=e164] [cursor=pointer]
+        - combobox [ref=e166] [cursor=pointer]:
+          - generic: CLEAR
+          - img [ref=e167] [cursor=pointer]
+    - generic [ref=e170]:
+      - img "SoundAngeles" [ref=e171]
+      - generic [ref=e172]: DRUM SEQUENCER
+    - img [ref=e176] [cursor=pointer]
+```
