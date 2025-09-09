@@ -1,0 +1,178 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=e3]:
+    - generic [ref=e7]:
+      - generic [ref=e8]: © 2025 SOUNDANGELES™
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - img "SoundAngeles Logo" [ref=e12]
+            - paragraph [ref=e13]: DRUM SEQUENZER
+          - generic [ref=e14]:
+            - generic [ref=e17]:
+              - img "Volume knob at 70%"
+            - paragraph [ref=e18]: VOLUME
+          - generic [ref=e19]:
+            - generic [ref=e20]:
+              - button "Auto-preview in progress..." [disabled] [ref=e21]:
+                - img [ref=e22]
+              - generic [ref=e25]:
+                - img "Sample Pack 1" [ref=e27]
+                - img "Sample Pack 2" [ref=e29]
+                - img "Sample Pack 3" [ref=e31]
+              - button "Auto-preview in progress..." [disabled] [ref=e32]:
+                - img [ref=e33]
+            - button "€9.90" [ref=e36] [cursor=pointer]:
+              - img [ref=e37] [cursor=pointer]
+              - generic [ref=e41] [cursor=pointer]: €9.90
+        - generic [ref=e42]:
+          - generic [ref=e44]:
+            - button "STRAIGHT" [ref=e45] [cursor=pointer]
+            - button "SLIGHT" [ref=e46] [cursor=pointer]
+            - button "SWING" [ref=e47] [cursor=pointer]
+          - generic [ref=e49]:
+            - generic [ref=e50]: "100"
+            - generic [ref=e51]:
+              - button [ref=e52] [cursor=pointer]:
+                - img
+              - button [ref=e53] [cursor=pointer]:
+                - img
+          - generic [ref=e55]:
+            - button "PLAY" [ref=e57] [cursor=pointer]:
+              - img
+              - text: PLAY
+            - generic [ref=e58]:
+              - generic [ref=e59]:
+                - button "A" [ref=e60] [cursor=pointer]
+                - button "B" [disabled]
+                - button "C" [disabled]
+                - button "D" [disabled]
+              - generic [ref=e61]:
+                - button "↗" [ref=e62] [cursor=pointer]
+                - button "⏸" [disabled]
+                - button "✓" [disabled]
+            - button "CLEAR" [ref=e64] [cursor=pointer]
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - img "Volume Scale"
+                - generic [ref=e71]:
+                  - img "Volume knob at 75%"
+              - generic [ref=e72] [cursor=pointer]:
+                - img "KICK WippSchalter" [ref=e73] [cursor=pointer]
+                - generic:
+                  - generic: KICK
+                  - generic: 1/50
+            - generic [ref=e77]:
+              - generic [ref=e78]:
+                - img "Volume Scale"
+                - generic [ref=e81]:
+                  - img "Volume knob at 75%"
+              - generic [ref=e82] [cursor=pointer]:
+                - img "SNARE WippSchalter" [ref=e83] [cursor=pointer]
+                - generic:
+                  - generic: SNARE
+                  - generic: 1/75
+            - generic [ref=e87]:
+              - generic [ref=e88]:
+                - img "Volume Scale"
+                - generic [ref=e91]:
+                  - img "Volume knob at 75%"
+              - generic [ref=e92] [cursor=pointer]:
+                - img "HI-HAT WippSchalter" [ref=e93] [cursor=pointer]
+                - generic:
+                  - generic: HI-HAT
+                  - generic: 1/50
+            - generic [ref=e97]:
+              - generic [ref=e98]:
+                - img "Volume Scale"
+                - generic [ref=e101]:
+                  - img "Volume knob at 75%"
+              - generic [ref=e102] [cursor=pointer]:
+                - img "OPEN WippSchalter" [ref=e103] [cursor=pointer]
+                - generic:
+                  - generic: OPEN
+                  - generic: 1/25
+            - generic [ref=e107]:
+              - generic [ref=e108]:
+                - img "Volume Scale"
+                - generic [ref=e111]:
+                  - img "Volume knob at 75%"
+              - generic [ref=e112] [cursor=pointer]:
+                - img "CYM WippSchalter" [ref=e113] [cursor=pointer]
+                - generic:
+                  - generic: CYM
+                  - generic: 1/25
+            - generic [ref=e117]:
+              - generic [ref=e118]:
+                - img "Volume Scale"
+                - generic [ref=e121]:
+                  - img "Volume knob at 75%"
+              - generic [ref=e122] [cursor=pointer]:
+                - img "PERC WippSchalter" [ref=e123] [cursor=pointer]
+                - generic:
+                  - generic: PERC
+                  - generic: 1/70
+            - generic [ref=e127]:
+              - generic [ref=e128]:
+                - img "Volume Scale"
+                - generic [ref=e131]:
+                  - img "Volume knob at 75%"
+              - generic [ref=e132] [cursor=pointer]:
+                - img "SNIP WippSchalter" [ref=e133] [cursor=pointer]
+                - generic:
+                  - generic: SNIP
+                  - generic: 1/20
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - img "Volume Scale"
+                - generic [ref=e141]:
+                  - img "Volume knob at 75%"
+              - generic [ref=e142] [cursor=pointer]:
+                - img "CLAP WippSchalter" [ref=e143] [cursor=pointer]
+                - generic:
+                  - generic: CLAP
+                  - generic: 1/20
+          - generic [ref=e165]:
+            - img "Pad 1" [ref=e167] [cursor=pointer]
+            - img "Pad 2" [ref=e169] [cursor=pointer]
+            - img "Pad 3" [ref=e171] [cursor=pointer]
+            - img "Pad 4" [ref=e173] [cursor=pointer]
+            - img "Pad 5" [ref=e175] [cursor=pointer]
+            - img "Pad 6" [ref=e177] [cursor=pointer]
+            - img "Pad 7" [ref=e179] [cursor=pointer]
+            - img "Pad 8" [ref=e181] [cursor=pointer]
+            - img "Pad 9" [ref=e183] [cursor=pointer]
+            - img "Pad 10" [ref=e185] [cursor=pointer]
+            - img "Pad 11" [ref=e187] [cursor=pointer]
+            - img "Pad 12" [ref=e189] [cursor=pointer]
+            - img "Pad 13" [ref=e191] [cursor=pointer]
+            - img "Pad 14" [ref=e193] [cursor=pointer]
+            - img "Pad 15" [ref=e195] [cursor=pointer]
+            - img "Pad 16" [ref=e197] [cursor=pointer]
+          - generic [ref=e199]:
+            - generic [ref=e201]: "1"
+            - generic [ref=e204]: "2"
+            - generic [ref=e206]: "3"
+            - generic [ref=e208]: "4"
+            - generic [ref=e210]: "5"
+            - generic [ref=e213]: "6"
+            - generic [ref=e215]: "7"
+            - generic [ref=e217]: "8"
+            - generic [ref=e219]: "9"
+            - generic [ref=e222]: "10"
+            - generic [ref=e224]: "11"
+            - generic [ref=e226]: "12"
+            - generic [ref=e228]: "13"
+            - generic [ref=e231]: "14"
+            - generic [ref=e233]: "15"
+            - generic [ref=e235]: "16"
+      - img [ref=e239] [cursor=pointer]
+    - generic [ref=e245]: "Scale: 108%"
+```
