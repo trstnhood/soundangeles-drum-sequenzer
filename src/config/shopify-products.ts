@@ -8,6 +8,26 @@ export interface ShopifyProduct {
 }
 
 export const SHOPIFY_PRODUCTS: Record<string, ShopifyProduct> = {
+  // NEW NAMES (current version)
+  'Pack Vol. 1': {
+    id: 'ill-will-vol-1',
+    name: 'I.L.L. WILL Drumkit Vol. 1',
+    price: '€4.90',
+    handle: 'i-l-l-will-drumkit-vol-1'
+  },
+  'Pack Vol. 2': {
+    id: 'ill-will-vol-2', 
+    name: 'I.L.L. WILL Drumkit Vol. 2',
+    price: '€9.90',
+    handle: 'i-l-l-will-drumkit-vol-2'
+  },
+  'Pack Vol. 3': {
+    id: 'ill-will-vol-3',
+    name: 'I.L.L. WILL Drumkit Vol. 3', 
+    price: '€9.90',
+    handle: 'i-l-l-will-drumkit-vol-3'
+  },
+  // LEGACY NAMES (fallback compatibility)
   'I.L.L. Will - Drumsound Pack Vol. 1': {
     id: 'ill-will-vol-1',
     name: 'I.L.L. WILL Drumkit Vol. 1',
