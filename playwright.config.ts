@@ -10,7 +10,7 @@ export default defineConfig({
   timeout: 30000,
   
   use: {
-    baseURL: 'https://soundangeles-drum-sequenzer.vercel.app/',
+    baseURL: 'http://localhost:8080',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure'

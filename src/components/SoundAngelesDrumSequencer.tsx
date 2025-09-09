@@ -44,6 +44,13 @@ interface QuantizationPreset {
   description: string;
 }
 
+// Function to get track ID from folder name (same as mobile version)
+const getTrackIdFromFolder = (folderName: string): string => {
+  // Keep the original folder name as much as possible for the ID
+  // Just replace spaces and special characters with underscores to make it a valid ID
+  return folderName.replace(/[\s-]/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+};
+
 /**
  * GROOVE UTILITIES - J Dilla Style Programming
  */
@@ -631,7 +638,7 @@ export default function SoundAngelesDrumSequencer({ embedded = false }: SoundAng
         const currentPack = finalPacks[0];
         const fixedInstruments = getFixedInstruments(currentPack);
         const initialTracks: EnhancedTrackPattern[] = fixedInstruments.map((instrument, index) => ({
-          id: `sa_track_${index}`, // Unique ID for each instrument
+          id: getTrackIdFromFolder(instrument.originalCategory || `sa_track_${index}`), // Use same system as mobile version
           name: instrument.name, // ✅ REMOVE "Track" suffix - use clean instrument name only
           steps: new Array(16).fill(false), // Each instrument starts with empty pattern
           volume: masterVolume / 100,
@@ -1661,7 +1668,7 @@ export default function SoundAngelesDrumSequencer({ embedded = false }: SoundAng
                           zIndex: 0,
                           top: '50%',
                           left: '50%',
-                          transform: 'translate(-50%, -50%) translateY(-7px)',
+                          transform: 'translate(-50%, -50%) translateY(-10px)',
                         }}
                         draggable={false}
                       />

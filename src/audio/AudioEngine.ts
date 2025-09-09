@@ -113,6 +113,9 @@ export class ProfessionalAudioEngine {
       // Cache using original identifier (secure ID or URL)
       this.sampleCache.set(sampleIdOrUrl, audioBuffer);
       
+      // CRITICAL FIX: Register sampleId -> samplePath mapping for lazy loading
+      this.samplePaths.set(sampleIdOrUrl, sampleIdOrUrl);
+      
       console.log(`✅ Sample loaded: ${sampleIdOrUrl.includes('/') ? sampleIdOrUrl.split('/').pop() : sampleIdOrUrl} (${audioBuffer.duration.toFixed(2)}s)`);
       return audioBuffer;
 
@@ -168,6 +171,19 @@ export class ProfessionalAudioEngine {
   }
 
   /**
+   * 🚀 LAZY LOADING: Register sample path by sampleId (FIXED VERSION)
+   */
+  registerSamplePathById(sampleId: string, samplePath: string): void {
+    this.samplePaths.set(sampleId, samplePath);
+    console.log(`📝 Registered sample path by ID: ${sampleId} -> ${samplePath.split('/').pop()}`);
+    
+    // DEBUG: Show all registered samples
+    console.log(`🔍 Total registered samples: ${this.samplePaths.size}`);
+    const allKeys = Array.from(this.samplePaths.keys());
+    console.log(`🗂️ All registered sampleIds:`, allKeys);
+  }
+
+  /**
    * 🚀 LAZY LOADING: Load sample on demand (when first needed)
    */
   async ensureSampleLoaded(trackId: string): Promise<boolean> {
@@ -216,20 +232,84 @@ export class ProfessionalAudioEngine {
   }
 
   /**
-   * 🚀 LAZY LOADING: Play sample with automatic loading
+   * 🚀 LAZY LOADING: Load sample by sampleId (FIXED VERSION)
+   */
+  async ensureSampleLoadedById(sampleId: string): Promise<boolean> {
+    const samplePath = this.samplePaths.get(sampleId);
+    if (!samplePath) {
+      console.warn(`⚠️ No sample path registered for sampleId: ${sampleId}`);
+      return false;
+    }
+
+    // Already cached?
+    if (this.sampleCache.has(samplePath)) {
+      return true;
+    }
+
+    // Already loading?
+    if (this.loadingPromises.has(samplePath)) {
+      console.log(`⏳ Waiting for sample to load: ${sampleId}`);
+      const buffer = await this.loadingPromises.get(samplePath);
+      return buffer !== null;
+    }
+
+    // Start loading
+    console.log(`🚀 Lazy loading sample by ID: ${sampleId} -> ${samplePath.split('/').pop()}`);
+    this.pendingLoads.add(sampleId);
+    
+    const loadPromise = this.loadSample(samplePath);
+    this.loadingPromises.set(samplePath, loadPromise);
+    
+    try {
+      const buffer = await loadPromise;
+      this.pendingLoads.delete(sampleId);
+      
+      if (buffer) {
+        console.log(`✅ Lazy load complete for sampleId: ${sampleId}`);
+        return true;
+      } else {
+        console.error(`❌ Lazy load failed for sampleId: ${sampleId}`);
+        return false;
+      }
+    } catch (error) {
+      this.pendingLoads.delete(sampleId);
+      this.loadingPromises.delete(samplePath);
+      console.error(`❌ Lazy load error for sampleId ${sampleId}:`, error);
+      return false;
+    }
+  }
+
+  /**
+   * 🚀 LAZY LOADING: Play sample with automatic loading - FIXED for sample selection
    */
   async playTrackSample(trackId: string, volume: number = 1.0, time?: number): Promise<void> {
-    // Ensure sample is loaded first
-    const loaded = await this.ensureSampleLoaded(trackId);
-    if (!loaded) {
-      console.error(`❌ Could not load sample for track: ${trackId}`);
+    const track = this.tracks.get(trackId);
+    if (!track) {
+      console.error(`❌ Track not found: ${trackId}`);
       return;
     }
 
-    // Get the sample path and play it
-    const samplePath = this.samplePaths.get(trackId);
+    // Get the selected sample ID for this track
+    const selectedSampleId = track.selectedSampleId;
+    if (!selectedSampleId) {
+      console.warn(`⚠️ No sample selected for track: ${trackId}`);
+      return;
+    }
+
+    // CRITICAL FIX: Use sampleId instead of trackId for sample loading
+    const loaded = await this.ensureSampleLoadedById(selectedSampleId);
+    if (!loaded) {
+      console.error(`❌ Could not load sample: ${selectedSampleId} for track: ${trackId}`);
+      return;
+    }
+
+    // Get the sample path by sampleId and play it
+    const samplePath = this.samplePaths.get(selectedSampleId);
     if (samplePath) {
+      console.log(`🔊 Playing sample: ${selectedSampleId} for track: ${trackId}`);
       this.playSample(samplePath, volume, time);
+    } else {
+      console.error(`❌ Sample path not found for sampleId: ${selectedSampleId}`);
     }
   }
 
@@ -361,13 +441,9 @@ export class ProfessionalAudioEngine {
           console.log(`🎵 Groove: track=${trackId}, step=${stepIndex}, offset=${(grooveOffset * 1000).toFixed(1)}ms`);
         }
         
-        // Use lazy loading system to play sample
+        // UNIFIED SYSTEM: Always use built-in playTrackSample (works for both Desktop & Mobile)
+        console.log(`🎵 UNIFIED: Playing ${trackId} with selectedSampleId=${track.selectedSampleId}`);
         await this.playTrackSample(trackId, track.volume, adjustedTime);
-        
-        // Also trigger callback if it exists (for UI updates)
-        if (this.onStepCallback) {
-          this.onStepCallback(trackId, track.selectedSampleId, track.volume, adjustedTime);
-        }
       }
     });
   }

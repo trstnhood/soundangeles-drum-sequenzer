@@ -22,9 +22,12 @@ export const RotaryKnob: React.FC<RotaryKnobProps> = ({
   const [startValue, setStartValue] = useState(value);
   const knobRef = useRef<HTMLDivElement>(null);
   
-  // Calculate frame index based on value (0-255 for 256 frames)
-  const frameIndex = Math.floor((value / 100) * 255);
-  const paddedIndex = frameIndex.toString().padStart(4, '0');
+  // Use only every ~10th frame for better performance (24 total frames instead of 256)
+  const totalFrames = 24; // Much better performance than 256 frames
+  const frameStep = Math.floor(255 / (totalFrames - 1)); // ~10-11 step size
+  const rawFrameIndex = Math.floor((value / 100) * (totalFrames - 1));
+  const frameIndex = rawFrameIndex * frameStep;
+  const paddedIndex = Math.min(frameIndex, 255).toString().padStart(4, '0');
   
   // Construct image path
   const imagePath = size === 'big' 
