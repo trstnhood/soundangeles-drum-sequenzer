@@ -46,6 +46,8 @@ const ProgrammerCredits: React.FC<ProgrammerCreditsProps> = ({ position = 'mobil
             backdropFilter: 'blur(10px)',
             border: '1px solid rgba(0,0,0,0.1)'
           }}
+          onMouseEnter={() => setShowOverlay(true)}
+          onMouseLeave={() => setShowOverlay(false)}
         >
           {/* Arrow pointing to icon */}
           <div className="absolute bottom-0 right-6 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-white translate-y-full"></div>
@@ -60,6 +62,7 @@ const ProgrammerCredits: React.FC<ProgrammerCreditsProps> = ({ position = 'mobil
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 transition-colors underline"
+                onClick={(e) => e.stopPropagation()}
               >
                 tristanladwein.com
               </a>
@@ -72,6 +75,7 @@ const ProgrammerCredits: React.FC<ProgrammerCreditsProps> = ({ position = 'mobil
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-yellow-600 hover:text-yellow-800 transition-colors underline"
+                onClick={(e) => e.stopPropagation()}
               >
                 soundangeles.com
               </a>

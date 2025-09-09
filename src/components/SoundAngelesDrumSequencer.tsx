@@ -197,10 +197,24 @@ export default function SoundAngelesDrumSequencer({ embedded = false }: SoundAng
           .replace(/\s+(Drums?|Hat|Hats?|Percussion)\s*$/i, '') // Remove common suffixes
           .toUpperCase() // Convert to uppercase for consistent display
           .trim();
+
+        // ✅ FIX: Map specific short names to full names for consistency
+        const nameMapping: { [key: string]: string } = {
+          'HI': 'HI-HAT',
+          'KICK': 'KICK',
+          'SNARE': 'SNARE', 
+          'OPEN': 'OPEN',
+          'RIDE': 'RIDE',
+          'CLAP': 'CLAP',
+          'PERC': 'PERC',
+          'CONGA': 'CONGA'
+        };
+        
+        const mappedName = nameMapping[cleanName] || cleanName;
         
         instruments.push({
           id: i,
-          name: cleanName || `INST ${i + 1}`,  // Real folder names without numbers
+          name: mappedName || `INST ${i + 1}`,  // Real folder names with consistent mapping
           originalCategory: categoryKey,
           hasSamples: true
         });

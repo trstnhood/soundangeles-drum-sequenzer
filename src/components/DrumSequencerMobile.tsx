@@ -1420,8 +1420,9 @@ export default function DrumSequencerMobile() {
           <img 
             src={(() => {
               const pack = AVAILABLE_SAMPLE_PACKS.find(p => p.id === selectedKit);
-              if (pack && pack.coverImage && pack.coverImage !== 'default-cover.png') {
-                return `/sample-packs-mp3/${encodeURIComponent(pack.folderName)}/${encodeURIComponent(pack.coverImage)}`;
+              if (pack?.coverImage) {
+                // ✅ FIX: Use direct path from JSON data (already includes full path)
+                return pack.coverImage;
               }
               return '/sample-packs-mp3/default-cover.png';
             })()}
