@@ -454,143 +454,58 @@ export default function SoundAngelesDrumSequencer({ embedded = false }: SoundAng
       try {
         setIsLoading(true);
         
-        // Define fallback pack structure FIRST (always available)
-        const fallbackPacks = [
-          {
-            id: 'pack1',
-            name: 'Pack Vol. 1',
-            description: 'Professional drum samples',
-            coverImage: '/sample-packs-mp3/Pack_Vol_1/ILLWILL-Drum-Kit-Vol-1-1.jpg',
-            categories: {
-              'Kick Drums': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick2.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick3.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick4.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick5.mp3'
-              ] },
-              'Snares': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare2.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare3.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare4.mp3'
-              ] },
-              'Rimshot': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat2.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat3.mp3'
-              ] },
-              'Hi-hats': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open2.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open3.mp3'
-              ] },
-              'Open Hi-hats': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride2.mp3'
-              ] },
-              'Ride': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap2.mp3'
-              ] },
-              'Hand claps': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/07-PERC/perc4.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/07-PERC/perc3.mp3'
-              ] },
-              'Percussion': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/08-CONGA/Conga2.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/08-CONGA/Conga1.mp3'
-              ] }
-            }
-          },
-          {
-            id: 'pack2',
-            name: 'Pack Vol. 2',
-            description: 'Extended drum library',
-            coverImage: '/sample-packs-mp3/Pack_Vol_2/ILLWILL-Drum-Kit-Vol-2-1.jpg',
-            categories: {
-              'Kick Drums': { samples: [
-                '/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick43.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick2.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick3.mp3'
-              ] },
-              'Snares': { samples: [
-                '/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare2.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare1.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare3.mp3'
-              ] },
-              'Rimshot': { samples: [
-                '/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Rimshot 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Rimshot 2.mp3'
-              ] },
-              'Hi-hats': { samples: [
-                '/sample-packs-mp3/Pack_Vol_2/04-OPEN/HH 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/04-OPEN/HH 2.mp3'
-              ] },
-              'Open Hi-hats': { samples: [
-                '/sample-packs-mp3/Pack_Vol_2/05-CYM/Ohh 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/05-CYM/Ohh 2.mp3'
-              ] },
-              'Ride': { samples: [
-                '/sample-packs-mp3/Pack_Vol_2/06-CLAP/18AMB RI.1-S.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/06-CLAP/18AMB RI.2-S.mp3'
-              ] },
-              'Hand claps': { samples: [
-                '/sample-packs-mp3/Pack_Vol_2/07-SNIP/Handclap 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/07-SNIP/Handclap 2.mp3'
-              ] },
-              'Percussion': { samples: [
-                '/sample-packs-mp3/Pack_Vol_2/08-CONGA/Conga 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/08-CONGA/Cowbell.mp3'
-              ] }
-            }
-          },
-          {
-            id: 'pack3',
-            name: 'Pack Vol. 3',
-            description: '808 style drums',
-            coverImage: '/sample-packs-mp3/Pack_Vol_3/ILLWILL-Drum-Kit-Vol-3.jpg',
-            categories: {
-              'Kick Drums': { samples: [
-                '/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick1.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick2.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick3.mp3'
-              ] },
-              'Snares': { samples: [
-                '/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare1.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare2.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare3.mp3'
-              ] },
-              'Rimshot': { samples: [
-                '/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Rimshot 808.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Rimshot classic.mp3'
-              ] },
-              'Hi-hats': { samples: [
-                '/sample-packs-mp3/Pack_Vol_3/04-OPEN/Hi Hat 808 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/04-OPEN/Hi Hat 808 2.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/04-OPEN/Hi Hat classic.mp3'
-              ] },
-              'Open Hi-hats': { samples: [
-                '/sample-packs-mp3/Pack_Vol_3/05-CYM/Open Hat 808 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/05-CYM/Open Hat 808 2.mp3'
-              ] },
-              'Ride': { samples: [
-                '/sample-packs-mp3/Pack_Vol_3/06-CLAP/Crash 808 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/06-CLAP/Crash 808 2.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/06-CLAP/Ride 808.mp3'
-              ] },
-              'Hand claps': { samples: [
-                '/sample-packs-mp3/Pack_Vol_3/07-SNIP/Handclap 808 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/07-SNIP/Handclap 808 2.mp3'
-              ] },
-              'Percussion': { samples: [
-                '/sample-packs-mp3/Pack_Vol_3/08-CONGA/Perc 808 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/08-CONGA/Perc 808 2.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/08-CONGA/Cowbell 808.mp3'
-              ] }
-            }
+        // 🔄 SIMPLIFIED SAMPLE PACK LOADING - ONLY from /sample-packs-data.json
+        let loadedPacks = [];
+        
+        try {
+          console.log('📦 Loading sample data from /sample-packs-data.json...');
+          
+          const response = await fetch('/sample-packs-data.json');
+          if (!response.ok) {
+            throw new Error(`Failed to load sample data: ${response.status}`);
           }
-        ];
+          
+          const staticData = await response.json();
+          console.log('✅ Successfully loaded static sample data');
+          
+          // Convert static data to expected format
+          for (const pack of staticData.packs) {
+            const categories = {};
+            const packName = pack.folderName;
+            
+            // Get instruments for this pack
+            const instrumentFolders = staticData.instruments[packName] || [];
+            
+            for (const folderName of instrumentFolders) {
+              const samples = staticData.samples[packName]?.[folderName] || [];
+              if (samples.length > 0) {
+                categories[folderName] = {
+                  samples: samples.map(sample => sample.path)
+                };
+              }
+            }
+            
+            loadedPacks.push({
+              id: pack.id,
+              name: pack.name,
+              description: pack.description,
+              coverImage: pack.coverImage,
+              categories: categories
+            });
+          }
+          
+          console.log(`✅ Successfully loaded ${loadedPacks.length} sample packs`);
+        } catch (error) {
+          console.error('❌ Failed to load sample packs:', error);
+          setIsLoading(false);
+          return;
+        }
+        
+        if (loadedPacks.length === 0) {
+          console.error('❌ No sample packs found in data file');
+          setIsLoading(false);
+          return;
+        }
         
         // 🔄 SAMPLE PACK DISCOVERY - Static (CDN) or Dynamic (Dev)
         let discoveredPacks = [];
@@ -693,10 +608,10 @@ export default function SoundAngelesDrumSequencer({ embedded = false }: SoundAng
         }
         }
         
-        // Use discovered packs if available, otherwise fallback
-        const finalPacks = discoveredPacks.length > 0 ? discoveredPacks : fallbackPacks;
+        // Use loaded packs
+        const finalPacks = loadedPacks;
         setAvailablePacks(finalPacks);
-        console.log(`📦 Using ${discoveredPacks.length > 0 ? 'REAL' : 'FALLBACK'} packs:`, finalPacks.length);
+        console.log(`📦 Successfully initialized ${finalPacks.length} sample packs`);
         
         // Create tracks based on FIXED 8 INSTRUMENTS
         const currentPack = finalPacks[0];

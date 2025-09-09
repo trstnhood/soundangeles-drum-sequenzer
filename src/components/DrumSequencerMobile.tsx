@@ -55,23 +55,32 @@ let AVAILABLE_SAMPLE_PACKS: any[] = [];
 let SAMPLE_KITS: SampleKit[] = [];
 
 
-// Reuse API functions from desktop version
-const discoverSamplePacks = async (): Promise<void> => {
+// SIMPLIFIED: Load sample packs from static JSON file
+const loadSamplePacksFromJSON = async (): Promise<void> => {
   try {
-    const response = await fetch('/api/discover-packs');
-    const data = await response.json();
+    console.log('📦 MOBILE: Loading sample data from /sample-packs-data.json...');
     
-    if (data.error) {
-      console.warn('⚠️ No sample packs found:', data.error);
-      AVAILABLE_SAMPLE_PACKS = [];
-      return;
+    const response = await fetch('/sample-packs-data.json');
+    if (!response.ok) {
+      throw new Error(`Failed to load sample data: ${response.status}`);
     }
     
-    AVAILABLE_SAMPLE_PACKS = data.packs || [];
-    console.log(`✅ Discovered ${AVAILABLE_SAMPLE_PACKS.length} sample packs`);
+    const staticData = await response.json();
+    
+    // Convert to mobile format
+    AVAILABLE_SAMPLE_PACKS = staticData.packs.map(pack => ({
+      id: pack.id,
+      name: pack.name,
+      description: pack.description,
+      folderName: pack.folderName,
+      coverImage: pack.coverImage
+    }));
+    
+    console.log(`✅ MOBILE: Successfully loaded ${AVAILABLE_SAMPLE_PACKS.length} sample packs`);
   } catch (error) {
-    console.error('❌ Sample pack discovery failed:', error);
+    console.error('❌ MOBILE: Failed to load sample packs:', error);
     AVAILABLE_SAMPLE_PACKS = [];
+    throw error;
   }
 };
 
@@ -94,34 +103,49 @@ const discoverInstrumentFolders = async (packName: string): Promise<string[]> =>
   }
 };
 
-// **OPTIMIZED API-BASED DYNAMIC SAMPLE PACK LOADING (FROM DESKTOP v6.0.2)**
+// SIMPLIFIED: Load sample pack structure from JSON data
 const loadSamplePackStructure = async (packId: string): Promise<SampleKit | null> => {
   const pack = AVAILABLE_SAMPLE_PACKS.find(p => p.id === packId);
   if (!pack) return null;
 
   try {
-    const samples: { [drumType: string]: DrumSample[] } = {};
+    console.log(`📦 MOBILE: Loading structure for ${pack.name}...`);
     
-    // **DYNAMICALLY DISCOVER ALL INSTRUMENT FOLDERS USING API**
-    const folders = await discoverInstrumentFolders(pack.folderName);
-    
-    if (folders.length === 0) {
-      console.warn(`⚠️ MOBILE: No instruments in ${pack.name}`);
-      return null;
+    // Load JSON data again to get samples
+    const response = await fetch('/sample-packs-data.json');
+    if (!response.ok) {
+      throw new Error(`Failed to load sample data: ${response.status}`);
     }
     
-    // Erstelle Samples für jeden gefundenen Ordner - PARALLEL LOADING
+    const staticData = await response.json();
+    const packData = staticData.packs.find(p => p.id === packId);
+    if (!packData) {
+      console.error(`❌ MOBILE: Pack ${packId} not found in JSON data`);
+      return null;
+    }
+
+    const samples: { [drumType: string]: DrumSample[] } = {};
     const folderNames: { [drumType: string]: string } = {};
-    const loadPromises = folders.map(async (folderName) => {
+    
+    // Get instruments for this pack from JSON
+    const instrumentFolders = staticData.instruments[packData.folderName] || [];
+    
+    for (const folderName of instrumentFolders) {
       const trackId = getTrackIdFromFolder(folderName);
-      const folderSamples = await loadSamplesFromFolder(pack.folderName, folderName, trackId);
-      if (folderSamples.length > 0) {
+      const sampleData = staticData.samples[packData.folderName]?.[folderName] || [];
+      
+      if (sampleData.length > 0) {
+        const folderSamples = sampleData.map((sample: any, index: number) => ({
+          id: `${trackId}-${index + 1}-${Date.now()}`,
+          name: sample.name.replace(/\.(wav|mp3)$/i, ''),
+          audioFile: sample.path,
+          sampleType: 'audio' as const
+        }));
+        
         samples[trackId] = folderSamples;
         folderNames[trackId] = folderName;
       }
-    });
-    
-    await Promise.all(loadPromises);
+    }
     
     console.log(`✅ MOBILE: Loaded ${pack.name}: ${Object.keys(samples).length} tracks`);
     
@@ -164,7 +188,7 @@ const loadSamplesFromFolder = async (packName: string, folderName: string, track
     
     if (data.error) {
       console.error('❌ MOBILE: Error discovering samples:', data.error);
-      return createFallbackSamplesForFolder(folderName, trackId);
+      return [];
     }
     
     const files = data.samples || data.files || []; // CRITICAL FIX: API returns 'samples', not 'files'
@@ -192,7 +216,7 @@ const loadSamplesFromFolder = async (packName: string, folderName: string, track
     
   } catch (error) {
     console.error('❌ MOBILE: Failed to discover samples:', error);
-    return createFallbackSamplesForFolder(folderName, trackId);
+    return [];
   }
   
   return samples;
@@ -309,8 +333,8 @@ export default function DrumSequencerMobile() {
       console.log('🔍 MOBILE: Starting sample pack discovery...');
       
       try {
-        await discoverSamplePacks();
-        console.log('🔍 MOBILE: Sample packs discovered:', AVAILABLE_SAMPLE_PACKS.length);
+        await loadSamplePacksFromJSON();
+        console.log('🔍 MOBILE: Sample packs loaded:', AVAILABLE_SAMPLE_PACKS.length);
         
         if (AVAILABLE_SAMPLE_PACKS.length > 0) {
           const firstPack = AVAILABLE_SAMPLE_PACKS[0];
