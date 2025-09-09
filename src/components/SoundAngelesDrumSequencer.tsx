@@ -599,7 +599,7 @@ export default function SoundAngelesDrumSequencer({ embedded = false }: SoundAng
           console.log('📦 Trying static sample data first (CDN mode)...');
           
           // Try static data first (for CDN builds)  
-          const staticResponse = await fetch('/sample-data.json');
+          const staticResponse = await fetch('/sample-packs-data.json');
           if (staticResponse.ok) {
             const staticData = await staticResponse.json();
             console.log('✅ Using pre-generated static sample data');
