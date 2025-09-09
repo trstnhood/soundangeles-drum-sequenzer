@@ -23,6 +23,7 @@ import { ProfessionalAudioEngine, TrackPattern } from '@/audio/AudioEngine';
 import { Midi } from '@tonejs/midi';
 import { SampleManager, SamplePack, SampleInfo } from '@/audio/SampleManager';
 import { AnimatedKnob } from '@/components/AnimatedKnob';
+import { cn } from '@/lib/utils';
 
 interface GrooveDot {
   stepIndex: number;
@@ -90,6 +91,11 @@ export default function ProfessionalDrumSequencer() {
   // UX ENHANCEMENT STATES - RESTORED FEATURES
   const [selectedTrackIndex, setSelectedTrackIndex] = useState<number | null>(null);
   const [loadingTracks, setLoadingTracks] = useState<Set<string>>(new Set());
+  
+  // HERO SLIDER ANIMATION STATE - Sample Pack Carousel
+  const [isAutoSwiping, setIsAutoSwiping] = useState(false);
+  const [hasShownAllPacks, setHasShownAllPacks] = useState(false);
+  const [selectedPackIndex, setSelectedPackIndex] = useState(0);
   
   // Visual update timer
   const visualUpdateRef = useRef<number>(0);
@@ -1028,6 +1034,9 @@ export default function ProfessionalDrumSequencer() {
    * Pack switching
    */
   const switchPack = useCallback(async (packId: string) => {
+    // Don't switch during auto-swipe animation
+    if (isAutoSwiping) return;
+    
     console.log(`🔄 Switching to pack: ${packId}`);
     
     // Stop playback
@@ -1037,7 +1046,62 @@ export default function ProfessionalDrumSequencer() {
     
     // Load new pack
     await loadSamplePack(packId);
-  }, [isPlaying, handleStop, loadSamplePack]);
+  }, [isPlaying, handleStop, loadSamplePack, isAutoSwiping]);
+
+  /**
+   * HERO SLIDER ANIMATION - Fast slide-through all packs on first load
+   * Shows users all available sample packs in a quick carousel animation
+   */
+  const startHeroSliderDemo = useCallback(() => {
+    if (availablePacks.length <= 1 || hasShownAllPacks) return;
+    
+    console.log('🎬 Starting hero slider demo - fast slide through all packs...');
+    setIsAutoSwiping(true);
+    
+    let slideIndex = 0;
+    const totalSlides = availablePacks.length;
+    
+    const slideNext = () => {
+      if (slideIndex < totalSlides - 1) {
+        slideIndex++;
+        setSelectedPackIndex(slideIndex);
+        // Also update selectedPack to show the current pack
+        const nextPack = availablePacks[slideIndex];
+        if (nextPack) {
+          setSelectedPack(nextPack.id);
+        }
+        setTimeout(slideNext, 600); // 600ms per slide - fast!
+      } else {
+        // Animation complete - return to first pack
+        console.log('✨ Hero slider complete - returning to first pack');
+        setSelectedPackIndex(0);
+        setIsAutoSwiping(false);
+        setHasShownAllPacks(true);
+        
+        // Load the first pack for real
+        if (availablePacks[0]) {
+          loadSamplePack(availablePacks[0].id);
+        }
+      }
+    };
+    
+    // Start sliding
+    setTimeout(slideNext, 600);
+  }, [availablePacks, hasShownAllPacks, loadSamplePack]);
+
+  /**
+   * HERO SLIDER TRIGGER - Start when packs are loaded
+   */
+  useEffect(() => {
+    if (availablePacks.length > 1 && !hasShownAllPacks && !isInitializing && !isLoadingPack) {
+      // Start hero slider demo after short delay
+      const startDelay = setTimeout(() => {
+        startHeroSliderDemo();
+      }, 1000); // 1s delay after load
+      
+      return () => clearTimeout(startDelay);
+    }
+  }, [availablePacks.length, hasShownAllPacks, isInitializing, isLoadingPack, startHeroSliderDemo]);
 
   // Loading screen
   if (isInitializing || isLoadingPack) {
@@ -1092,14 +1156,19 @@ export default function ProfessionalDrumSequencer() {
             {/* Previous Pack Button */}
             <Button 
               onClick={() => {
+                if (isAutoSwiping) return;
                 const currentIndex = availablePacks.findIndex(pack => pack.id === selectedPack);
                 const prevIndex = currentIndex > 0 ? currentIndex - 1 : availablePacks.length - 1;
                 switchPack(availablePacks[prevIndex].id);
               }}
               size="lg"
               variant="outline"
-              className="h-16 w-16 rounded-full"
-              title="Previous Sample Pack"
+              className={cn(
+                "h-16 w-16 rounded-full transition-all duration-200",
+                isAutoSwiping && "animate-pulse opacity-50 cursor-wait"
+              )}
+              disabled={availablePacks.length <= 1 || isAutoSwiping}
+              title={isAutoSwiping ? "Auto-preview in progress..." : "Previous Sample Pack"}
             >
               <ChevronLeft className="w-6 h-6" />
             </Button>
@@ -1163,14 +1232,19 @@ export default function ProfessionalDrumSequencer() {
             {/* Next Pack Button */}
             <Button 
               onClick={() => {
+                if (isAutoSwiping) return;
                 const currentIndex = availablePacks.findIndex(pack => pack.id === selectedPack);
                 const nextIndex = currentIndex < availablePacks.length - 1 ? currentIndex + 1 : 0;
                 switchPack(availablePacks[nextIndex].id);
               }}
               size="lg"
               variant="outline"
-              className="h-16 w-16 rounded-full"
-              title="Next Sample Pack"
+              className={cn(
+                "h-16 w-16 rounded-full transition-all duration-200",
+                isAutoSwiping && "animate-pulse opacity-50 cursor-wait"
+              )}
+              disabled={availablePacks.length <= 1 || isAutoSwiping}
+              title={isAutoSwiping ? "Auto-preview in progress..." : "Next Sample Pack"}
             >
               <ChevronRight className="w-6 h-6" />
             </Button>

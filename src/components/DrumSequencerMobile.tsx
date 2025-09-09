@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { Play, Pause, ChevronLeft, ChevronRight, Copy, Trash2 } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
 import AddToCartButton from '@/components/AddToCartButton';
@@ -220,6 +221,11 @@ export default function DrumSequencerMobile() {
   // Removed: const [isDraggingVolume, setIsDraggingVolume] - Not needed with Slider component
   const [preloadingProgress, setPreloadingProgress] = useState(0);
   const [preloadedSampleCount, setPreloadedSampleCount] = useState(0);
+
+  // HERO SLIDER ANIMATION STATE - Sample Pack Carousel (from Desktop)
+  const [isAutoSwiping, setIsAutoSwiping] = useState(false);
+  const [hasShownAllPacks, setHasShownAllPacks] = useState(false);
+  const [currentPackIndex, setCurrentPackIndex] = useState(0);
   
   // Removed: volumeContainerRef - Not needed with Slider component
   
@@ -877,6 +883,9 @@ export default function DrumSequencerMobile() {
   };
   
   const navigatePack = (direction: 'prev' | 'next') => {
+    // Don't navigate during auto-swipe animation
+    if (isAutoSwiping) return;
+    
     const currentIndex = AVAILABLE_SAMPLE_PACKS.findIndex(p => p.id === selectedKit);
     let newIndex = currentIndex;
     
@@ -890,6 +899,61 @@ export default function DrumSequencerMobile() {
       switchSampleKit(AVAILABLE_SAMPLE_PACKS[newIndex].id);
     }
   };
+
+  /**
+   * HERO SLIDER ANIMATION - Fast slide-through all packs on first load
+   * Shows users all available sample packs in a quick carousel animation
+   */
+  const startHeroSliderDemo = useCallback(() => {
+    if (AVAILABLE_SAMPLE_PACKS.length <= 1 || hasShownAllPacks || !isPreloadingComplete) return;
+    
+    console.log('🎬 MOBILE: Starting hero slider demo - fast slide through all packs...');
+    setIsAutoSwiping(true);
+    
+    let slideIndex = 0;
+    const totalSlides = AVAILABLE_SAMPLE_PACKS.length;
+    
+    const slideNext = () => {
+      if (slideIndex < totalSlides - 1) {
+        slideIndex++;
+        setCurrentPackIndex(slideIndex);
+        // Switch to the next pack visually
+        const nextPack = AVAILABLE_SAMPLE_PACKS[slideIndex];
+        if (nextPack) {
+          setSelectedKit(nextPack.id);
+        }
+        setTimeout(slideNext, 600); // 600ms per slide - fast!
+      } else {
+        // Animation complete - return to first pack
+        console.log('✨ MOBILE: Hero slider complete - returning to first pack');
+        setCurrentPackIndex(0);
+        setIsAutoSwiping(false);
+        setHasShownAllPacks(true);
+        
+        // Load the first pack for real
+        if (AVAILABLE_SAMPLE_PACKS[0]) {
+          switchSampleKit(AVAILABLE_SAMPLE_PACKS[0].id);
+        }
+      }
+    };
+    
+    // Start sliding
+    setTimeout(slideNext, 600);
+  }, [hasShownAllPacks, isPreloadingComplete]);
+
+  /**
+   * HERO SLIDER TRIGGER - Start when packs are loaded and preloading is complete
+   */
+  useEffect(() => {
+    if (AVAILABLE_SAMPLE_PACKS.length > 1 && !hasShownAllPacks && isPreloadingComplete && !isAutoSwiping) {
+      // Start hero slider demo after short delay
+      const startDelay = setTimeout(() => {
+        startHeroSliderDemo();
+      }, 1000); // 1s delay after load
+      
+      return () => clearTimeout(startDelay);
+    }
+  }, [AVAILABLE_SAMPLE_PACKS.length, hasShownAllPacks, isPreloadingComplete, isAutoSwiping, startHeroSliderDemo]);
   
   // **PATTERN-PRESERVING SAMPLE PACK SWITCHING - FROM DESKTOP v6.0.2**
   const switchSampleKit = async (kitId: string) => {
@@ -1344,19 +1408,27 @@ export default function DrumSequencerMobile() {
             }}
           />
           
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows with Animation Support */}
           <button
             onClick={() => navigatePack('prev')}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md"
-            disabled={AVAILABLE_SAMPLE_PACKS.findIndex(p => p.id === selectedKit) === 0}
+            className={cn(
+              "absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md transition-all duration-200",
+              isAutoSwiping && "animate-pulse opacity-60"
+            )}
+            disabled={AVAILABLE_SAMPLE_PACKS.findIndex(p => p.id === selectedKit) === 0 || isAutoSwiping}
+            title={isAutoSwiping ? "Auto-preview in progress..." : "Previous Sample Pack"}
           >
             <ChevronLeft className="w-5 h-5 text-gray-700" />
           </button>
           
           <button
             onClick={() => navigatePack('next')}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md"
-            disabled={AVAILABLE_SAMPLE_PACKS.findIndex(p => p.id === selectedKit) === AVAILABLE_SAMPLE_PACKS.length - 1}
+            className={cn(
+              "absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 rounded-full p-2 shadow-md transition-all duration-200",
+              isAutoSwiping && "animate-pulse opacity-60"
+            )}
+            disabled={AVAILABLE_SAMPLE_PACKS.findIndex(p => p.id === selectedKit) === AVAILABLE_SAMPLE_PACKS.length - 1 || isAutoSwiping}
+            title={isAutoSwiping ? "Auto-preview in progress..." : "Next Sample Pack"}
           >
             <ChevronRight className="w-5 h-5 text-gray-700" />
           </button>
