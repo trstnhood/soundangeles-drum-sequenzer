@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { directoryDiscoveryPlugin } from "./vite-directory-plugin.js";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -13,8 +12,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    // Only use directory discovery plugin in development
-    mode === 'development' ? directoryDiscoveryPlugin() : null,
+    // Directory discovery plugin removed - using static JSON only
   ].filter(Boolean),
   resolve: {
     alias: {
