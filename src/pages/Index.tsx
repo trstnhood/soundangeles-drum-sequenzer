@@ -14,11 +14,35 @@ const Index = () => {
   const [initError, setInitError] = useState<string>('');
 
   useEffect(() => {
-    // Test if sample discovery API is available (production vs development)
-    const testSampleDiscovery = async () => {
+    // Test both static data and API availability
+    const testSampleAvailability = async () => {
       try {
-        console.log('🔍 Testing sample discovery API...');
+        console.log('🔍 Testing sample data availability...');
         
+        // First try static JSON data (production compatible)
+        try {
+          const staticResponse = await fetch('/sample-packs-data.json', {
+            method: 'GET',
+            headers: {
+              'Cache-Control': 'no-cache'
+            }
+          });
+          
+          if (staticResponse.ok) {
+            const staticData = await staticResponse.json();
+            if (staticData.packs && staticData.packs.length > 0) {
+              console.log('✅ Static sample data available, using full sequencer');
+              console.log(`📦 Found ${staticData.packs.length} static packs`);
+              setShowFallback(false);
+              setIsLoading(false);
+              return;
+            }
+          }
+        } catch (staticError) {
+          console.log('⚠️ Static data not available, trying API:', staticError);
+        }
+        
+        // Fallback to API (development mode)
         const response = await fetch('/api/discover-packs', {
           method: 'GET',
           headers: {
@@ -28,14 +52,14 @@ const Index = () => {
         
         if (response.ok) {
           const data = await response.json();
-          console.log('✅ Sample discovery API working:', data);
+          console.log('✅ API sample discovery working:', data);
           
           // Check if we actually have packs
           if (data.packs && data.packs.length > 0) {
-            console.log('✅ Sample packs available, using full sequencer');
+            console.log('✅ API sample packs available, using full sequencer');
             setShowFallback(false);
           } else {
-            console.log('⚠️ No sample packs found, using fallback');
+            console.log('⚠️ No sample packs found via API, using fallback');
             setInitError('No sample packs available');
             setShowFallback(true);
           }
@@ -43,7 +67,7 @@ const Index = () => {
           throw new Error(`API returned ${response.status}`);
         }
       } catch (error) {
-        console.log('❌ Sample discovery failed, using mobile fallback:', error);
+        console.log('❌ Both static data and API failed, using mobile fallback:', error);
         setInitError(`Sample loading failed: ${error.message}`);
         setShowFallback(true);
       } finally {
@@ -56,11 +80,11 @@ const Index = () => {
                      || window.innerWidth < 768;
     
     if (isMobile) {
-      console.log('📱 Mobile device detected, testing API but may prefer fallback');
+      console.log('📱 Mobile device detected, will test both static and API');
     }
 
     // Start the test
-    testSampleDiscovery();
+    testSampleAvailability();
   }, []);
 
   // Loading screen

@@ -21,7 +21,7 @@ import { Slider } from '@/components/ui/slider';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ProfessionalAudioEngine, TrackPattern } from '@/audio/AudioEngine';
 import { Midi } from '@tonejs/midi';
-import { SampleManager, SamplePack, SampleInfo } from '@/audio/SampleManager';
+import { SmartSampleManager, SamplePack, SampleInfo } from '@/audio/SmartSampleManager';
 import { AnimatedKnob } from '@/components/AnimatedKnob';
 import { cn } from '@/lib/utils';
 
@@ -59,7 +59,7 @@ const STEP_COLORS = [
 export default function ProfessionalDrumSequencer() {
   // Core system instances
   const audioEngineRef = useRef<ProfessionalAudioEngine>(new ProfessionalAudioEngine());
-  const sampleManagerRef = useRef<SampleManager>(new SampleManager());
+  const sampleManagerRef = useRef<SmartSampleManager>(new SmartSampleManager());
   
   // UI State (separate from audio state)
   const [tracks, setTracks] = useState<UITrack[]>([]);

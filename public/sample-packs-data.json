@@ -1,0 +1,277 @@
+{
+  "packs": [
+    {
+      "id": "ill-will-vol-1",
+      "name": "I.L.L. Will - Drumsound Pack Vol. 1",
+      "description": "Professional drum samples - I.L.L. Will - Drumsound Pack Vol. 1",
+      "folderName": "I.L.L. Will - Drumsound Pack Vol. 1",
+      "coverImage": "ILLWILL-Drum-Kit-Vol-1-1.jpg",
+      "instruments": [
+        {
+          "id": "kick",
+          "name": "01-Kick",
+          "displayName": "Kick",
+          "samples": [
+            "1l kick.mp3", "1l kick2.mp3", "1l kick3.mp3", "1l kick4.mp3", "1l kick5.mp3", 
+            "1l kick6.mp3", "1l kick7.mp3", "1l kick8.mp3", "1l kick9.mp3", "1l kick10.mp3",
+            "1l kick11.mp3", "1l kick12.mp3", "1l kick13.mp3", "1l kick14.mp3", "1l kick15.mp3"
+          ]
+        },
+        {
+          "id": "snare",
+          "name": "02-Snare", 
+          "displayName": "Snare",
+          "samples": [
+            "1l snare.mp3", "1l snare2.mp3", "1l snare3.mp3", "1l snare4.mp3", "1l snare5.mp3",
+            "1l snare6.mp3", "1l snare7.mp3", "1l snare8.mp3", "1l snare9.mp3", "1l snare10.mp3",
+            "1l snare11.mp3", "1l snare12.mp3", "1l snare13.mp3", "1l snare14.mp3", "1l snare15.mp3",
+            "1l snare16.mp3", "1l snare17.mp3", "1l snare18.mp3", "1l snare19.mp3", "1l snare20.mp3",
+            "1l snare21.mp3", "1l snare22.mp3", "1l snare23.mp3"
+          ]
+        },
+        {
+          "id": "hi-hat",
+          "name": "03-Hi-hat",
+          "displayName": "Hi Hat", 
+          "samples": [
+            "1l hihat.mp3", "1l hihat2.mp3", "1l hihat3.mp3", "1l hihat4.mp3", "1l hihat5.mp3",
+            "1l hihat6.mp3", "1l hihat7.mp3", "1l hihat8.mp3", "1l hihat9.mp3", "1l hihat10.mp3",
+            "1l hihat11.mp3", "1l hihat12.mp3", "1l hihat13.mp3", "1l hihat14.mp3", "1l hihat15.mp3"
+          ]
+        },
+        {
+          "id": "open-hat",
+          "name": "04-Open hat",
+          "displayName": "Open Hat",
+          "samples": [
+            "1l openhat.mp3", "1l openhat2.mp3", "1l openhat3.mp3", "1l openhat4.mp3", 
+            "1l openhat5.mp3", "1l openhat6.mp3", "1l openhat7.mp3"
+          ]
+        },
+        {
+          "id": "cym",
+          "name": "05-Cym",
+          "displayName": "Cymbal",
+          "samples": [
+            "1l cym.mp3", "1l cym2.mp3", "1l cym3.mp3", "1l cym4.mp3", 
+            "1l cym5.mp3", "1l cym6.mp3", "1l cym7.mp3"
+          ]
+        },
+        {
+          "id": "clap", 
+          "name": "06-clap",
+          "displayName": "Clap",
+          "samples": [
+            "1l clap.mp3", "1l clap2.mp3", "1l clap3.mp3", "1l clap4.mp3",
+            "1l clap5.mp3", "1l clap6.mp3", "1l clap7.mp3"
+          ]
+        },
+        {
+          "id": "perc",
+          "name": "07-Perc", 
+          "displayName": "Percussion",
+          "samples": [
+            "1l perc.mp3", "1l perc2.mp3", "1l perc3.mp3", "1l perc4.mp3", "1l perc5.mp3",
+            "1l perc6.mp3", "1l perc7.mp3", "1l perc8.mp3", "1l perc9.mp3", "1l perc10.mp3",
+            "1l perc11.mp3", "1l perc12.mp3", "1l perc13.mp3", "1l perc14.mp3", "1l perc15.mp3",
+            "1l perc16.mp3", "1l perc17.mp3"
+          ]
+        },
+        {
+          "id": "conga",
+          "name": "08-Conga",
+          "displayName": "Conga", 
+          "samples": [
+            "1l conga.mp3", "1l conga2.mp3", "1l conga3.mp3", "1l conga4.mp3", "1l conga5.mp3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ill-will-vol-2",
+      "name": "I.L.L. Will - Drumsound Pack Vol. 2",
+      "description": "Professional drum samples - I.L.L. Will - Drumsound Pack Vol. 2",
+      "folderName": "I.L.L. Will - Drumsound Pack Vol. 2", 
+      "coverImage": "ILLWILL-Drum-Kit-Vol-2-1.jpg",
+      "instruments": [
+        {
+          "id": "kick",
+          "name": "01-Kick",
+          "displayName": "Kick",
+          "samples": [
+            "2 kick.mp3", "2 kick2.mp3", "2 kick3.mp3", "2 kick4.mp3", "2 kick5.mp3",
+            "2 kick6.mp3", "2 kick7.mp3", "2 kick8.mp3", "2 kick9.mp3", "2 kick10.mp3",
+            "2 kick11.mp3", "2 kick12.mp3", "2 kick13.mp3", "2 kick14.mp3", "2 kick15.mp3"
+          ]
+        },
+        {
+          "id": "snare",
+          "name": "02-Snare",
+          "displayName": "Snare", 
+          "samples": [
+            "2 snare.mp3", "2 snare2.mp3", "2 snare3.mp3", "2 snare4.mp3", "2 snare5.mp3",
+            "2 snare6.mp3", "2 snare7.mp3", "2 snare8.mp3", "2 snare9.mp3", "2 snare10.mp3",
+            "2 snare11.mp3", "2 snare12.mp3", "2 snare13.mp3", "2 snare14.mp3", "2 snare15.mp3",
+            "2 snare16.mp3", "2 snare17.mp3", "2 snare18.mp3", "2 snare19.mp3", "2 snare20.mp3"
+          ]
+        },
+        {
+          "id": "hi-hat",
+          "name": "03-Hi-hat",
+          "displayName": "Hi Hat",
+          "samples": [
+            "2 hihat.mp3", "2 hihat2.mp3", "2 hihat3.mp3", "2 hihat4.mp3", "2 hihat5.mp3",
+            "2 hihat6.mp3", "2 hihat7.mp3", "2 hihat8.mp3", "2 hihat9.mp3", "2 hihat10.mp3",
+            "2 hihat11.mp3", "2 hihat12.mp3", "2 hihat13.mp3", "2 hihat14.mp3", "2 hihat15.mp3"
+          ]
+        },
+        {
+          "id": "open-hat", 
+          "name": "04-Open hat",
+          "displayName": "Open Hat",
+          "samples": [
+            "2 openhat.mp3", "2 openhat2.mp3", "2 openhat3.mp3", "2 openhat4.mp3",
+            "2 openhat5.mp3", "2 openhat6.mp3", "2 openhat7.mp3"
+          ]
+        },
+        {
+          "id": "cym",
+          "name": "05-Cym",
+          "displayName": "Cymbal",
+          "samples": [
+            "2 cym.mp3", "2 cym2.mp3", "2 cym3.mp3", "2 cym4.mp3",
+            "2 cym5.mp3", "2 cym6.mp3", "2 cym7.mp3"
+          ]
+        },
+        {
+          "id": "clap",
+          "name": "06-clap", 
+          "displayName": "Clap",
+          "samples": [
+            "2 clap.mp3", "2 clap2.mp3", "2 clap3.mp3", "2 clap4.mp3",
+            "2 clap5.mp3", "2 clap6.mp3", "2 clap7.mp3"
+          ]
+        },
+        {
+          "id": "perc",
+          "name": "07-Perc",
+          "displayName": "Percussion",
+          "samples": [
+            "2 perc.mp3", "2 perc2.mp3", "2 perc3.mp3", "2 perc4.mp3", "2 perc5.mp3",
+            "2 perc6.mp3", "2 perc7.mp3", "2 perc8.mp3", "2 perc9.mp3", "2 perc10.mp3",
+            "2 perc11.mp3", "2 perc12.mp3", "2 perc13.mp3", "2 perc14.mp3", "2 perc15.mp3"
+          ]
+        },
+        {
+          "id": "conga",
+          "name": "08-Conga",
+          "displayName": "Conga",
+          "samples": [
+            "2 conga.mp3", "2 conga2.mp3", "2 conga3.mp3", "2 conga4.mp3", "2 conga5.mp3"
+          ]
+        },
+        {
+          "id": "tom",
+          "name": "09-tom", 
+          "displayName": "Tom",
+          "samples": [
+            "2 tom.mp3", "2 tom2.mp3", "2 tom3.mp3", "2 tom4.mp3", "2 tom5.mp3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ill-will-vol-3",
+      "name": "I.L.L. Will - Drumsound Pack Vol. 3",
+      "description": "Professional drum samples - I.L.L. Will - Drumsound Pack Vol. 3",
+      "folderName": "I.L.L. Will - Drumsound Pack Vol. 3",
+      "coverImage": "ILLWILL-Drum-Kit-Vol-3.jpg", 
+      "instruments": [
+        {
+          "id": "kick",
+          "name": "01-Kick",
+          "displayName": "Kick",
+          "samples": [
+            "3 kick.mp3", "3 kick2.mp3", "3 kick3.mp3", "3 kick4.mp3", "3 kick5.mp3",
+            "3 kick6.mp3", "3 kick7.mp3", "3 kick8.mp3", "3 kick9.mp3", "3 kick10.mp3",
+            "3 kick11.mp3", "3 kick12.mp3", "3 kick13.mp3", "3 kick14.mp3", "3 kick15.mp3"
+          ]
+        },
+        {
+          "id": "snare",
+          "name": "02-Snare",
+          "displayName": "Snare",
+          "samples": [
+            "3 snare.mp3", "3 snare2.mp3", "3 snare3.mp3", "3 snare4.mp3", "3 snare5.mp3",
+            "3 snare6.mp3", "3 snare7.mp3", "3 snare8.mp3", "3 snare9.mp3", "3 snare10.mp3",
+            "3 snare11.mp3", "3 snare12.mp3", "3 snare13.mp3", "3 snare14.mp3", "3 snare15.mp3",
+            "3 snare16.mp3", "3 snare17.mp3", "3 snare18.mp3", "3 snare19.mp3", "3 snare20.mp3"
+          ]
+        },
+        {
+          "id": "hi-hat",
+          "name": "03-Hi-hat", 
+          "displayName": "Hi Hat",
+          "samples": [
+            "3 hihat.mp3", "3 hihat2.mp3", "3 hihat3.mp3", "3 hihat4.mp3", "3 hihat5.mp3",
+            "3 hihat6.mp3", "3 hihat7.mp3", "3 hihat8.mp3", "3 hihat9.mp3", "3 hihat10.mp3",
+            "3 hihat11.mp3", "3 hihat12.mp3", "3 hihat13.mp3", "3 hihat14.mp3", "3 hihat15.mp3"
+          ]
+        },
+        {
+          "id": "open-hat",
+          "name": "04-Open hat",
+          "displayName": "Open Hat",
+          "samples": [
+            "3 openhat.mp3", "3 openhat2.mp3", "3 openhat3.mp3", "3 openhat4.mp3",
+            "3 openhat5.mp3", "3 openhat6.mp3", "3 openhat7.mp3"
+          ]
+        },
+        {
+          "id": "cym",
+          "name": "05-Cym",
+          "displayName": "Cymbal", 
+          "samples": [
+            "3 cym.mp3", "3 cym2.mp3", "3 cym3.mp3", "3 cym4.mp3",
+            "3 cym5.mp3", "3 cym6.mp3", "3 cym7.mp3"
+          ]
+        },
+        {
+          "id": "clap",
+          "name": "06-clap",
+          "displayName": "Clap",
+          "samples": [
+            "3 clap.mp3", "3 clap2.mp3", "3 clap3.mp3", "3 clap4.mp3",
+            "3 clap5.mp3", "3 clap6.mp3", "3 clap7.mp3"
+          ]
+        },
+        {
+          "id": "perc",
+          "name": "07-Perc",
+          "displayName": "Percussion",
+          "samples": [
+            "3 perc.mp3", "3 perc2.mp3", "3 perc3.mp3", "3 perc4.mp3", "3 perc5.mp3",
+            "3 perc6.mp3", "3 perc7.mp3", "3 perc8.mp3", "3 perc9.mp3", "3 perc10.mp3",
+            "3 perc11.mp3", "3 perc12.mp3", "3 perc13.mp3", "3 perc14.mp3", "3 perc15.mp3"
+          ]
+        },
+        {
+          "id": "conga", 
+          "name": "08-Conga",
+          "displayName": "Conga",
+          "samples": [
+            "3 conga.mp3", "3 conga2.mp3", "3 conga3.mp3", "3 conga4.mp3", "3 conga5.mp3"
+          ]
+        },
+        {
+          "id": "tom",
+          "name": "09-tom",
+          "displayName": "Tom",
+          "samples": [
+            "3 tom.mp3", "3 tom2.mp3", "3 tom3.mp3", "3 tom4.mp3", "3 tom5.mp3"
+          ]
+        }
+      ]
+    }
+  ]
+}
