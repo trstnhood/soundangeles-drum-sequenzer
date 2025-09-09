@@ -8,9 +8,9 @@ const ResponsiveSequencer = () => {
   useEffect(() => {
     const checkViewport = () => {
       const width = window.innerWidth;
-      // Hardware-Computer braucht mindestens 1200px für professionelle Hardware-Fidelity
-      // Unter 1200px würde das Hardware-Design gequetscht aussehen
-      setMode(width >= 1200 ? 'desktop' : 'mobile');
+      // Hardware-Computer braucht mindestens 1400px für professionelle Hardware-Fidelity
+      // Unter 1400px würde das Hardware-Design gequetscht aussehen (Tablets zeigen sonst abgeschnittene Desktop-Version)
+      setMode(width >= 1400 ? 'desktop' : 'mobile');
     };
 
     // Initial check
