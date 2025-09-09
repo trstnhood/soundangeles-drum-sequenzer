@@ -18,17 +18,17 @@
           - paragraph [ref=e18]: VOLUME
         - generic [ref=e19]:
           - generic [ref=e20]:
-            - button "Previous sample pack" [ref=e21] [cursor=pointer]:
-              - img [ref=e22] [cursor=pointer]
+            - button "Auto-preview in progress..." [disabled] [ref=e21]:
+              - img [ref=e22]
             - generic [ref=e25]:
               - img "Sample Pack 1" [ref=e27]
               - img "Sample Pack 2" [ref=e29]
               - img "Sample Pack 3" [ref=e31]
-            - button "Next sample pack" [ref=e32] [cursor=pointer]:
-              - img [ref=e33] [cursor=pointer]
-          - button "€4.90" [ref=e36] [cursor=pointer]:
+            - button "Auto-preview in progress..." [disabled] [ref=e32]:
+              - img [ref=e33]
+          - button "€9.90" [ref=e36] [cursor=pointer]:
             - img [ref=e37] [cursor=pointer]
-            - generic [ref=e41] [cursor=pointer]: €4.90
+            - generic [ref=e41] [cursor=pointer]: €9.90
       - generic [ref=e42]:
         - generic [ref=e44]:
           - button "STRAIGHT" [ref=e45] [cursor=pointer]
@@ -67,7 +67,7 @@
               - img "KICK WippSchalter" [ref=e73] [cursor=pointer]
               - generic:
                 - generic: KICK
-                - generic: 1/5
+                - generic: 1/3
           - generic [ref=e77]:
             - generic [ref=e78]:
               - img "Volume Scale"
@@ -77,7 +77,7 @@
               - img "SNARES WippSchalter" [ref=e83] [cursor=pointer]
               - generic:
                 - generic: SNARES
-                - generic: 1/4
+                - generic: 1/3
           - generic [ref=e87]:
             - generic [ref=e88]:
               - img "Volume Scale"
@@ -87,7 +87,7 @@
               - img "RIMSHOT WippSchalter" [ref=e93] [cursor=pointer]
               - generic:
                 - generic: RIMSHOT
-                - generic: 1/3
+                - generic: 1/2
           - generic [ref=e97]:
             - generic [ref=e98]:
               - img "Volume Scale"
@@ -97,7 +97,7 @@
               - img "HI WippSchalter" [ref=e103] [cursor=pointer]
               - generic:
                 - generic: HI
-                - generic: 1/3
+                - generic: 1/2
           - generic [ref=e107]:
             - generic [ref=e108]:
               - img "Volume Scale"

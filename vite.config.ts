@@ -13,7 +13,8 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    directoryDiscoveryPlugin(),
+    // Only use directory discovery plugin in development
+    mode === 'development' ? directoryDiscoveryPlugin() : null,
   ].filter(Boolean),
   resolve: {
     alias: {
