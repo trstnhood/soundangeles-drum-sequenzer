@@ -463,43 +463,43 @@ export default function SoundAngelesDrumSequencer({ embedded = false }: SoundAng
             coverImage: '/sample-packs-mp3/Pack_Vol_1/ILLWILL-Drum-Kit-Vol-1-1.jpg',
             categories: {
               'Kick Drums': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick Drum 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick Drum 2.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick Drum 3.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick Drum 4.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick Drum 5.mp3'
+                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick1.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick2.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick3.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick4.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/01-KICK/Kick5.mp3'
               ] },
               'Snares': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare 2.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare 3.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare 4.mp3'
+                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare1.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare2.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare3.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/02-SNARE/Snare4.mp3'
               ] },
               'Rimshot': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-hat 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-hat 2.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-hat 3.mp3'
+                '/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat1.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat2.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/03-HI-HAT/Hi-Hat3.mp3'
               ] },
               'Hi-hats': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open Hi-hat 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open Hi-hat 2.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open Hi-hat 3.mp3'
+                '/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open1.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open2.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/04-OPEN/Open3.mp3'
               ] },
               'Open Hi-hats': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride 2.mp3'
+                '/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride1.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/05-RIDE/Ride2.mp3'
               ] },
               'Ride': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/06-CLAP/Handclap 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/06-CLAP/Handclap 2.mp3'
+                '/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap1.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/06-CLAP/Clap2.mp3'
               ] },
               'Hand claps': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/07-PERC/Perc.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/07-PERC/Perc 2.mp3'
+                '/sample-packs-mp3/Pack_Vol_1/07-PERC/perc4.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/07-PERC/perc3.mp3'
               ] },
               'Percussion': { samples: [
-                '/sample-packs-mp3/Pack_Vol_1/08-CONGA/Con.mp3',
-                '/sample-packs-mp3/Pack_Vol_1/08-CONGA/Con 2.mp3'
+                '/sample-packs-mp3/Pack_Vol_1/08-CONGA/Conga2.mp3',
+                '/sample-packs-mp3/Pack_Vol_1/08-CONGA/Conga1.mp3'
               ] }
             }
           },
@@ -510,14 +510,14 @@ export default function SoundAngelesDrumSequencer({ embedded = false }: SoundAng
             coverImage: '/sample-packs-mp3/Pack_Vol_2/ILLWILL-Drum-Kit-Vol-2-1.jpg',
             categories: {
               'Kick Drums': { samples: [
-                '/sample-packs-mp3/Pack_Vol_2/01-KICK/Bass Drum old.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/01-KICK/Bass Drum old 2.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/01-KICK/Bass Drum old 3.mp3'
+                '/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick43.mp3',
+                '/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick2.mp3',
+                '/sample-packs-mp3/Pack_Vol_2/01-KICK/Kick3.mp3'
               ] },
               'Snares': { samples: [
-                '/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare 80s.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare 80s 2.mp3',
-                '/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare 90s new jack.mp3'
+                '/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare2.mp3',
+                '/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare1.mp3',
+                '/sample-packs-mp3/Pack_Vol_2/02-SNARE/Snare3.mp3'
               ] },
               'Rimshot': { samples: [
                 '/sample-packs-mp3/Pack_Vol_2/03-HI-HAT/Rimshot 1.mp3',
@@ -552,14 +552,14 @@ export default function SoundAngelesDrumSequencer({ embedded = false }: SoundAng
             coverImage: '/sample-packs-mp3/Pack_Vol_3/ILLWILL-Drum-Kit-Vol-3.jpg',
             categories: {
               'Kick Drums': { samples: [
-                '/sample-packs-mp3/Pack_Vol_3/01-KICK/Bass Drum 808 long.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/01-KICK/Bass Drum 808 short filter.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/01-KICK/Bass Drum big shorty 10.mp3'
+                '/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick1.mp3',
+                '/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick2.mp3',
+                '/sample-packs-mp3/Pack_Vol_3/01-KICK/Kick3.mp3'
               ] },
               'Snares': { samples: [
-                '/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare 808 1.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare 808 2.mp3',
-                '/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare classic 1.mp3'
+                '/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare1.mp3',
+                '/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare2.mp3',
+                '/sample-packs-mp3/Pack_Vol_3/02-SNARE/Snare3.mp3'
               ] },
               'Rimshot': { samples: [
                 '/sample-packs-mp3/Pack_Vol_3/03-HI-HAT/Rimshot 808.mp3',
