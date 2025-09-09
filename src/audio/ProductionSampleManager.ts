@@ -61,11 +61,15 @@ export class ProductionSampleManager {
     try {
       // Load static data if not already loaded
       if (!this.staticData) {
-        const response = await fetch('/sample-packs-data.json');
+        const cacheBuster = Date.now();
+        const response = await fetch(`/sample-packs-data.json?v=${cacheBuster}`, {
+          cache: 'no-cache'
+        });
         if (!response.ok) {
           throw new Error(`Failed to load static pack data: ${response.status}`);
         }
         this.staticData = await response.json();
+        console.log('📡 Static sample data loaded with cache-buster:', cacheBuster);
       }
 
       // Convert static data to pack list
