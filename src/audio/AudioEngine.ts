@@ -41,15 +41,27 @@ export class ProfessionalAudioEngine {
   private samplePaths: Map<string, string> = new Map(); // trackId -> sample path
   private pendingLoads: Set<string> = new Set(); // Track which samples are currently loading
   
-  // Professional timing constants
+  // 🛡️ DOUBLE-TRIGGERING PREVENTION
+  private activeSources: Map<string, AudioBufferSourceNode[]> = new Map();
+  private scheduledEvents: Map<string, number> = new Map();
+  
+  // Professional timing constants - MOBILE OPTIMIZED
   private readonly LOOKAHEAD_TIME = 25.0; // Check every 25ms
-  private readonly SCHEDULE_AHEAD_TIME = 0.1; // Schedule 100ms ahead
+  private readonly SCHEDULE_AHEAD_TIME: number; // Dynamic based on device
+  
+  // Mobile optimization
+  private readonly MAX_SIMULTANEOUS_SAMPLES = 8;
+  private isMobile: boolean = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
   
   constructor() {
     this.audioContext = new AudioContext({
       latencyHint: 'interactive',
       sampleRate: 44100
     });
+    
+    // Set schedule ahead time based on device
+    this.SCHEDULE_AHEAD_TIME = this.isMobile ? 0.05 : 0.1; // 50ms for mobile, 100ms for desktop
+    console.log(`📱 Device: ${this.isMobile ? 'Mobile' : 'Desktop'}, Schedule ahead: ${this.SCHEDULE_AHEAD_TIME * 1000}ms`);
   }
 
   /**
@@ -134,7 +146,7 @@ export class ProfessionalAudioEngine {
   /**
    * Play a sample immediately - ONLY REAL SAMPLES with SECURE ID SUPPORT
    */
-  playSample(sampleIdOrUrl: string, volume: number = 1.0, time?: number): void {
+  playSample(sampleIdOrUrl: string, volume: number = 1.0, time?: number, trackId?: string): void {
     const audioBuffer = this.sampleCache.get(sampleIdOrUrl);
     
     if (!audioBuffer) {
@@ -143,6 +155,17 @@ export class ProfessionalAudioEngine {
     }
 
     const playTime = time || this.audioContext.currentTime;
+    
+    // 🛡️ MOBILE: Check simultaneous sample limit
+    if (this.isMobile && trackId) {
+      const totalActive = Array.from(this.activeSources.values())
+        .reduce((sum, sources) => sum + sources.length, 0);
+      
+      if (totalActive >= this.MAX_SIMULTANEOUS_SAMPLES) {
+        console.warn(`⚠️ Mobile: Max ${this.MAX_SIMULTANEOUS_SAMPLES} samples reached`);
+        this.stopOldestSource();
+      }
+    }
     
     // Create audio nodes
     const source = this.audioContext.createBufferSource();
@@ -154,6 +177,21 @@ export class ProfessionalAudioEngine {
     
     // Set volume
     gainNode.gain.setValueAtTime(volume, playTime);
+    
+    // 🛡️ Track active source
+    if (trackId) {
+      if (!this.activeSources.has(trackId)) {
+        this.activeSources.set(trackId, []);
+      }
+      const sources = this.activeSources.get(trackId)!;
+      sources.push(source);
+      
+      // Auto-cleanup when ended
+      source.onended = () => {
+        const idx = sources.indexOf(source);
+        if (idx > -1) sources.splice(idx, 1);
+      };
+    }
     
     // Start playback
     source.start(playTime);
@@ -307,7 +345,7 @@ export class ProfessionalAudioEngine {
     const samplePath = this.samplePaths.get(selectedSampleId);
     if (samplePath) {
       console.log(`🔊 Playing sample: ${selectedSampleId} for track: ${trackId}`);
-      this.playSample(samplePath, volume, time);
+      this.playSample(samplePath, volume, time, trackId); // Pass trackId for tracking
     } else {
       console.error(`❌ Sample path not found for sampleId: ${selectedSampleId}`);
     }
@@ -430,6 +468,21 @@ export class ProfessionalAudioEngine {
     
     // 🚀 LAZY LOADING: Play samples on-demand with groove-adjusted timing
     activeTracks.forEach(async (trackId) => {
+      // 🛡️ DOUBLE-TRIGGER PREVENTION
+      const eventKey = `${trackId}-${stepIndex}-${Math.floor(baseTime * 1000)}`;
+      const now = Date.now();
+      
+      // Check if recently scheduled (within 50ms)
+      if (this.scheduledEvents.has(eventKey)) {
+        const lastTime = this.scheduledEvents.get(eventKey)!;
+        if (now - lastTime < 50) {
+          console.warn(`⚠️ Preventing double-trigger: ${trackId} step ${stepIndex}`);
+          return;
+        }
+      }
+      
+      this.scheduledEvents.set(eventKey, now);
+      
       const track = this.tracks.get(trackId);
       if (track) {
         // GROOVE INTEGRATION: Calculate timing offset for this step
@@ -446,6 +499,14 @@ export class ProfessionalAudioEngine {
         await this.playTrackSample(trackId, track.volume, adjustedTime);
       }
     });
+    
+    // Cleanup old events (> 1 second old)
+    const cutoff = now - 1000;
+    for (const [key, time] of this.scheduledEvents) {
+      if (time < cutoff) {
+        this.scheduledEvents.delete(key);
+      }
+    }
   }
 
   /**
@@ -564,10 +625,57 @@ export class ProfessionalAudioEngine {
       this.schedulerInterval = null;
     }
     
+    // 🛡️ Stop all active sources
+    this.stopAllActiveSources();
+    
+    // Clear scheduled events
+    this.scheduledEvents.clear();
+    
     this.nextStepTime = 0;
     this.currentStep = 0;
     
     console.log('✅ Audio engine stopped');
+  }
+  
+  /**
+   * Stop all active audio sources
+   */
+  private stopAllActiveSources(): void {
+    let count = 0;
+    for (const [_, sources] of this.activeSources) {
+      sources.forEach(source => {
+        try {
+          source.stop();
+          count++;
+        } catch (e) {
+          // Already ended
+        }
+      });
+      sources.length = 0;
+    }
+    if (count > 0) {
+      console.log(`🛑 Stopped ${count} active sources`);
+    }
+  }
+  
+  /**
+   * Stop oldest source (mobile optimization)
+   */
+  private stopOldestSource(): void {
+    for (const [trackId, sources] of this.activeSources) {
+      if (sources.length > 0) {
+        const oldest = sources.shift();
+        if (oldest) {
+          try {
+            oldest.stop();
+            console.log(`🛑 Stopped oldest: ${trackId}`);
+            return;
+          } catch (e) {
+            // Already ended
+          }
+        }
+      }
+    }
   }
 
   /**
