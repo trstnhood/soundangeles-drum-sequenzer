@@ -295,9 +295,9 @@ export default function DrumSequencerMobile() {
     return match ? parseInt(match[1], 10) : 999; // Fallback to end if no number found
   };
   
-  // **PROFESSIONAL WEB AUDIO TIMING SYSTEM - PRECISION TIMING (FROM DESKTOP v6.0.2)**
-  const lookAheadTime = 25.0; // 25ms lookahead
-  const scheduleAheadTime = 0.1; // 100ms scheduling window
+  // **PROFESSIONAL WEB AUDIO TIMING SYSTEM - ADAPTIVE FOR iOS SAFARI**
+  const lookAheadTimeRef = useRef<number>(25.0); // Dynamic lookahead
+  const scheduleAheadTimeRef = useRef<number>(0.1); // Dynamic scheduling window
   const timerWorkerRef = useRef<number>(0);
   const isSchedulingRef = useRef<boolean>(false);
   const sampleCacheRef = useRef<{ [key: string]: AudioBuffer }>({});
@@ -313,11 +313,35 @@ export default function DrumSequencerMobile() {
     
     if (!audioContextRef.current) {
       const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+      
+      // 🎯 UNIFIED 48kHz: All samples are 48kHz, force consistent rate for perfect sync
       audioContextRef.current = new AudioContextClass({
         latencyHint: 'interactive',
-        sampleRate: 44100
+        sampleRate: 48000 // Force 48kHz to match sample rate exactly
       });
-      console.log('🎵 Stable AudioContext created - will never be recreated');
+      
+      // iOS Safari Detection & Optimization
+      const isIOSSafari = /iPad|iPhone|iPod/.test(navigator.userAgent) && 
+                          /Safari/.test(navigator.userAgent) && 
+                          !/Chrome|CriOS|FxiOS/.test(navigator.userAgent);
+      
+      if (isIOSSafari) {
+        console.log('🍎 iOS Safari detected - 48kHz unified optimizations');
+        console.log(`🎯 Unified Sample Rate: ${audioContextRef.current.sampleRate}Hz (matches samples)`);
+        
+        // iOS Safari optimized timing for 48kHz
+        scheduleAheadTimeRef.current = 0.15; // Reduced from 200ms to 150ms
+        lookAheadTimeRef.current = 80; // Reduced from 100ms to 80ms
+        console.log('🍎 iOS Safari 48kHz: 150ms schedule, 80ms lookahead');
+      } else {
+        console.log('💻 Standard browser detected - 48kHz unified');
+        console.log(`🎯 Unified Sample Rate: ${audioContextRef.current.sampleRate}Hz`);
+        scheduleAheadTimeRef.current = 0.05; // 50ms for other browsers  
+        lookAheadTimeRef.current = 25; // 25ms lookahead
+        console.log('💻 Desktop 48kHz: 50ms schedule, 25ms lookahead');
+      }
+      
+      console.log('🎵 Optimized AudioContext created - will never be recreated');
     }
     
     return () => {
@@ -716,7 +740,7 @@ export default function DrumSequencerMobile() {
     if (!isPlayingRef.current || !audioContextRef.current) return;
     
     const ctx = audioContextRef.current;
-    const lookAheadTime = 0.1;
+    const lookAheadTime = scheduleAheadTimeRef.current; // Use dynamic iOS Safari timing
     const stepDuration = stepDurationRef.current;
     
     while (nextStepTimeRef.current < ctx.currentTime + lookAheadTime) {

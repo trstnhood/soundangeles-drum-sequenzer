@@ -54,14 +54,27 @@ export class ProfessionalAudioEngine {
   private isMobile: boolean = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
   
   constructor() {
+    // 🎯 UNIFIED 48kHz: All samples are now 48kHz - force consistent rate
     this.audioContext = new AudioContext({
       latencyHint: 'interactive',
-      sampleRate: 44100
+      sampleRate: 48000 // Match sample rate exactly
     });
     
-    // Set schedule ahead time based on device
-    this.SCHEDULE_AHEAD_TIME = this.isMobile ? 0.05 : 0.1; // 50ms for mobile, 100ms for desktop
-    console.log(`📱 Device: ${this.isMobile ? 'Mobile' : 'Desktop'}, Schedule ahead: ${this.SCHEDULE_AHEAD_TIME * 1000}ms`);
+    // 🍎 iOS Safari Detection
+    const isIOSSafari = /iPad|iPhone|iPod/.test(navigator.userAgent) && 
+                        /Safari/.test(navigator.userAgent) && 
+                        !/Chrome|CriOS|FxiOS/.test(navigator.userAgent);
+    
+    // Device-optimized settings for 48kHz
+    if (isIOSSafari) {
+      this.SCHEDULE_AHEAD_TIME = 0.15; // 150ms for iOS Safari
+      console.log('🍎 iOS Safari: 48kHz unified, 150ms lookahead');
+    } else {
+      this.SCHEDULE_AHEAD_TIME = this.isMobile ? 0.05 : 0.08; // 50ms mobile, 80ms desktop
+      console.log(`💻 ${this.isMobile ? 'Mobile' : 'Desktop'}: 48kHz unified, ${this.SCHEDULE_AHEAD_TIME * 1000}ms lookahead`);
+    }
+    
+    console.log(`🎯 UNIFIED AUDIO: Forced 48kHz, actual: ${this.audioContext.sampleRate}Hz`);
   }
 
   /**
@@ -428,35 +441,20 @@ export class ProfessionalAudioEngine {
    */
   private scheduler = (): void => {
     if (!this.isPlaying) {
-      console.log('🚫 Scheduler called but not playing');
       return;
     }
 
     const stepDuration = (60 / this.bpm) / 4; // 16th notes
     const currentTime = this.audioContext.currentTime;
     
-    console.log(`⏰ Scheduler: step=${this.currentStep}, nextTime=${this.nextStepTime.toFixed(3)}, currentTime=${currentTime.toFixed(3)}`);
-    
-    // CRITICAL SAFEGUARD: Prevent infinite loops
-    let maxIterations = 4; // Max 4 steps per scheduler call
-    let iterations = 0;
-    
     // Schedule events within lookahead window
-    while (this.nextStepTime < currentTime + this.SCHEDULE_AHEAD_TIME && iterations < maxIterations) {
-      console.log(`📅 Scheduling step ${this.currentStep} at time ${this.nextStepTime.toFixed(3)} (iteration ${iterations + 1})`);
+    while (this.nextStepTime < currentTime + this.SCHEDULE_AHEAD_TIME) {
+      // Schedule current step
       this.scheduleStep(this.currentStep, this.nextStepTime);
       
       // Advance to next step
       this.nextStepTime += stepDuration;
       this.currentStep = (this.currentStep + 1) % 16;
-      iterations++;
-      
-      console.log(`➡️ Advanced to step ${this.currentStep}`);
-    }
-    
-    // Warn if we hit the iteration limit
-    if (iterations >= maxIterations) {
-      console.warn(`⚠️ Scheduler hit max iterations (${maxIterations}) - preventing infinite loop`);
     }
   };
 
