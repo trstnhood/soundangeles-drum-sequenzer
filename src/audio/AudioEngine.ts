@@ -464,11 +464,13 @@ export class ProfessionalAudioEngine {
   private scheduleStep(stepIndex: number, baseTime: number): void {
     const activeTracks = this.getActiveTracksForStep(stepIndex);
     
-    // 🚀 LAZY LOADING: Play samples on-demand with groove-adjusted timing
-    activeTracks.forEach(async (trackId) => {
+    // 🛡️ DOUBLE-TRIGGER PREVENTION - Move 'now' declaration to method scope
+    const now = Date.now();
+    
+    // 🚀 LAZY LOADING: Play samples on-demand with groove-adjusted timing (SYNCHRONOUS)
+    activeTracks.forEach((trackId) => {
       // 🛡️ DOUBLE-TRIGGER PREVENTION
       const eventKey = `${trackId}-${stepIndex}-${Math.floor(baseTime * 1000)}`;
-      const now = Date.now();
       
       // Check if recently scheduled (within 50ms)
       if (this.scheduledEvents.has(eventKey)) {
@@ -492,9 +494,14 @@ export class ProfessionalAudioEngine {
           console.log(`🎵 Groove: track=${trackId}, step=${stepIndex}, offset=${(grooveOffset * 1000).toFixed(1)}ms`);
         }
         
-        // UNIFIED SYSTEM: Always use built-in playTrackSample (works for both Desktop & Mobile)
-        console.log(`🎵 UNIFIED: Playing ${trackId} with selectedSampleId=${track.selectedSampleId}`);
-        await this.playTrackSample(trackId, track.volume, adjustedTime);
+        // SCHEDULER FIX: Use direct sample playback to avoid async blocking
+        if (track.selectedSampleId) {
+          const samplePath = this.samplePaths.get(track.selectedSampleId);
+          if (samplePath && this.sampleCache.has(samplePath)) {
+            // Sample is cached - play directly without async loading
+            this.playSample(samplePath, track.volume, adjustedTime, trackId);
+          }
+        }
       }
     });
     
