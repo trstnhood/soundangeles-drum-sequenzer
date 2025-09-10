@@ -6,6 +6,7 @@
 import { useState, useEffect } from 'react';
 import ProfessionalDrumSequencer from '@/components/ProfessionalDrumSequencer';
 import MobileFallback from '@/components/MobileFallback';
+import { AdaptiveMobileIntegration } from '@/components/AdaptiveMobileIntegration';
 import { Loader2 } from 'lucide-react';
 
 const Index = () => {
@@ -115,17 +116,58 @@ const Index = () => {
           </div>
         </div>
         <MobileFallback />
+        <AdaptiveMobileIntegration 
+          onConfigChange={(config) => {
+            console.log('📱 Mobile fallback adaptive config:', config.deviceTier);
+          }}
+          onPerformanceIssue={(reason) => {
+            console.warn('⚠️ Mobile fallback performance issue:', reason);
+          }}
+          onQualityChange={(newQuality) => {
+            console.log('🎵 Mobile fallback quality changed to:', newQuality);
+          }}
+        />
       </div>
     );
   }
 
   // Show fallback version
   if (showFallback) {
-    return <MobileFallback />;
+    return (
+      <>
+        <MobileFallback />
+        <AdaptiveMobileIntegration 
+          onConfigChange={(config) => {
+            console.log('📱 Fallback adaptive config:', config.deviceTier);
+          }}
+          onPerformanceIssue={(reason) => {
+            console.warn('⚠️ Fallback performance issue:', reason);
+          }}
+          onQualityChange={(newQuality) => {
+            console.log('🎵 Fallback quality changed to:', newQuality);
+          }}
+        />
+      </>
+    );
   }
 
-  // Show full professional version
-  return <ProfessionalDrumSequencer />;
+  // Show full professional version with adaptive integration
+  return (
+    <>
+      <ProfessionalDrumSequencer />
+      <AdaptiveMobileIntegration 
+        onConfigChange={(config) => {
+          console.log('📱 Adaptive configuration updated:', config.deviceTier);
+        }}
+        onPerformanceIssue={(reason) => {
+          console.warn('⚠️ Performance issue detected:', reason);
+        }}
+        onQualityChange={(newQuality) => {
+          console.log('🎵 Audio quality changed to:', newQuality);
+        }}
+      />
+    </>
+  );
 };
 
 export default Index;

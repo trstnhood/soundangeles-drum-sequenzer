@@ -1,7 +1,10 @@
 /**
  * Professional Audio Engine - ZERO SYNTHESIS, ONLY REAL SAMPLES
  * Isolated from React - Professional drum machine behavior
+ * DEVICE-SPECIFIC AUDIO CONFIGURATION for iPad Pro Audio Fix
  */
+
+import { DeviceAudioConfigManager } from './DeviceAudioConfig';
 
 export interface TrackPattern {
   id: string;
@@ -54,27 +57,32 @@ export class ProfessionalAudioEngine {
   private isMobile: boolean = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
   
   constructor() {
-    // 🎯 UNIFIED 48kHz: All samples are now 48kHz - force consistent rate
-    this.audioContext = new AudioContext({
-      latencyHint: 'interactive',
-      sampleRate: 48000 // Match sample rate exactly
-    });
+    // 🔧 DEVICE-SPECIFIC AUDIO CONFIGURATION - iPad Pro Fix
+    const deviceConfig = DeviceAudioConfigManager.getOptimalAudioConfig();
     
-    // 🍎 iOS Safari Detection
-    const isIOSSafari = /iPad|iPhone|iPod/.test(navigator.userAgent) && 
-                        /Safari/.test(navigator.userAgent) && 
-                        !/Chrome|CriOS|FxiOS/.test(navigator.userAgent);
+    console.log(`🔧 DEVICE-SPECIFIC AUDIO INIT:`);
+    console.log(`   Device: ${deviceConfig.deviceType} | ${deviceConfig.deviceInfo}`);
+    console.log(`   Sample Rate: ${deviceConfig.recommendedSampleRate}Hz`);
+    console.log(`   Reason: ${deviceConfig.reason}`);
     
-    // Device-optimized settings for 48kHz
-    if (isIOSSafari) {
-      this.SCHEDULE_AHEAD_TIME = 0.15; // 150ms for iOS Safari
-      console.log('🍎 iOS Safari: 48kHz unified, 150ms lookahead');
-    } else {
-      this.SCHEDULE_AHEAD_TIME = this.isMobile ? 0.05 : 0.08; // 50ms mobile, 80ms desktop
-      console.log(`💻 ${this.isMobile ? 'Mobile' : 'Desktop'}: 48kHz unified, ${this.SCHEDULE_AHEAD_TIME * 1000}ms lookahead`);
+    // Create AudioContext with device-optimal settings
+    this.audioContext = DeviceAudioConfigManager.createOptimalAudioContext();
+    
+    // Device-optimized timing settings
+    this.SCHEDULE_AHEAD_TIME = deviceConfig.scheduleAheadTime;
+    
+    console.log(`✅ DEVICE-OPTIMIZED AUDIO:`);
+    console.log(`   Requested: ${deviceConfig.recommendedSampleRate}Hz`);
+    console.log(`   Actual: ${this.audioContext.sampleRate}Hz`);
+    console.log(`   Schedule: ${this.SCHEDULE_AHEAD_TIME * 1000}ms lookahead`);
+    console.log(`   Device: ${deviceConfig.deviceInfo}`);
+    
+    // Log if this is the iPad Pro fix
+    if (deviceConfig.deviceType === 'ipad-pro') {
+      console.log(`🚨 IPAD PRO AUDIO FIX APPLIED:`);
+      console.log(`   Using 44.1kHz instead of 48kHz to prevent audio corruption`);
+      console.log(`   This should resolve "komplett zerbrochene" audio issue`);
     }
-    
-    console.log(`🎯 UNIFIED AUDIO: Forced 48kHz, actual: ${this.audioContext.sampleRate}Hz`);
   }
 
   /**

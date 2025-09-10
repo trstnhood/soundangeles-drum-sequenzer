@@ -5,8 +5,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Slider } from '@/components/ui/slider';
 import AddToCartButton from '@/components/AddToCartButton';
 import ProgrammerCredits from '@/components/ProgrammerCredits';
-// TEST: Import ProfessionalAudioEngine
+// TEST: Import ProfessionalAudioEngine + Device-Specific Audio Config
 import { ProfessionalAudioEngine, TrackPattern } from '@/audio/AudioEngine';
+import { DeviceAudioConfigManager } from '@/audio/DeviceAudioConfig';
 
 interface DrumSample {
   id: string;
@@ -312,43 +313,41 @@ export default function DrumSequencerMobile() {
     if (!isInitialized) return;
     
     if (!audioContextRef.current) {
-      const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+      // 🚨 DEVICE-SPECIFIC AUDIO CONFIGURATION - iPad Pro Fix
+      const deviceConfig = DeviceAudioConfigManager.getOptimalAudioConfig();
       
-      // 🎯 UNIFIED 48kHz: All samples are 48kHz, force consistent rate for perfect sync
-      audioContextRef.current = new AudioContextClass({
-        latencyHint: 'interactive',
-        sampleRate: 48000 // Force 48kHz to match sample rate exactly
-      });
+      console.log(`🔧 MOBILE DEVICE-SPECIFIC AUDIO INIT:`);
+      console.log(`   Device: ${deviceConfig.deviceType} | ${deviceConfig.deviceInfo}`);
+      console.log(`   Sample Rate: ${deviceConfig.recommendedSampleRate}Hz`);
+      console.log(`   Schedule Ahead: ${deviceConfig.scheduleAheadTime * 1000}ms`);
+      console.log(`   Reason: ${deviceConfig.reason}`);
       
-      // iOS Safari Detection & Optimization
-      const isIOSSafari = /iPad|iPhone|iPod/.test(navigator.userAgent) && 
-                          /Safari/.test(navigator.userAgent) && 
-                          !/Chrome|CriOS|FxiOS/.test(navigator.userAgent);
+      // Create AudioContext with device-optimal settings
+      audioContextRef.current = DeviceAudioConfigManager.createOptimalAudioContext();
       
-      if (isIOSSafari) {
-        console.log('🍎 iOS Safari detected - 48kHz unified optimizations');
-        console.log(`🎯 Unified Sample Rate: ${audioContextRef.current.sampleRate}Hz (matches samples)`);
-        
-        // iOS Safari optimized timing for 48kHz
-        scheduleAheadTimeRef.current = 0.15; // Reduced from 200ms to 150ms
-        lookAheadTimeRef.current = 80; // Reduced from 100ms to 80ms
-        console.log('🍎 iOS Safari 48kHz: 150ms schedule, 80ms lookahead');
-      } else {
-        console.log('💻 Standard browser detected - 48kHz unified');
-        console.log(`🎯 Unified Sample Rate: ${audioContextRef.current.sampleRate}Hz`);
-        scheduleAheadTimeRef.current = 0.05; // 50ms for other browsers  
-        lookAheadTimeRef.current = 25; // 25ms lookahead
-        console.log('💻 Desktop 48kHz: 50ms schedule, 25ms lookahead');
+      // Apply device-specific timing settings
+      scheduleAheadTimeRef.current = deviceConfig.scheduleAheadTime;
+      lookAheadTimeRef.current = deviceConfig.scheduleAheadTime * 1000; // Convert to milliseconds
+      
+      console.log(`✅ MOBILE DEVICE-OPTIMIZED AUDIO:`);
+      console.log(`   Requested: ${deviceConfig.recommendedSampleRate}Hz`);
+      console.log(`   Actual: ${audioContextRef.current.sampleRate}Hz`);
+      console.log(`   Schedule: ${scheduleAheadTimeRef.current * 1000}ms`);
+      console.log(`   Lookahead: ${lookAheadTimeRef.current}ms`);
+      console.log(`   Device: ${deviceConfig.deviceInfo}`);
+      
+      // Special logging for iPad Pro fix
+      if (deviceConfig.deviceType === 'ipad-pro') {
+        console.log(`🚨 IPAD PRO AUDIO FIX APPLIED IN MOBILE COMPONENT:`);
+        console.log(`   Using 44.1kHz instead of 48kHz to prevent "komplett zerbrochene" audio`);
+        console.log(`   This fix should resolve the iPad Pro 12" audio corruption issue`);
+      } else if (deviceConfig.deviceType === 'desktop' || deviceConfig.deviceType === 'iphone') {
+        console.log(`✅ MAINTAINING WORKING ${deviceConfig.recommendedSampleRate}Hz FOR ${deviceConfig.deviceType.toUpperCase()}`);
+        console.log(`   This device works well with the current configuration`);
       }
       
       console.log('🎵 Optimized AudioContext created - will never be recreated');
     }
-    
-    return () => {
-      if (audioContextRef.current && audioContextRef.current.state !== 'closed') {
-        audioContextRef.current.close();
-      }
-    };
   }, [isInitialized]); // ONLY isInitialized - no tracks dependency!
   
   // Initialize sample packs with AGGRESSIVE PRELOADING FROM DESKTOP v6.0.2

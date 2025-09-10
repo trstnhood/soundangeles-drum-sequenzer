@@ -174,3 +174,4 @@ Da dies die stabile 7.1 GM MP3 Basis ist, können folgende Features aufgebaut we
 **Letzte Aktualisierung:** 08.09.2025  
 **Erstellt für:** Saubere, professionelle Weiterentwicklung ohne Legacy-Code  
 **Claude Code Hinweis:** Dies ist die einzige Version in diesem Projektordner!
+- nur deployen auf github wenn der user das freigibt
